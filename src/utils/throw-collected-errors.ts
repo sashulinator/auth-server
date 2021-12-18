@@ -1,21 +1,25 @@
-import { HttpException } from '@nestjs/common';
+import { HttpException } from '@nestjs/common'
+import { ValidationError } from 'src/validators'
 
-export async function throwCollectedErrors(validators: (() => void)[]) {
-  const errors = [];
+// TODO: могут быть одинаковые ошибки
+export function throwCollectedErrors(validators: (() => void)[]): void {
+  const errors = new Set()
 
   for (let i = 0; i < validators.length; i++) {
-    const validator = validators[i];
+    const validator = validators[i]
 
     try {
-      validator();
-    } catch ({ message, key, value }) {
-      errors.push({ message, key, value });
+      validator()
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        errors.add({ ...error, message: error.message })
+      }
     } finally {
-      if (errors.length !== 0 && i === validators.length - 1) {
-        throw new HttpException(
-          { errors, message: 'ValidationError', errcode: 'EINVALID' },
-          401,
-        );
+      const isLast = i === validators.length - 1
+      const hasErrors = errors.size !== 0
+
+      if (isLast && hasErrors) {
+        throw new HttpException({ errors: [...errors], message: 'ValidationError', errcode: 'EINVALID' }, 401)
       }
     }
   }

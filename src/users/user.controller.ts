@@ -1,9 +1,8 @@
-import { Controller, Get, Header, Req } from '@nestjs/common';
-import { Request } from 'express';
-import { throwCollectedErrors } from '../utils/throw-collected-errors';
-import { validateNotMoreThan, validateNumber } from '../validators';
-import { UserService } from './user.service';
-import { parseInteger } from 'src/utils/parse-integer';
+import { Controller, Get, Header, Req } from '@nestjs/common'
+import { UserService } from './user.service'
+import { parseInteger } from '../utils/parse-integer'
+import validateFindManyParams from '../validators/find-many'
+import { FindManyParams, RequestWithQuery } from 'src/type'
 
 @Controller('users')
 export class UserController {
@@ -11,18 +10,14 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Get()
-  async findMany(@Req() request: Request) {
-    const query = request?.query as Record<string, string>;
+  async findMany(@Req() request: RequestWithQuery<FindManyParams<string>>) {
+    const query = request?.query
 
-    const take = parseInteger(query.take);
-    const skip = parseInteger(query.skip);
+    validateFindManyParams({ take: query.take, skip: query.take }, { maxTake: 50 })
 
-    await throwCollectedErrors([
-      () => take && validateNumber(take, 'take'),
-      () => take && validateNotMoreThan(take, 100, 'take'),
-      () => skip && validateNumber(skip, 'skip'),
-    ]);
+    const take = parseInteger(query.take)
+    const skip = parseInteger(query.skip)
 
-    return this.userService.findMany({ take, skip });
+    return this.userService.findMany({ take, skip })
   }
 }

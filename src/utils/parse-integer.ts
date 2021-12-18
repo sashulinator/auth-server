@@ -1,9 +1,9 @@
 export function parseInteger(string?: string): number | undefined {
   if (string === undefined) {
-    return;
+    return undefined
   }
 
-  const integer = parseInt(string, 10);
+  const integer = parseInt(string, 10)
 
-  return !integer ? undefined : integer;
+  return !integer ? undefined : integer
 }
