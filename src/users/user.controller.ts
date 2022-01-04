@@ -13,6 +13,12 @@ export class UserController {
   async findMany(@Req() request: RequestWithQuery<FindManyParams<string>>) {
     const query = request?.query
 
+    /**
+     * TODO: сделать валидатор по типу:
+     * new Validator(params)
+     *    .validateFindManyParams({ maxTake: 50 })
+     *    .validateSmthElse({ foo: bar })
+     */
     validateFindManyParams({ take: query.take, skip: query.take }, { maxTake: 50 })
 
     const take = parseInteger(query.take)
