@@ -10,6 +10,7 @@ export class UserService {
     const items = await prisma.user.findMany({
       take: params.take ?? 10,
       skip: params.skip,
+      orderBy: { updatedAt: 'desc' },
     })
 
     const total = await prisma.user.count()
