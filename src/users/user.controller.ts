@@ -1,8 +1,10 @@
-import { Controller, Get, Header, Req } from '@nestjs/common'
+import { Controller, Get, Header, Post, Req } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
 import validateFindManyParams from '../validators/find-many'
-import { FindManyParams, RequestWithQuery } from 'src/type'
+import { FindManyParams, RequestWithBody, RequestWithQuery } from 'src/type'
+import { User } from '@prisma/client'
+import validateUserInput from 'src/validators/user'
 
 @Controller('users')
 export class UserController {
@@ -25,5 +27,20 @@ export class UserController {
     const skip = parseInteger(query.skip)
 
     return this.userService.findMany({ take, skip })
+  }
+
+  @Header('Content-Type', 'application/json')
+  @Post()
+  async create(@Req() request: RequestWithBody<User>) {
+    const createUserInput = request?.body
+
+    const formatedUserInput = {
+      name: createUserInput?.name?.toLowerCase(),
+      email: createUserInput?.email?.toLowerCase(),
+    }
+
+    validateUserInput(formatedUserInput)
+
+    return this.userService.create(formatedUserInput)
   }
 }

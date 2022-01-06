@@ -6,14 +6,20 @@ export function assertNumber(input: unknown): asserts input is number {
     return
   }
 
-  throw Error('is not number')
+  throw Error('is not a number')
+}
+
+export function assertNotUndefined(input: unknown): asserts input is number {
+  if (typeof input === 'undefined') {
+    throw Error('cannot be undefined')
+  }
 }
 
 export function assertNotNaN(input: unknown): asserts input is number {
   assertNumber(input)
 
   if (isNaN(input)) {
-    throw Error('is not number')
+    throw Error('is not a number')
   }
 }
 
@@ -22,16 +28,16 @@ export function assertString(input: unknown): asserts input is string {
     return
   }
 
-  throw Error('is not string')
+  throw Error('is not a string')
 }
 
 export function assertNotMoreThan(input: unknown, num: number): void {
   if (!isNumber(input) && !isString(input)) {
-    throw Error(`must be string or number`)
+    throw Error(`must be a string or number`)
   }
 
   if (!isNumber(num) && !isString(num)) {
-    throw Error(`must be string or number`)
+    throw Error(`must be a string or number`)
   }
 
   const inputNum = isNumber(input) ? input : parseInt(input)
@@ -53,6 +59,25 @@ export function assertStringifiedNumber(input: unknown): void {
   try {
     assertNotNaN(parseInt(input, 10))
   } catch (e) {
-    throw Error(`is not stringified number`)
+    throw Error(`is not a stringified number`)
+  }
+}
+
+export function assertRegExp(input: unknown): asserts input is RegExp {
+  try {
+    new RegExp(input as string)
+  } catch (e) {
+    throw Error(`is not a regular expression`)
+  }
+}
+
+export function assertMatchPattern(input: unknown, pattern: unknown): void {
+  assertString(input)
+  assertRegExp(pattern)
+
+  const regExp = new RegExp(pattern)
+
+  if (!regExp.test(input)) {
+    throw new Error('does not match the pattern')
   }
 }

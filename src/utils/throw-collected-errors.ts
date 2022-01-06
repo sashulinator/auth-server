@@ -3,7 +3,7 @@ import { ValidationError } from 'src/validators'
 
 // TODO: могут быть одинаковые ошибки
 export function throwCollectedErrors(validators: (() => void)[]): void {
-  const errors = new Set()
+  const errors = new Map()
 
   for (let i = 0; i < validators.length; i++) {
     const validator = validators[i]
@@ -12,14 +12,17 @@ export function throwCollectedErrors(validators: (() => void)[]): void {
       validator()
     } catch (error) {
       if (error instanceof ValidationError) {
-        errors.add({ ...error, message: error.message })
+        errors.set(error.key, { ...error, message: error.message })
       }
     } finally {
       const isLast = i === validators.length - 1
       const hasErrors = errors.size !== 0
 
       if (isLast && hasErrors) {
-        throw new HttpException({ errors: [...errors], message: 'ValidationError', errcode: 'EINVALID' }, 401)
+        throw new HttpException(
+          { errors: Object.fromEntries(errors), message: 'ValidationError', errcode: 'EINVALID' },
+          400,
+        )
       }
     }
   }

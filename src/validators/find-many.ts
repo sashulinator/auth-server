@@ -1,5 +1,5 @@
 import { throwCollectedErrors } from '../utils/throw-collected-errors'
-import { validateNotMoreThan, validateNumber, validateStringifiedNumber } from '../validators'
+import { validateNotMoreThan, validateStringifiedNumber } from '../validators'
 
 interface FindManySettings {
   maxTake: number
