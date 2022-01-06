@@ -1,4 +1,4 @@
-import { Controller, Get, Header, Post, Req } from '@nestjs/common'
+import { Controller, Delete, Get, Header, Post, Req } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
 import validateFindManyParams from '../validators/find-many'
@@ -42,5 +42,13 @@ export class UserController {
     validateUserInput(formatedUserInput)
 
     return this.userService.create(formatedUserInput)
+  }
+
+  @Header('Content-Type', 'application/json')
+  @Delete()
+  async pruneMany(@Req() request: RequestWithBody<number[]>) {
+    const ids = request?.body
+
+    return this.userService.pruneMany(ids)
   }
 }

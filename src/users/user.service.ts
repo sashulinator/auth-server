@@ -31,4 +31,8 @@ export class UserService {
   async pruneById(input: UpdateInput<User>) {
     return prisma.user.delete({ where: { id: input.id } })
   }
+
+  async pruneMany(input: number[]) {
+    return prisma.user.deleteMany({ where: { id: { in: input } } })
+  }
 }
