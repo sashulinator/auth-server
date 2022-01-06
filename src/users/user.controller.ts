@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Header, Post, Req } from '@nestjs/common'
+import { Controller, Delete, Get, Header, Post, Put, Req } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
 import validateFindManyParams from '../validators/find-many'
@@ -32,16 +32,32 @@ export class UserController {
   @Header('Content-Type', 'application/json')
   @Post()
   async create(@Req() request: RequestWithBody<User>) {
-    const createUserInput = request?.body
+    const userInput = request?.body
 
     const formatedUserInput = {
-      name: createUserInput?.name?.toLowerCase(),
-      email: createUserInput?.email?.toLowerCase(),
+      name: userInput?.name?.toLowerCase(),
+      email: userInput?.email?.toLowerCase(),
     }
 
     validateUserInput(formatedUserInput)
 
     return this.userService.create(formatedUserInput)
+  }
+
+  @Header('Content-Type', 'application/json')
+  @Put()
+  async update(@Req() request: RequestWithBody<User>) {
+    const userInput = request?.body
+
+    const formatedUserInput = {
+      name: userInput?.name?.toLowerCase(),
+      email: userInput?.email?.toLowerCase(),
+      id: userInput.id,
+    }
+
+    validateUserInput(formatedUserInput)
+
+    return this.userService.updateById(formatedUserInput)
   }
 
   @Header('Content-Type', 'application/json')
