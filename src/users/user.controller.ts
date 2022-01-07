@@ -1,8 +1,8 @@
 import { Controller, Delete, Get, Header, Post, Put, Req } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
-import validateFindManyParams from '../validators/find-many'
-import { FindManyParams, RequestWithBody, RequestWithQuery } from 'src/type'
+import { validateFindManyParams } from '../validators/common'
+import { SearchQuery, RequestWithBody, RequestWithQuery, FindManyParams } from '../type'
 import { User } from '@prisma/client'
 import validateUserInput from 'src/validators/user'
 
@@ -12,7 +12,7 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Get()
-  async findMany(@Req() request: RequestWithQuery<FindManyParams<string>>) {
+  async findMany(@Req() request: RequestWithQuery<FindManyParams<string> & SearchQuery>) {
     const query = request?.query
 
     /**
@@ -21,12 +21,12 @@ export class UserController {
      *    .validateFindManyParams({ maxTake: 50 })
      *    .validateSmthElse({ foo: bar })
      */
-    validateFindManyParams({ take: query.take, skip: query.take }, { maxTake: 50 })
+    validateFindManyParams(query, { maxTake: 50 })
 
     const take = parseInteger(query.take)
     const skip = parseInteger(query.skip)
 
-    return this.userService.findMany({ take, skip })
+    return this.userService.findMany({ take, skip }, query.searchQuery)
   }
 
   @Header('Content-Type', 'application/json')

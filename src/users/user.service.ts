@@ -6,18 +6,40 @@ const prisma = new PrismaClient()
 
 @Injectable()
 export class UserService {
-  async findMany(params: FindManyParams) {
-    const items = await prisma.user.findMany({
+  async findMany(params: FindManyParams, searchQuery?: string) {
+    const pagination = {
       take: params.take ?? 10,
       skip: params.skip,
       orderBy: { updatedAt: 'desc' },
-    })
+    } as const
 
-    const total = await prisma.user.count()
+    const filters = searchQuery
+      ? {
+          where: {
+            OR: [
+              {
+                name: {
+                  contains: searchQuery,
+                },
+              },
+              {
+                email: {
+                  contains: searchQuery,
+                },
+              },
+            ],
+          },
+        }
+      : null
+
+    const [total, items] = await prisma.$transaction([
+      prisma.user.count(filters),
+      prisma.user.findMany({ ...pagination, ...filters }),
+    ])
 
     return {
-      items,
       total,
+      items,
     }
   }
 
