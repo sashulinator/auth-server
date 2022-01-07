@@ -79,7 +79,7 @@ export function validateNotUndefined(input: unknown, key: string): void {
   }
 }
 
-export function validateNotMoreThan(input: unknown, num: number, key: string): void {
+export function validateNotMoreThan(input: unknown, num: number, key: string, maxName?: string): void {
   try {
     assertNotMoreThan(input, num)
   } catch (error) {
@@ -89,6 +89,8 @@ export function validateNotMoreThan(input: unknown, num: number, key: string): v
         value: input,
         message: error.message,
         validatorName: validateNotMoreThan.name,
+        key2: maxName,
+        value2: num,
       })
     }
   }
