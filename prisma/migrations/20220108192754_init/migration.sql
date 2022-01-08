@@ -17,10 +17,8 @@ CREATE TABLE "LocalAuth" (
     "id" UUID NOT NULL,
     "userId" UUID NOT NULL,
     "password" TEXT NOT NULL,
-    "salt" VARCHAR(64) NOT NULL,
-    "jwtHash" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "salt" VARCHAR(64),
+    "jwtHash" TEXT,
 
     CONSTRAINT "LocalAuth_pkey" PRIMARY KEY ("id")
 );
@@ -30,6 +28,9 @@ CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_phone_key" ON "User"("phone");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "LocalAuth_userId_key" ON "LocalAuth"("userId");
 
 -- AddForeignKey
 ALTER TABLE "LocalAuth" ADD CONSTRAINT "LocalAuth_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

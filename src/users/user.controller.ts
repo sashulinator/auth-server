@@ -4,13 +4,18 @@ import { parseInteger } from '../utils/parse-integer'
 import { validateFindManyParams, validateId } from '../helpers/validators'
 import { SearchQuery, FindManyParams } from '../types'
 import { RequestWithBody, RequestWithQuery } from '../utils/types'
-import { User } from '@prisma/client'
+import { PrismaClient, User } from '@prisma/client'
 import validateUserInput from 'src/users/user.validators'
 import RequestDataValidator from 'src/utils/errors/request-data-validator'
+import { LocalAuthService } from 'src/local-auth/local-auth.service'
+import generateHash from 'src/utils/generate-hash'
+import generateHashedPassword from 'src/utils/generate-hash-password'
+
+const prisma = new PrismaClient()
 
 @Controller('users')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService, private readonly localAuthService: LocalAuthService) {}
 
   @Header('Content-Type', 'application/json')
   @Get()
@@ -27,7 +32,7 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Post()
-  async create(@Req() request: RequestWithBody<User>) {
+  async create(@Req() request: RequestWithBody<User & { password: string }>) {
     const userInput = request?.body
 
     new RequestDataValidator(userInput).push([validateUserInput]).validate()
@@ -37,7 +42,20 @@ export class UserController {
       email: userInput?.email?.toLowerCase(),
     }
 
-    return this.userService.create(formatedUserInput)
+    const createdUser = await prisma.$transaction(async () => {
+      const user = await this.userService.create(formatedUserInput)
+      const salt = await generateHash()
+
+      this.localAuthService.savePassword({
+        userId: user.id,
+        password: generateHashedPassword(userInput.password, salt),
+        salt,
+      })
+
+      return user
+    })
+
+    return createdUser
   }
 
   @Header('Content-Type', 'application/json')
@@ -58,7 +76,7 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Delete()
-  async pruneMany(@Req() request: RequestWithBody<number[]>) {
+  async pruneMany(@Req() request: RequestWithBody<string[]>) {
     const ids = request?.body
 
     return this.userService.pruneMany(ids)

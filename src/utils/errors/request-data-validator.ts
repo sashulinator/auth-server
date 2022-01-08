@@ -45,10 +45,7 @@ export default class RequestDataValidator {
         const isLast = this.validators.length === 0
         const hasErrors = this.errors.size !== 0
 
-        console.log(isLast && hasErrors)
         if (isLast && hasErrors) {
-          console.log(isLast && hasErrors)
-
           throw new HttpException(
             {
               errors: Object.fromEntries(this.errors),

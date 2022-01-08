@@ -44,7 +44,7 @@ export class UserService {
     }
   }
 
-  async create(input: CreateInput<Omit<User, 'name' | 'phone'>>) {
+  async create(input: CreateInput<Omit<User, 'name' | 'phone'>>): Promise<User> {
     return prisma.user.create({ data: input })
   }
 
@@ -52,7 +52,7 @@ export class UserService {
     return prisma.user.update({ data: input, where: { id: input.id } })
   }
 
-  async pruneMany(input: number[]) {
+  async pruneMany(input: string[]) {
     return prisma.user.deleteMany({ where: { id: { in: input } } })
   }
 }
