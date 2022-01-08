@@ -1,5 +1,5 @@
-import { isNumber } from './utils/is-number'
-import { isString } from './utils/is-string'
+import { isNumber } from './is-number'
+import { isString } from './is-string'
 
 export function assertNumber(input: unknown): asserts input is number {
   if (isNumber(input)) {

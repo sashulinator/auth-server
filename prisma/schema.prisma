@@ -12,10 +12,11 @@ datasource db {
 
 model User {
   id        Int       @id @default(autoincrement())
-  username  String
-  email     String    @unique
-  name      String?
-  phone     Int?      @unique
+  // If you change max length, do not forget to change it in the api validator
+  username  String    @db.VarChar(64)
+  email     String    @unique @db.VarChar(64)
+  name      String?   @db.VarChar(64)
+  phone     String?   @unique @db.VarChar(15)
   deletedAt DateTime?
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

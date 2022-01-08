@@ -1,14 +1,5 @@
 import { Request } from 'express'
 
-export interface FindManyParams<T = number> {
-  take?: T
-  skip?: T
-}
-
-export interface SearchQuery {
-  searchQuery?: string
-}
-
 export type CreateInput<T> = Omit<T, 'id' | 'createdAt' | 'deletedAt' | 'updatedAt'>
 
 export type UpdateInput<T extends { id: string | number }> = Omit<T, 'createdAt' | 'deletedAt' | 'updatedAt'> &

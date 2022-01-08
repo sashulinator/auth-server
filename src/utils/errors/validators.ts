@@ -5,7 +5,7 @@ import {
   assertNumber,
   assertString,
   assertStringifiedNumber,
-} from '../../assertions'
+} from '../assertions'
 import { ValidationError } from './errors'
 
 export function validateString(input: unknown, key: string): void {
