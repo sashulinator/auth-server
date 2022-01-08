@@ -43,11 +43,11 @@ export class UserService {
     }
   }
 
-  async create(input: CreateInput<User>) {
+  async create(input: CreateInput<Omit<User, 'name' | 'phone'>>) {
     return prisma.user.create({ data: input })
   }
 
-  async updateById(input: UpdateInput<User>) {
+  async updateById(input: UpdateInput<Omit<User, 'name' | 'phone'>>) {
     return prisma.user.update({ data: input, where: { id: input.id } })
   }
 

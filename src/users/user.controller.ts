@@ -32,7 +32,7 @@ export class UserController {
     new RequestDataValidator(userInput).push([validateUserInput]).validate()
 
     const formatedUserInput = {
-      name: userInput?.name?.toLowerCase(),
+      username: userInput?.name?.toLowerCase(),
       email: userInput?.email?.toLowerCase(),
     }
 
@@ -47,7 +47,7 @@ export class UserController {
     new RequestDataValidator(userInput).push([validateUserInput, validateId]).validate()
 
     const formatedUserInput = {
-      name: userInput?.name?.toLowerCase(),
+      username: userInput?.name?.toLowerCase(),
       email: userInput?.email?.toLowerCase(),
       id: userInput.id,
     }
