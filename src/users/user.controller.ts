@@ -1,10 +1,11 @@
 import { Controller, Delete, Get, Header, Post, Put, Req } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
-import { validateFindManyParams } from '../validators/common'
+import { validateFindManyParams, validateId } from '../helpers/validators'
 import { SearchQuery, RequestWithBody, RequestWithQuery, FindManyParams } from '../type'
 import { User } from '@prisma/client'
-import validateUserInput from 'src/validators/user'
+import validateUserInput from 'src/users/user.validators'
+import RequestDataValidator from 'src/utils/errors/request-data-validator'
 
 @Controller('users')
 export class UserController {
@@ -15,13 +16,7 @@ export class UserController {
   async findMany(@Req() request: RequestWithQuery<FindManyParams<string> & SearchQuery>) {
     const query = request?.query
 
-    /**
-     * TODO: сделать валидатор по типу:
-     * new Validator(params)
-     *    .validateFindManyParams({ maxTake: 50 })
-     *    .validateSmthElse({ foo: bar })
-     */
-    validateFindManyParams(query, { maxTake: 50 })
+    new RequestDataValidator(query, true).push([validateFindManyParams({ maxTake: 50 })]).validate()
 
     const take = parseInteger(query.take)
     const skip = parseInteger(query.skip)
@@ -34,12 +29,12 @@ export class UserController {
   async create(@Req() request: RequestWithBody<User>) {
     const userInput = request?.body
 
+    new RequestDataValidator(userInput).push([validateUserInput]).validate()
+
     const formatedUserInput = {
       name: userInput?.name?.toLowerCase(),
       email: userInput?.email?.toLowerCase(),
     }
-
-    validateUserInput(formatedUserInput)
 
     return this.userService.create(formatedUserInput)
   }
@@ -49,13 +44,13 @@ export class UserController {
   async update(@Req() request: RequestWithBody<User>) {
     const userInput = request?.body
 
+    new RequestDataValidator(userInput).push([validateUserInput, validateId]).validate()
+
     const formatedUserInput = {
       name: userInput?.name?.toLowerCase(),
       email: userInput?.email?.toLowerCase(),
       id: userInput.id,
     }
-
-    validateUserInput(formatedUserInput)
 
     return this.userService.updateById(formatedUserInput)
   }

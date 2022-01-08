@@ -5,34 +5,8 @@ import {
   assertNumber,
   assertString,
   assertStringifiedNumber,
-} from './assertions'
-
-interface ValidationProps {
-  validatorName: string
-  message: string
-  key: string
-  value: unknown
-  key2?: string
-  value2?: unknown
-}
-
-export class ValidationError extends Error {
-  validatorName: string
-  message: string
-  key: string
-  value: unknown
-  key2?: string
-  value2?: unknown
-
-  constructor(props: ValidationProps) {
-    super(props.message)
-    this.key = props.key
-    this.value = props.value
-    this.key2 = props.key2
-    this.value2 = props.value2
-    this.validatorName = props.validatorName
-  }
-}
+} from '../../assertions'
+import { ValidationError } from './errors'
 
 export function validateString(input: unknown, key: string): void {
   try {
@@ -43,7 +17,7 @@ export function validateString(input: unknown, key: string): void {
         key,
         value: input,
         message: error.message,
-        validatorName: validateString.name,
+        errorCode: validateString.name,
       })
     }
   }
@@ -58,7 +32,7 @@ export function validateNumber(input: unknown, key: string): void {
         key,
         value: input,
         message: error.message,
-        validatorName: validateNumber.name,
+        errorCode: validateNumber.name,
       })
     }
   }
@@ -73,7 +47,7 @@ export function validateNotUndefined(input: unknown, key: string): void {
         key,
         value: input,
         message: error.message,
-        validatorName: validateNotUndefined.name,
+        errorCode: validateNotUndefined.name,
       })
     }
   }
@@ -88,7 +62,7 @@ export function validateNotMoreThan(input: unknown, num: number, key: string, ma
         key,
         value: input,
         message: error.message,
-        validatorName: validateNotMoreThan.name,
+        errorCode: validateNotMoreThan.name,
         key2: maxName,
         value2: num,
       })
@@ -105,7 +79,7 @@ export function validateStringifiedNumber(input: unknown, key: string): void {
         key,
         value: input,
         message: error.message,
-        validatorName: validateStringifiedNumber.name,
+        errorCode: validateStringifiedNumber.name,
       })
     }
   }
@@ -120,7 +94,7 @@ export function validateByPattern(input: unknown, pattern: unknown, key: string,
         key,
         value: input,
         message: error.message,
-        validatorName: validateByPattern.name,
+        errorCode: validateByPattern.name,
         value2: pattern.toString(),
         key2: patternName,
       })
