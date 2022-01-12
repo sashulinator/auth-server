@@ -2,26 +2,29 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  const alice = await prisma.user.upsert({
-    where: { email: 'alice@prisma.io' },
-    update: {},
-    create: {
-      email: 'alice@prisma.io',
-      username: 'aliceprisma',
-      name: 'Alice',
-    },
-  })
+  Array(100)
+    .fill(1)
+    .forEach(async (item, index) => {
+      await prisma.user.upsert({
+        where: { email: `alice${index}@prisma.io` },
+        update: {},
+        create: {
+          email: `alice${index}@prisma.io`,
+          username: `aliceprisma${index}`,
+          name: `Alice${index}`,
+        },
+      })
 
-  const bob = await prisma.user.upsert({
-    where: { email: 'bob@prisma.io' },
-    update: {},
-    create: {
-      email: 'bob@prisma.io',
-      username: 'bobprisma',
-      name: 'Bob',
-    },
-  })
-  console.log({ alice, bob })
+      await prisma.user.upsert({
+        where: { email: `bob${index}@prisma.io` },
+        update: {},
+        create: {
+          email: `bob${index}@prisma.io`,
+          username: `bobprisma${index}`,
+          name: `Bob${index}`,
+        },
+      })
+    })
 }
 
 main()

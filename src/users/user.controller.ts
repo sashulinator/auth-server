@@ -38,8 +38,9 @@ export class UserController {
     new RequestDataValidator(userInput).push([validateUserInput]).validate()
 
     const formatedUserInput = {
-      username: userInput?.name?.toLowerCase(),
+      username: userInput?.username?.toLowerCase(),
       email: userInput?.email?.toLowerCase(),
+      name: userInput?.name,
     }
 
     const createdUser = await prisma.$transaction(async () => {
@@ -66,7 +67,7 @@ export class UserController {
     new RequestDataValidator(userInput).push([validateUserInput, validateId]).validate()
 
     const formatedUserInput = {
-      username: userInput?.name?.toLowerCase(),
+      username: userInput?.username?.toLowerCase(),
       email: userInput?.email?.toLowerCase(),
       id: userInput.id,
     }
