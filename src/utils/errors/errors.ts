@@ -1,3 +1,5 @@
+import { HttpException } from '@nestjs/common'
+
 export class BaseError extends Error {
   public readonly errors?: { [keyFromCollectableError: string]: CollectableError }
   // depending on a context on a client side
@@ -5,20 +7,20 @@ export class BaseError extends Error {
   // so you can show the message "Such user already exists"
   public readonly errorCode: string // very handy when you need to translate or to give a more detailed information
 
-  constructor(message: string, errorCode: string) {
-    super(message)
-    this.errorCode = errorCode
+  constructor(props: Omit<BaseError, 'timestamp' | 'name'>) {
+    super(props.message)
+    this.errorCode = props.errorCode
+    this.errors = props.errors
   }
 }
 
-export class ServerError extends BaseError {
-  public readonly status: number
-  public readonly timestamp: string
+export class ServerError extends HttpException implements BaseError {
+  public readonly errorCode: string
+  public readonly errors?: { [keyFromCollectableError: string]: CollectableError }
 
-  constructor(message: string, errorCode: string, status: number) {
-    super(message, errorCode)
-    this.status = status
-    this.timestamp = new Date().toDateString()
+  constructor(props: Omit<BaseError, 'name'> & { status: number }) {
+    super(props, props.status)
+    this.errorCode = props.errorCode
   }
 }
 
@@ -32,7 +34,7 @@ export class CollectableError extends BaseError {
   // value that we somehow compared with ValidationError['value']
   value2?: unknown
   constructor(props: Omit<CollectableError, 'name'>) {
-    super(props.message, props.errorCode)
+    super({ ...props })
     this.key = props.key
     this.value = props.value
     this.key2 = props.key2

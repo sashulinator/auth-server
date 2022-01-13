@@ -7,6 +7,10 @@ import { UserService } from './users/user.service'
 @Module({
   imports: [],
   controllers: [UserController],
-  providers: [PrismaService, UserService, LocalAuthService],
+  providers: [
+    // PrismaService,
+    UserService,
+    LocalAuthService,
+  ],
 })
 export class AppModule {}

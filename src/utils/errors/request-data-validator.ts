@@ -1,8 +1,7 @@
-import { HttpException } from '@nestjs/common'
-import { on } from 'events'
-import { BaseError, ServerError, ValidationError } from './errors'
+import { ServerError, ValidationError } from './errors'
 
 type Assertion = (value: any) => void
+
 type ComparingAssertion = (value: any, comparingValue: any) => void
 
 type AssertionItem = Assertion | [ComparingAssertion, any, string?]
@@ -53,12 +52,14 @@ export function only(schema: OnlySchema) {
       const emitValidator = schema[objKey]
 
       const isOnly = emitValidator?.name === emitOnlyValidation?.name
+      const isRequired = emitValidator?.name === required({})?.name
+      const isRequiredOnly = emitValidator?.name === requiredOnly({}).name
 
       try {
-        if (!isOnly && typeof emitValidator === 'function') {
+        if (objKey in obj && !isOnly && !isRequired && !isRequiredOnly && typeof emitValidator === 'function') {
           errorTree[objKey] = emitValidator(objValue, objKey)
         }
-        if (typeof emitValidator === 'function') {
+        if (objKey in obj && typeof emitValidator === 'function') {
           errorTree[objKey] = (emitValidator as typeof emitOnlyValidation)(objValue, objKey, false)
         }
       } catch (error) {
@@ -70,9 +71,9 @@ export function only(schema: OnlySchema) {
       if (emitValidator === undefined) {
         const excessiveKeyError = new ValidationError({
           key,
-          errorCode: 'excessiveKey',
           value: errorTree.value ? errorTree.value.concat([objKey]) : [objKey],
-          message: 'excessiveKey',
+          errorCode: 'excessiveKey',
+          message: 'Excessive Key',
         })
 
         errorTree = { ...excessiveKeyError, ...errorTree }
@@ -92,64 +93,122 @@ export function only(schema: OnlySchema) {
   }
 }
 
-// export default class RequestDataValidator {
-//   private validators: Assertion | [Assertion, ...unknown[]] [] = []
-//   private readonly errors = new Map()
-//   constructor(private readonly data: Record<string, unknown>, readonly isThrowFirst = false) {}
+export function required(schema: OnlySchema) {
+  return function emitRequiredValidation(obj: Record<string, any>, key: string, isThrowError = true) {
+    // const schemaEntries = Object.entries(schema)
+    const schemaEntries = Object.entries(schema)
+    let errorTree: Record<string, any> = {}
 
-//   public push(validators: RequestDataValidator['validators']): RequestDataValidator {
-//     this.validators = this.validators.concat(validators)
-//     return this
-//   }
+    for (let index = 0; index < schemaEntries.length; index++) {
+      const [objKey, emitValidator] = schemaEntries[index]
+      const objValue = obj[objKey]
 
-//   public pushError(error: CollectableError): RequestDataValidator {
-//     if (this.isThrowFirst) {
-//       throw new HttpException(
-//         {
-//           ...error,
-//           message: error.message,
-//           errorCode: 'EINVALID',
-//           timestamp: new Date().toISOString(),
-//         },
-//         400,
-//       )
-//     }
+      if (objValue === undefined) {
+        const excessiveKeyError = new ValidationError({
+          key,
+          value: errorTree.value ? errorTree.value.concat([objKey]) : [objKey],
+          errorCode: 'requiredKey',
+          message: 'Required Key',
+        })
 
-//     this.errors.set(error.key, { ...error, message: error.message })
+        errorTree = { ...excessiveKeyError, ...errorTree }
+      }
 
-//     return this
-//   }
+      const isOnly = emitValidator?.name === only({}).name
+      const isRequired = emitValidator?.name === emitRequiredValidation?.name
+      const isRequiredOnly = emitValidator?.name === requiredOnly({}).name
 
-//   public validate(): RequestDataValidator {
-//     for (let i = 0; i < this.validators.length; i++) {
-//       const validator = this.validators.pop()
+      try {
+        if (objKey in obj && !isRequired && !isOnly && !isRequiredOnly && typeof emitValidator === 'function') {
+          errorTree[objKey] = emitValidator(objValue, objKey)
+        }
+        if (objKey in obj && typeof emitValidator === 'function') {
+          errorTree[objKey] = (emitValidator as typeof emitRequiredValidation)(objValue, objKey, false)
+        }
+      } catch (error) {
+        if (!isRequired) {
+          errorTree[objKey] = error
+        }
+      }
+    }
 
-//       try {
-//         validator(this.data)
-//       } catch (error) {
-//         if (error instanceof CollectableError) {
-//           this.pushError(error)
-//         } else {
-//           throw Error('Unexpected error while validating a request data ')
-//         }
-//       } finally {
-//         const isLast = this.validators.length === 0
-//         const hasErrors = this.errors.size !== 0
+    if (Object.keys(errorTree).length > 0 && isThrowError) {
+      throw new ServerError({
+        errorCode: 'validation',
+        message: 'Validation error',
+        errors: errorTree,
+        status: 401,
+      })
+    }
 
-//         if (isLast && hasErrors) {
-//           throw new HttpException(
-//             {
-//               errors: Object.fromEntries(this.errors),
-//               message: 'Validation error',
-//               errorCode: 'EINVALID',
-//               timestamp: new Date().toISOString(),
-//             },
-//             400,
-//           )
-//         }
-//       }
-//     }
+    return errorTree
+  }
+}
 
-//     return this
-//   }
-// }
+export function requiredOnly(schema: OnlySchema) {
+  return function emitRequiredOnlyValidation(obj: Record<string, any>, key: string, isThrowError = true) {
+    // const schemaEntries = Object.entries(schema)
+    const schemaEntries = Object.entries(schema)
+    let excessiveObjectKeys = Object.keys(obj)
+    let errorTree: Record<string, any> = {}
+
+    for (let index = 0; index < schemaEntries.length; index++) {
+      const [objKey, emitValidator] = schemaEntries[index]
+      const objValue = obj[objKey]
+      excessiveObjectKeys = excessiveObjectKeys.filter((key) => key !== objKey)
+      // нужна проверка на excessive
+      //
+      if (objValue === undefined) {
+        const excessiveKeyError = new ValidationError({
+          key,
+          value: errorTree.value ? errorTree.value.concat([objKey]) : [objKey],
+          errorCode: 'requiredKey',
+          message: 'Required Key',
+        })
+
+        errorTree = { ...excessiveKeyError, ...errorTree }
+      }
+
+      const isOnly = emitValidator?.name === only({}).name
+      const isRequired = emitValidator?.name === required({}).name
+      const isRequiredOnly = emitValidator?.name === emitRequiredOnlyValidation?.name
+
+      try {
+        if (objKey in obj && !isRequired && !isOnly && !isRequiredOnly && typeof emitValidator === 'function') {
+          errorTree[objKey] = emitValidator(objValue, objKey)
+        }
+        if (objKey in obj && typeof emitValidator === 'function') {
+          errorTree[objKey] = (emitValidator as typeof emitRequiredOnlyValidation)(objValue, objKey, false)
+        }
+      } catch (error) {
+        if (!isRequired) {
+          errorTree[objKey] = error
+        }
+      }
+
+      const isLast = index === schemaEntries.length - 1
+
+      if (isLast && excessiveObjectKeys.length) {
+        const excessiveKeyError = new ValidationError({
+          key,
+          value: excessiveObjectKeys,
+          errorCode: 'excessiveKey',
+          message: 'Excessive Key',
+        })
+
+        errorTree = { ...excessiveKeyError, ...errorTree }
+      }
+    }
+
+    if (Object.keys(errorTree).length > 0 && isThrowError) {
+      throw new ServerError({
+        errorCode: 'validation',
+        message: 'Validation error',
+        errors: errorTree,
+        status: 401,
+      })
+    }
+
+    return errorTree
+  }
+}

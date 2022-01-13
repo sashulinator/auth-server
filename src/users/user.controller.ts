@@ -6,10 +6,17 @@ import { SearchQuery, FindManyParams } from '../types'
 import { RequestWithBody, RequestWithQuery } from '../utils/types'
 import { PrismaClient, User } from '@prisma/client'
 import validateUserInput from 'src/users/user.validators'
-import RequestDataValidator from 'src/utils/errors/request-data-validator'
+import { only, required, requiredOnly, validate } from 'src/utils/errors/request-data-validator'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
+import {
+  assertMatchPattern,
+  assertNotMoreThan,
+  assertNotUndefined,
+  assertString,
+  assertStringifiedNumber,
+} from 'src/utils/assertions'
 
 const prisma = new PrismaClient()
 
@@ -22,8 +29,6 @@ export class UserController {
   async findMany(@Req() request: RequestWithQuery<FindManyParams<string> & SearchQuery>) {
     const query = request?.query
 
-    new RequestDataValidator(query, true).push([validateFindManyParams({ maxTake: 50 })]).validate()
-
     const take = parseInteger(query.take)
     const skip = parseInteger(query.skip)
 
@@ -35,28 +40,35 @@ export class UserController {
   async create(@Req() request: RequestWithBody<User & { password: string }>) {
     const userInput = request?.body
 
-    new RequestDataValidator(userInput).push([validateUserInput]).validate()
+    only({
+      username: validate([[assertMatchPattern, /^(\w*)$/]]),
+      password: validate([assertString]),
+      address: requiredOnly({
+        code: validate([assertStringifiedNumber]),
+        building: validate([assertStringifiedNumber]),
+      }),
+    })(request?.body, 'user')
 
-    const formatedUserInput = {
-      username: userInput?.username?.toLowerCase(),
-      email: userInput?.email?.toLowerCase(),
-      name: userInput?.name,
-    }
+    // const formatedUserInput = {
+    //   username: userInput?.username?.toLowerCase(),
+    //   email: userInput?.email?.toLowerCase(),
+    //   name: userInput?.name,
+    // }
 
-    const createdUser = await prisma.$transaction(async () => {
-      const user = await this.userService.create(formatedUserInput)
-      const salt = await generateHash()
+    // const createdUser = await prisma.$transaction(async () => {
+    //   const user = await this.userService.create(formatedUserInput)
+    //   const salt = await generateHash()
 
-      this.localAuthService.savePassword({
-        userId: user.id,
-        password: generateHashedPassword(userInput.password, salt),
-        salt,
-      })
+    //   this.localAuthService.savePassword({
+    //     userId: user.id,
+    //     password: generateHashedPassword(userInput.password, salt),
+    //     salt,
+    //   })
 
-      return user
-    })
+    //   return user
+    // })
 
-    return createdUser
+    // return createdUser
   }
 
   @Header('Content-Type', 'application/json')
@@ -64,7 +76,7 @@ export class UserController {
   async update(@Req() request: RequestWithBody<User>) {
     const userInput = request?.body
 
-    new RequestDataValidator(userInput).push([validateUserInput, validateId]).validate()
+    // new RequestDataValidator(userInput).push([validateUserInput, validateId]).validate()
 
     const formatedUserInput = {
       username: userInput?.username?.toLowerCase(),
