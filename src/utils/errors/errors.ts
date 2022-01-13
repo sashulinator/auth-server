@@ -1,7 +1,7 @@
 import { HttpException } from '@nestjs/common'
 
 export class BaseError extends Error {
-  public readonly errors?: { [keyFromCollectableError: string]: CollectableError }
+  public readonly errors?: { [keyFromCollectableError: string]: CollectableError } | CollectableError
   // depending on a context on a client side
   // example: you try to create a user and receive { errorCode: CONFLICT }
   // so you can show the message "Such user already exists"
@@ -16,7 +16,7 @@ export class BaseError extends Error {
 
 export class ServerError extends HttpException implements BaseError {
   public readonly errorCode: string
-  public readonly errors?: { [keyFromCollectableError: string]: CollectableError }
+  public readonly errors?: { [keyFromCollectableError: string]: CollectableError } | CollectableError
 
   constructor(props: Omit<BaseError, 'name'> & { status: number }) {
     super(props, props.status)

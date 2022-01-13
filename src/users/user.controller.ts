@@ -6,7 +6,7 @@ import { SearchQuery, FindManyParams } from '../types'
 import { RequestWithBody, RequestWithQuery } from '../utils/types'
 import { PrismaClient, User } from '@prisma/client'
 import validateUserInput from 'src/users/user.validators'
-import { array, only, required, requiredOnly, validate } from 'src/utils/errors/request-data-validator'
+import { array, only, or, required, requiredOnly, validate } from 'src/utils/errors/request-data-validator'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
@@ -48,11 +48,15 @@ export class UserController {
         code: validate([assertStringifiedNumber]),
         building: validate([assertStringifiedNumber]),
         landmarkIds: array(validate([assertString])),
-        landmarksCoords: array(
-          requiredOnly({
+        landmarksCoords: or(
+          {
+            longitude: validate([assertString]),
+            latitude: validate([assertString]),
+          },
+          {
             longitude: validate([assertNumber]),
             latitude: validate([assertNumber]),
-          }),
+          },
         ),
       }),
     })(userInput, 'userInput')
