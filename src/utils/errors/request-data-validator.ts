@@ -71,6 +71,52 @@ export function only(schema: TreeSchema): EmitTreeValidation {
   }
 }
 
+export function array(schemaOrEmitter: TreeSchema | EmitAssertValidation | EmitTreeValidation) {
+  return function emitTreeValidation(arr: any[], key: string, isThrowError = true) {
+    let ArrayErrors = {}
+
+    if (Array.isArray(arr)) {
+      if (typeof schemaOrEmitter === 'function') {
+        for (let index = 0; index < arr.length; index++) {
+          const item = arr[index]
+          try {
+            ArrayErrors[index] = schemaOrEmitter(item, index.toString(), false)
+          } catch (error) {
+            ArrayErrors[index] = error
+          }
+        }
+      } else {
+        for (let index = 0; index < arr.length; index++) {
+          const item = arr[index]
+          const { errorTree } = compare(schemaOrEmitter, item)
+
+          if (Object.keys(errorTree).length > 0) {
+            return errorTree[index]
+          }
+        }
+      }
+    } else {
+      ArrayErrors = new ValidationError({
+        key,
+        value: (arr as any)?.toString(),
+        errorCode: 'isNotArray',
+        message: 'Is not array',
+      })
+    }
+
+    if (Object.keys(ArrayErrors).length > 0 && isThrowError) {
+      throw new ServerError({
+        errorCode: 'validation',
+        message: 'Validation error',
+        errors: ArrayErrors,
+        status: 401,
+      })
+    }
+
+    return ArrayErrors
+  }
+}
+
 export function required(schema: TreeSchema): EmitTreeValidation {
   return function emitTreeValidation(obj: Record<string, any>, key: string, isThrowError = true) {
     let { unusedSchemaKeys, errorTree } = compare(schema, obj)
