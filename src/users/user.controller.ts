@@ -47,7 +47,7 @@ export class UserController {
         code: validate([assertStringifiedNumber]),
         building: validate([assertStringifiedNumber]),
       }),
-    })(request?.body, 'user')
+    })(userInput, 'userInput')
 
     // const formatedUserInput = {
     //   username: userInput?.username?.toLowerCase(),
