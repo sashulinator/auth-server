@@ -3,7 +3,7 @@ import { ValidationError } from './errors'
 import expectMatchError from './expect-match-error'
 import { validate } from './validate'
 
-describe('validate', () => {
+describe(validate.name, () => {
   it('throws error', () => {
     const emitValidation = validate([assertNumber])
 
