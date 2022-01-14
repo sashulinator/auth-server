@@ -1,44 +1,77 @@
 import { HttpException } from '@nestjs/common'
 
+interface BaseErrorProps {
+  code: string
+  message: string
+  errors?: { [keyFromCollectableError: string]: CollectableError } | CollectableError
+}
 export class BaseError extends Error {
-  public readonly errors?: { [keyFromCollectableError: string]: CollectableError } | CollectableError
+  public readonly _code: string // very handy when you need to translate or to give a more detailed information
+  public readonly _message: string
+  public readonly _errors?: { [keyFromCollectableError: string]: CollectableError } | CollectableError
   // depending on a context on a client side
   // example: you try to create a user and receive { errorCode: CONFLICT }
   // so you can show the message "Such user already exists"
-  public readonly errorCode: string // very handy when you need to translate or to give a more detailed information
 
-  constructor(props: Omit<BaseError, 'timestamp' | 'name'>) {
+  constructor(props: BaseErrorProps) {
     super(props.message)
-    this.errorCode = props.errorCode
-    this.errors = props.errors
+    this._code = props.code
+    this._message = props.message
+    this._errors = props.errors
   }
 }
 
-export class ServerError extends HttpException implements BaseError {
-  public readonly errorCode: string
-  public readonly errors?: { [keyFromCollectableError: string]: CollectableError } | CollectableError
+interface ServerErrorProps extends BaseErrorProps {
+  status: number
+}
 
-  constructor(props: Omit<BaseError, 'name'> & { status: number }) {
-    super(props, props.status)
-    this.errorCode = props.errorCode
+export class ServerError extends HttpException implements BaseError {
+  public readonly _code: string
+  public readonly _message: string
+  public readonly _errors?: { [keyFromCollectableError: string]: CollectableError } | CollectableError
+
+  constructor(props: ServerErrorProps) {
+    super(
+      {
+        _code: props.code,
+        _message: props.message,
+        _errors: props.errors,
+      },
+      props.status,
+    )
   }
+}
+
+export interface CollectableErrorProps {
+  code: string
+  message: string
+  key: string
+  value?: unknown
+  key2?: string
+  value2?: unknown
 }
 
 export class CollectableError extends BaseError {
   // can be a field name in a validated object
-  key: string
+  _key: string
   // can be a field value in a validated object
-  value?: unknown
+  _value?: unknown
   // can be a pattern name (email, uuid), a measuring system (kg, m) or a limit name (card/phone number limit)
-  key2?: string
+  _key2?: string
   // value that we somehow compared with ValidationError['value']
-  value2?: unknown
-  constructor(props: Omit<CollectableError, 'name'>) {
+  _value2?: unknown
+  constructor(props: CollectableErrorProps) {
     super({ ...props })
-    this.key = props.key
-    this.value = props.value
-    this.key2 = props.key2
-    this.value2 = props.value2
+    this._key = props.key
+    if (props.value) {
+      this._value = props.value
+    }
+    if (props.key2) {
+      this._key2 = props.key2
+    }
+    if (props.value2) {
+      this._value2 = props.value2
+    }
   }
 }
 

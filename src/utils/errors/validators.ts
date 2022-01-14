@@ -17,7 +17,7 @@ export function validateString(input: unknown, key: string): void {
         key,
         value: input,
         message: error.message,
-        errorCode: validateString.name,
+        code: validateString.name,
       })
     }
   }
@@ -32,7 +32,7 @@ export function validateNumber(input: unknown, key: string): void {
         key,
         value: input,
         message: error.message,
-        errorCode: validateNumber.name,
+        code: validateNumber.name,
       })
     }
   }
@@ -47,7 +47,7 @@ export function validateNotUndefined(input: unknown, key: string): void {
         key,
         value: input,
         message: error.message,
-        errorCode: validateNotUndefined.name,
+        code: validateNotUndefined.name,
       })
     }
   }
@@ -62,7 +62,7 @@ export function validateNotMoreThan(input: unknown, num: number, key: string, ma
         key,
         value: input,
         message: error.message,
-        errorCode: validateNotMoreThan.name,
+        code: validateNotMoreThan.name,
         key2: maxName,
         value2: num,
       })
@@ -79,7 +79,7 @@ export function validateStringifiedNumber(input: unknown, key: string): void {
         key,
         value: input,
         message: error.message,
-        errorCode: validateStringifiedNumber.name,
+        code: validateStringifiedNumber.name,
       })
     }
   }
@@ -94,7 +94,7 @@ export function validateByPattern(input: unknown, pattern: unknown, key: string,
         key,
         value: input,
         message: error.message,
-        errorCode: validateByPattern.name,
+        code: validateByPattern.name,
         value2: pattern.toString(),
         key2: patternName,
       })

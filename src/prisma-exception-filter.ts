@@ -14,7 +14,7 @@ export class PrismaExceptionFilter implements ExceptionFilter {
 
     const message = exception.message
     let statusCode = HttpStatus.INTERNAL_SERVER_ERROR
-    let errors: BaseError['errors']
+    let errors: BaseError['_errors']
 
     // P2002 - uniq constrain
     if (exception.code === 'P2002') {
@@ -26,7 +26,7 @@ export class PrismaExceptionFilter implements ExceptionFilter {
         acc[key] = new CollectableError({
           key,
           message: exception.message,
-          errorCode: exception.code,
+          code: exception.code,
         })
 
         return acc

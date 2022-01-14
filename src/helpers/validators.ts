@@ -34,7 +34,7 @@ export const throwError = createStructureValidator(({ errorTree }) => {
   if (errorTree) {
     throw new ServerError({
       message: 'Validation error',
-      errorCode: 'validation',
+      code: 'validation',
       errors: errorTree,
       status: 401,
     })

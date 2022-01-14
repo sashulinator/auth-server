@@ -12,7 +12,7 @@ describe(validate.name, () => {
       new ValidationError({
         key: 'test',
         value: 'string',
-        errorCode: 'assertNumber',
+        code: 'assertNumber',
         message: 'is not a number',
       }),
     )
@@ -26,7 +26,7 @@ describe(validate.name, () => {
       new ValidationError({
         key: 'test',
         value: 'string',
-        errorCode: 'assertNumber',
+        code: 'assertNumber',
         message: 'is not a number',
       }),
     )
@@ -42,7 +42,7 @@ describe(validate.name, () => {
         value: 'string',
         key2: 'pattern',
         value2: '/test/',
-        errorCode: 'assertMatchPattern',
+        code: 'assertMatchPattern',
         message: 'does not match the pattern',
       }),
     )
@@ -58,7 +58,7 @@ describe(validate.name, () => {
         value: 'string',
         key2: 'pattern',
         value2: '/test/',
-        errorCode: 'assertMatchPattern',
+        code: 'assertMatchPattern',
         message: 'does not match the pattern',
       }),
     )

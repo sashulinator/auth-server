@@ -19,7 +19,7 @@ export function validate(assertionItems: AssertionItem[]): EmitAssertValidation 
             value,
             key2,
             value2: value2?.toString(),
-            errorCode: assertion?.name,
+            code: assertion?.name,
             message: error.message,
           })
 

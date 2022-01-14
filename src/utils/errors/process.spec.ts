@@ -19,7 +19,7 @@ describe(process.name, () => {
         username: new ValidationError({
           key: 'username',
           value: 77,
-          errorCode: 'assertString',
+          code: 'assertString',
           message: 'is not a string',
         }),
       },
@@ -43,7 +43,7 @@ describe(process.name, () => {
           username: new ValidationError({
             key: 'username',
             value: 77,
-            errorCode: 'assertString',
+            code: 'assertString',
             message: 'is not a string',
           }),
         },

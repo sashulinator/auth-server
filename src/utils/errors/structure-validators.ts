@@ -22,7 +22,7 @@ export const only = createStructureValidator(({ errorTree, unusedObjectKeys, key
     const excessiveKeysError = new ValidationError({
       key,
       value: unusedObjectKeys,
-      errorCode: 'excessiveKeys',
+      code: 'excessiveKeys',
       message: 'Excessive Keys',
     })
 
@@ -37,7 +37,7 @@ export const required = createStructureValidator(({ errorTree, unusedSchemaKeys,
     const requiredKeysError = new ValidationError({
       key,
       value: unusedSchemaKeys,
-      errorCode: 'requiredKey',
+      code: 'requiredKey',
       message: 'Required Key',
     })
 
