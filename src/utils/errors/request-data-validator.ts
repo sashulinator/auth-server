@@ -1,18 +1,12 @@
 import { ServerError, ValidationError } from './errors'
-
-type Assertion = (value: any) => void
-
-type ComparingAssertion = (value: any, comparingValue: any) => void
-
-type AssertionItem = Assertion | [ComparingAssertion, any, string?]
-
-type TreeSchema = { [fieldName: string]: TreeSchema | EmitAssertValidation | EmitTreeValidation }
-
-type EmitAssertValidation = (value: any, key: string) => void
-
-type EmitTreeValidation = (obj: Record<string, any>, key: string, isThrowError?: boolean) => void
-
-//
+import {
+  Assertion,
+  AssertionItem,
+  ComparingAssertion,
+  EmitAssertValidation,
+  EmitTreeValidation,
+  TreeSchema,
+} from './types'
 
 export function validate(assertionItems: AssertionItem[]): EmitAssertValidation {
   return function emitAssertValidation(value: any, key: string, isThrowError = true): ValidationError | void {
