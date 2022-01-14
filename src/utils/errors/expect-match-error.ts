@@ -1,5 +1,8 @@
-export default async function expectMatchError(cb: () => void | Error, obj: Error | object): Promise<void> {
-  let error: Error | void
+export default async function expectMatchError(
+  cb: () => void | Error | Record<string, unknown>,
+  obj: Error | Record<string, unknown>,
+): Promise<void> {
+  let error: Error | void | Record<string, unknown>
 
   try {
     error = await cb()
@@ -12,6 +15,6 @@ export default async function expectMatchError(cb: () => void | Error, obj: Erro
       error = e
     }
   } finally {
-    return expect(JSON.parse(JSON.stringify(error))).toMatchObject(JSON.parse(JSON.stringify(obj)))
+    return expect(JSON.parse(JSON.stringify(obj))).toMatchObject(JSON.parse(JSON.stringify(error)))
   }
 }

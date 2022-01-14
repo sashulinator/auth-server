@@ -2,7 +2,7 @@ import { ValidationError } from './errors'
 import { AssertionItem, EmitAssertValidation } from './types'
 
 export function validate(assertionItems: AssertionItem[]): EmitAssertValidation {
-  return function emitAssertValidation(value: any, key: string, isThrowError = true): ValidationError | void {
+  return function emitAssertValidation(value: any, key: string, isThrowError = true): ValidationError | undefined {
     for (let index = 0; index < assertionItems.length; index++) {
       const assertionItem = assertionItems[index]
       const isArray = Array.isArray(assertionItem)
@@ -31,5 +31,7 @@ export function validate(assertionItems: AssertionItem[]): EmitAssertValidation 
         }
       }
     }
+
+    return undefined
   }
 }

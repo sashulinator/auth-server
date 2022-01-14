@@ -1,49 +1,10 @@
-import { compare } from './compare'
+import { process, processOrEmit } from './process'
 import { ServerError, ValidationError } from './errors'
-import { Assertion, AssertionItem, ComparingAssertion, EmitAssertValidation, EmitTreeValidation, Schema } from './types'
-
-export function validate(assertionItems: AssertionItem[]): EmitAssertValidation {
-  return function emitAssertValidation(value: any, key: string, isThrowError = true): ValidationError | void {
-    for (let index = 0; index < assertionItems.length; index++) {
-      const assertionItem = assertionItems[index]
-
-      let key2: string
-      let value2: any
-      let assertion: Assertion | ComparingAssertion
-
-      try {
-        if (Array.isArray(assertionItem)) {
-          ;[assertion, value2, key2] = assertionItem
-          assertion?.(value, value2)
-        } else {
-          assertion = assertionItem
-          ;(assertion as Assertion)(value)
-        }
-      } catch (error) {
-        if (error instanceof Error) {
-          const validationError = new ValidationError({
-            key,
-            value,
-            key2,
-            value2: value2?.toString(),
-            errorCode: assertion?.name,
-            message: error.message,
-          })
-
-          if (isThrowError) {
-            throw validationError
-          } else {
-            return validationError
-          }
-        }
-      }
-    }
-  }
-}
+import { EmitAssertValidation, EmitTreeValidation, Schema } from './types'
 
 export function only(schema: Schema): EmitTreeValidation {
   return function emitTreeValidation(obj: Record<string, any>, key: string, isThrowError = true) {
-    let { unusedObjectKeys, errorTree } = compare(schema, obj)
+    let { unusedObjectKeys, errorTree } = process(schema, obj)
 
     if (unusedObjectKeys.length) {
       const excessiveKeysError = new ValidationError({
@@ -69,73 +30,6 @@ export function only(schema: Schema): EmitTreeValidation {
   }
 }
 
-export function or(
-  schema1: Schema | EmitAssertValidation | EmitTreeValidation,
-  schema2: Schema | EmitAssertValidation | EmitTreeValidation,
-) {
-  return function emitOr(obj: Record<string, any>, key: string, isThrowError = true) {
-    const schemaErrors1 = compareSchemaOrEmitValidation(schema1, obj, key)
-    const schemaErrors2 = compareSchemaOrEmitValidation(schema2, obj, key)
-
-    if (schemaErrors1 && schemaErrors2) {
-      const errors = { ...schemaErrors2, ...schemaErrors1 }
-
-      if (isThrowError) {
-        throw new ServerError({
-          errorCode: 'validation',
-          message: 'Validation error',
-          errors,
-          status: 401,
-        })
-      }
-
-      return errors
-    }
-
-    return undefined
-  }
-}
-
-export function and(
-  schema1: Schema | EmitAssertValidation | EmitTreeValidation,
-  schema2: Schema | EmitAssertValidation | EmitTreeValidation,
-) {
-  return function emitOr(obj: Record<string, any>, key: string, isThrowError = true) {
-    const schemaErrors1 = compareSchemaOrEmitValidation(schema1, obj, key)
-    const schemaErrors2 = compareSchemaOrEmitValidation(schema2, obj, key)
-
-    if (schemaErrors1 || schemaErrors2) {
-      const errors = { ...schemaErrors2, ...schemaErrors1 }
-
-      if (isThrowError) {
-        throw new ServerError({
-          errorCode: 'validation',
-          message: 'Validation error',
-          errors,
-          status: 401,
-        })
-      }
-
-      return errors
-    }
-
-    return undefined
-  }
-}
-
-function compareSchemaOrEmitValidation(
-  schemaOrEmitter: Schema | EmitAssertValidation | EmitTreeValidation,
-  obj: any,
-  key: string,
-): Record<string, ValidationError> | ValidationError | void {
-  if (typeof schemaOrEmitter === 'function') {
-    return schemaOrEmitter(obj, key, false)
-  } else {
-    const { errorTree } = compare(schemaOrEmitter, obj)
-    return errorTree
-  }
-}
-
 export function array(schemaOrEmitter: Schema | EmitAssertValidation | EmitTreeValidation) {
   return function emitTreeValidation(arr: any[], key: string, isThrowError = true) {
     let arrayErrors = {}
@@ -146,7 +40,7 @@ export function array(schemaOrEmitter: Schema | EmitAssertValidation | EmitTreeV
           const item = arr[index]
           const key = index.toString()
 
-          arrayErrors[key] = compareSchemaOrEmitValidation(schemaOrEmitter, item, key)
+          arrayErrors[key] = processOrEmit(schemaOrEmitter, item, key)
         }
       }
     } else {
@@ -173,7 +67,7 @@ export function array(schemaOrEmitter: Schema | EmitAssertValidation | EmitTreeV
 
 export function required(schema: Schema): EmitTreeValidation {
   return function emitTreeValidation(obj: Record<string, any>, key: string, isThrowError = true) {
-    let { unusedSchemaKeys, errorTree } = compare(schema, obj)
+    let { unusedSchemaKeys, errorTree } = process(schema, obj)
 
     if (unusedSchemaKeys.length) {
       const requiredKeysError = new ValidationError({
@@ -201,7 +95,7 @@ export function required(schema: Schema): EmitTreeValidation {
 
 export function requiredOnly(schema: Schema): EmitTreeValidation {
   return function emitTreeValidation(obj: Record<string, any>, key: string, isThrowError = true) {
-    let { unusedSchemaKeys, unusedObjectKeys, errorTree } = compare(schema, obj)
+    let { unusedSchemaKeys, unusedObjectKeys, errorTree } = process(schema, obj)
 
     if (unusedObjectKeys.length) {
       const excessiveKeysError = new ValidationError({
