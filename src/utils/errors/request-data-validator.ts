@@ -1,6 +1,21 @@
-import { process, processOrEmit } from './process'
+import { process, processOrEmit, ProcessResult } from './process'
 import { ServerError, ValidationError } from './errors'
-import { EmitAssertValidation, EmitTreeValidation, Schema } from './types'
+import { EmitTreeValidation, ErrorTree, Schema, Structure } from './types'
+
+type StructureValidatorCbParams = ProcessResult & {
+  structure: Structure
+  schema: Schema
+  isThrownError: boolean
+  key: string
+}
+
+export function createStructureValidator(cb: (processResult: StructureValidatorCbParams) => ErrorTree) {
+  return (schema: Schema) => {
+    return (structure: Structure, key: string, isThrownError: boolean) => {
+      return cb({ ...process(schema, structure), structure, schema, isThrownError, key })
+    }
+  }
+}
 
 export function only(schema: Schema): EmitTreeValidation {
   return function emitTreeValidation(obj: Record<string, any>, key: string, isThrowError = true) {
@@ -30,17 +45,17 @@ export function only(schema: Schema): EmitTreeValidation {
   }
 }
 
-export function array(schemaOrEmitter: Schema | EmitAssertValidation | EmitTreeValidation) {
+export function array(schema: Schema) {
   return function emitTreeValidation(arr: any[], key: string, isThrowError = true) {
     let arrayErrors = {}
 
     if (Array.isArray(arr) || arr === undefined) {
-      if (typeof schemaOrEmitter === 'function') {
+      if (typeof schema === 'function') {
         for (let index = 0; index < arr?.length; index++) {
           const item = arr[index]
           const key = index.toString()
 
-          arrayErrors[key] = processOrEmit(schemaOrEmitter, item, key)
+          arrayErrors[key] = processOrEmit(schema, item, key)
         }
       }
     } else {

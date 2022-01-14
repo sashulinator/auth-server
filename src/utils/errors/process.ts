@@ -1,6 +1,6 @@
 import { EmitAssertValidation, EmitTreeValidation, ErrorTree, Schema } from './types'
 
-type ProcessResult = {
+export type ProcessResult = {
   errorTree: ErrorTree
   unusedObjectKeys: string[]
   unusedSchemaKeys: string[]
@@ -70,10 +70,10 @@ const processObject: Process<Record<string, any>> = (schema, inputObject) => {
   }
 }
 
-export const process: Process<Record<string, any> | any[]> = (schema, input) => {
-  if (Array.isArray(input)) {
-    return processArray(schema, input)
+export const process: Process<Record<string, any> | any[]> = (schema, structure) => {
+  if (Array.isArray(structure)) {
+    return processArray(schema, structure)
   } else {
-    return processObject(schema, input)
+    return processObject(schema, structure)
   }
 }
