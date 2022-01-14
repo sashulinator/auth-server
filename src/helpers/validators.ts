@@ -1,4 +1,6 @@
 import { BadRequestException } from '@nestjs/common'
+import { ServerError } from 'src/utils/errors/errors'
+import { createStructureValidator } from 'src/utils/errors/structure-validators'
 import {
   validateNotMoreThan,
   validateNotUndefined,
@@ -27,3 +29,16 @@ export function validateId(data: Record<string, unknown>) {
   validateNotUndefined(data.id, 'id')
   validateNumber(data.id, 'id')
 }
+
+export const throwError = createStructureValidator(({ errorTree }) => {
+  if (errorTree) {
+    throw new ServerError({
+      message: 'Validation error',
+      errorCode: 'validation',
+      errors: errorTree,
+      status: 401,
+    })
+  }
+
+  return undefined
+})

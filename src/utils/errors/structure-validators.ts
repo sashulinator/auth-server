@@ -1,4 +1,4 @@
-import { process, ProcessResult } from './process'
+import { process, processOrEmit, ProcessResult } from './process'
 import { ValidationError } from './errors'
 import { EmitTreeValidation, ErrorTree, Schema, Structure } from './types'
 
@@ -12,7 +12,7 @@ type StructureValidatorCbParams = ProcessResult & {
 export function createStructureValidator(cb: (processResult: StructureValidatorCbParams) => ErrorTree) {
   return (schema: Schema): EmitTreeValidation => {
     return (structure, key, isThrowError) => {
-      return cb({ ...process(schema, structure), structure, schema, isThrowError, key })
+      return cb({ ...processOrEmit(schema, structure, key), structure, schema, isThrowError, key })
     }
   }
 }

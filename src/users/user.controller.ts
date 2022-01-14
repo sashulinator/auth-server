@@ -1,12 +1,12 @@
 import { Controller, Delete, Get, Header, Post, Put, Req } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
-import { validateFindManyParams, validateId } from '../helpers/validators'
+import { throwError, validateFindManyParams, validateId } from '../helpers/validators'
 import { SearchQuery, FindManyParams } from '../types'
 import { RequestWithBody, RequestWithQuery } from '../utils/types'
 import { PrismaClient, User } from '@prisma/client'
 import validateUserInput from 'src/users/user.validators'
-import { array, only, or, required, requiredOnly, validate } from 'src/utils/errors/request-data-validator'
+import { only, required, requiredOnly } from 'src/utils/errors/structure-validators'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
@@ -18,6 +18,8 @@ import {
   assertString,
   assertStringifiedNumber,
 } from 'src/utils/assertions'
+import { validate } from 'src/utils/errors/validate'
+import { or } from 'src/utils/errors/or-and'
 
 const prisma = new PrismaClient()
 
@@ -41,25 +43,27 @@ export class UserController {
   async create(@Req() request: RequestWithBody<User & { password: string }>) {
     const userInput = request?.body
 
-    only({
-      username: validate([[assertMatchPattern, /^(\w*)$/]]),
-      password: validate([assertString]),
-      address: requiredOnly({
-        code: validate([assertStringifiedNumber]),
-        building: validate([assertStringifiedNumber]),
-        landmarkIds: array(validate([assertString])),
-        landmarksCoords: or(
-          {
-            longitude: validate([assertString]),
-            latitude: validate([assertString]),
-          },
-          {
-            longitude: validate([assertNumber]),
-            latitude: validate([assertNumber]),
-          },
-        ),
+    throwError(
+      only({
+        username: validate([[assertMatchPattern, /^(\w*)$/]]),
+        password: validate([assertString]),
+        address: requiredOnly({
+          code: validate([assertStringifiedNumber]),
+          building: validate([assertStringifiedNumber]),
+          landmarkIds: validate([assertString]),
+          landmarksCoords: or(
+            {
+              longitude: validate([assertString]),
+              latitude: validate([assertString]),
+            },
+            {
+              longitude: validate([assertNumber]),
+              latitude: validate([assertNumber]),
+            },
+          ),
+        }),
       }),
-    })(userInput, 'userInput')
+    )(userInput, 'userInput')
 
     // const formatedUserInput = {
     //   username: userInput?.username?.toLowerCase(),

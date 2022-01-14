@@ -6,6 +6,10 @@ export type Schema =
   | EmitAssertValidation
   | EmitTreeValidation
 
+export type StructureSchema =
+  | { [fieldName: string]: Schema | EmitAssertValidation | EmitTreeValidation }
+  | (Schema | EmitAssertValidation | EmitTreeValidation)[]
+
 export type Structure = Record<string, any> | any[]
 
 export type ErrorTree = Record<string, ValidationError> | ValidationError | undefined

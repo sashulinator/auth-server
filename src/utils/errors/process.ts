@@ -1,4 +1,4 @@
-import { EmitAssertValidation, EmitTreeValidation, ErrorTree, Schema, Structure } from './types'
+import { EmitAssertValidation, EmitTreeValidation, ErrorTree, Schema, Structure, StructureSchema } from './types'
 
 export type ProcessResult = {
   errorTree: ErrorTree
@@ -6,18 +6,23 @@ export type ProcessResult = {
   unusedSchemaKeys: string[]
 }
 
-type Process<S extends Structure> = (schema: Schema, structure: S) => ProcessResult
+type Process<S extends Structure> = (schema: StructureSchema, structure: S) => ProcessResult
 
-export function processOrEmit(
-  schemaOrEmitter: Schema | EmitAssertValidation | EmitTreeValidation,
-  structure: any,
-  key: string,
-): ErrorTree {
-  if (typeof schemaOrEmitter === 'function') {
-    return schemaOrEmitter(structure, key, false)
+export function processOrEmit(schema: Schema, structure: any, key: string): ProcessResult {
+  if (typeof schema === 'function') {
+    return {
+      errorTree: schema(structure, key, false),
+      unusedObjectKeys: [],
+      unusedSchemaKeys: [],
+    }
+  } else if (structure === undefined) {
+    return {
+      errorTree: undefined,
+      unusedObjectKeys: [],
+      unusedSchemaKeys: [],
+    }
   } else {
-    const { errorTree } = process(schemaOrEmitter, structure)
-    return errorTree
+    return process(schema, structure)
   }
 }
 
@@ -26,7 +31,7 @@ function removeErrorTreeIfEmpty(errorTree: ErrorTree): ErrorTree {
 }
 
 const processArray: Process<any[]> = (schema, arrayStructure) => {
-  let errorTree: Record<string, any> = {}
+  let localErrorTree: Record<string, any> = {}
 
   if (schema.length > 1) {
     throw Error(
@@ -36,18 +41,19 @@ const processArray: Process<any[]> = (schema, arrayStructure) => {
 
   for (let index = 0; index < arrayStructure.length; index++) {
     const key = index.toString()
-    errorTree[key] = processOrEmit(schema[0], index.toString(), arrayStructure?.[index])
+    const { errorTree } = processOrEmit(schema[0], index.toString(), arrayStructure?.[index])
+    localErrorTree[key] = errorTree
   }
 
   return {
-    errorTree: removeErrorTreeIfEmpty(errorTree),
+    errorTree: removeErrorTreeIfEmpty(localErrorTree),
     unusedObjectKeys: [],
     unusedSchemaKeys: [],
   }
 }
 
 const processObject: Process<Record<string, any>> = (schema, objectStructure) => {
-  let errorTree: Record<string, any> | undefined = {}
+  let localErrorTree: Record<string, any> | undefined = {}
   const schemaEntries = Object.entries(schema)
   let unusedObjectKeys = Object.keys(objectStructure)
   let unusedSchemaKeys = []
@@ -62,13 +68,14 @@ const processObject: Process<Record<string, any>> = (schema, objectStructure) =>
       unusedSchemaKeys.push(objKey)
     }
 
-    errorTree[objKey] = processOrEmit(schemaValue, objValue, objKey)
+    const { errorTree } = processOrEmit(schemaValue, objValue, objKey)
+    localErrorTree[objKey] = errorTree
   }
 
   return {
     unusedObjectKeys,
     unusedSchemaKeys,
-    errorTree: removeErrorTreeIfEmpty(errorTree),
+    errorTree: removeErrorTreeIfEmpty(localErrorTree),
   }
 }
 
