@@ -1,16 +1,23 @@
-import { User } from '@prisma/client'
-import { validateByPattern, validateNotMoreThan, validateNotUndefined } from '../utils/errors/validators'
+import { idSchemaStructure, throwError } from 'src/helpers/validators'
+import { only } from '@savchenko91/schema-validator/dist/structure-validators'
+import { validate } from '@savchenko91/schema-validator/dist/validate'
+import { assertMatchPattern, assertNotUndefined, assertString } from '@savchenko91/schema-validator/dist/assertions'
 
-export default function validateUserInput(user: Partial<User>): void {
-  // TODO minLength
-  user.name && validateByPattern(user.name, /^(\w*)$/, 'name', 'name')
-  user.name && validateNotMoreThan(user.name.length, 64, 'name')
-
-  validateNotUndefined(user.username, 'username')
-  validateByPattern(user.username, /^(\w*)$/, 'username', 'username')
-  validateNotMoreThan(user.username.length, 64, 'username')
-
-  validateNotUndefined(user.email, 'email')
-  validateByPattern(user.email, /@.*?\./, 'email', 'email')
-  validateNotMoreThan(user.email.length, 64, 'email')
+export const createUserSchema = {
+  username: validate([assertNotUndefined, [assertMatchPattern, /^(\w*)$/]]),
+  password: validate([assertNotUndefined, assertString]),
+  email: validate([assertNotUndefined, assertString]),
+  name: validate([assertString]),
 }
+
+export const validateCreateUser = throwError('createUserSchema')(only(createUserSchema))
+
+export const updateUserSchema = {
+  ...idSchemaStructure,
+  username: validate([[assertMatchPattern, /^(\w*)$/]]),
+  password: validate([assertString]),
+  email: validate([assertString]),
+  name: validate([assertString]),
+}
+
+export const validateUpdateUser = throwError('updateUserSchema')(only(updateUserSchema))

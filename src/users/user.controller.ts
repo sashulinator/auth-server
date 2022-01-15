@@ -1,25 +1,13 @@
 import { Controller, Delete, Get, Header, Post, Put, Req } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
-import { throwError, validateFindManyParams, validateId } from '../helpers/validators'
 import { SearchQuery, FindManyParams } from '../types'
 import { RequestWithBody, RequestWithQuery } from '../utils/types'
 import { PrismaClient, User } from '@prisma/client'
-import validateUserInput from 'src/users/user.validators'
-import { only, required, requiredOnly } from 'src/utils/errors/structure-validators'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
-import {
-  assertMatchPattern,
-  assertNotMoreThan,
-  assertNotUndefined,
-  assertNumber,
-  assertString,
-  assertStringifiedNumber,
-} from 'src/utils/assertions'
-import { validate } from 'src/utils/errors/validate'
-import { or } from 'src/utils/errors/or-and'
+import { validateCreateUser, validateUpdateUser } from './user.validators'
 
 const prisma = new PrismaClient()
 
@@ -41,50 +29,30 @@ export class UserController {
   @Header('Content-Type', 'application/json')
   @Post()
   async create(@Req() request: RequestWithBody<User & { password: string }>) {
-    const userInput = request?.body
+    const createUserInput = request?.body
 
-    throwError(
-      only({
-        username: validate([[assertMatchPattern, /^(\w*)$/]]),
-        password: validate([assertString]),
-        address: requiredOnly({
-          code: validate([assertStringifiedNumber]),
-          building: validate([assertStringifiedNumber]),
-          landmarkIds: validate([assertString]),
-          landmarksCoords: or(
-            {
-              longitude: validate([assertString]),
-              latitude: validate([assertString]),
-            },
-            {
-              longitude: validate([assertNumber]),
-              latitude: validate([assertNumber]),
-            },
-          ),
-        }),
-      }),
-    )(userInput, 'userInput')
+    validateCreateUser(createUserInput)
 
-    // const formatedUserInput = {
-    //   username: userInput?.username?.toLowerCase(),
-    //   email: userInput?.email?.toLowerCase(),
-    //   name: userInput?.name,
-    // }
+    const formatedUserInput = {
+      username: createUserInput?.username?.toLowerCase(),
+      email: createUserInput?.email?.toLowerCase(),
+      name: createUserInput?.name,
+    }
 
-    // const createdUser = await prisma.$transaction(async () => {
-    //   const user = await this.userService.create(formatedUserInput)
-    //   const salt = await generateHash()
+    const createdUser = await prisma.$transaction(async () => {
+      const user = await this.userService.create(formatedUserInput)
+      const salt = await generateHash()
 
-    //   this.localAuthService.savePassword({
-    //     userId: user.id,
-    //     password: generateHashedPassword(userInput.password, salt),
-    //     salt,
-    //   })
+      this.localAuthService.savePassword({
+        userId: user.id,
+        password: generateHashedPassword(createUserInput.password, salt),
+        salt,
+      })
 
-    //   return user
-    // })
+      return user
+    })
 
-    // return createdUser
+    return createdUser
   }
 
   @Header('Content-Type', 'application/json')
@@ -92,7 +60,7 @@ export class UserController {
   async update(@Req() request: RequestWithBody<User>) {
     const userInput = request?.body
 
-    // new RequestDataValidator(userInput).push([validateUserInput, validateId]).validate()
+    validateUpdateUser(userInput)
 
     const formatedUserInput = {
       username: userInput?.username?.toLowerCase(),

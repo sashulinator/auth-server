@@ -1,44 +1,30 @@
-import { BadRequestException } from '@nestjs/common'
-import { ServerError } from 'src/utils/errors/errors'
-import { createStructureValidator } from 'src/utils/errors/structure-validators'
-import {
-  validateNotMoreThan,
-  validateNotUndefined,
-  validateNumber,
-  validateStringifiedNumber,
-} from '../utils/errors/validators'
-
-interface FindManySettings {
+import { assertNotUndefined, assertString } from '@savchenko91/schema-validator/dist/assertions'
+import { ServerError } from 'src/utils/errors'
+import { createStructureValidator } from '@savchenko91/schema-validator/dist/structure-validators'
+import { StructureSchema } from '@savchenko91/schema-validator/dist/types'
+import { validate } from '@savchenko91/schema-validator/dist/validate'
+export interface FindManySettings {
   maxTake: number
 }
 
-interface FindManyParams {
+export interface FindManyParams {
   take: string
   skip: string
 }
 
-export function validateFindManyParams({ maxTake = 100 }: FindManySettings) {
-  return ({ take, skip }: Partial<FindManyParams>) => {
-    take !== undefined && validateStringifiedNumber(take, 'take')
-    take !== undefined && validateNotMoreThan(take, maxTake, 'take')
-    skip !== undefined && validateStringifiedNumber(skip, 'skip')
-  }
-}
+export const throwError = (name: string) =>
+  createStructureValidator(({ errorTree }) => {
+    if (errorTree) {
+      throw new ServerError({
+        message: 'Validation error',
+        code: 'validation',
+        errors: errorTree,
+        status: 401,
+      })
+    }
 
-export function validateId(data: Record<string, unknown>) {
-  validateNotUndefined(data.id, 'id')
-  validateNumber(data.id, 'id')
-}
+    return undefined
+  }, name)
 
-export const throwError = createStructureValidator(({ errorTree }) => {
-  if (errorTree) {
-    throw new ServerError({
-      message: 'Validation error',
-      code: 'validation',
-      errors: errorTree,
-      status: 401,
-    })
-  }
-
-  return undefined
-})
+// TODO add assertMatchPattern
+export const idSchemaStructure: StructureSchema = { id: validate([assertNotUndefined, assertString]) }

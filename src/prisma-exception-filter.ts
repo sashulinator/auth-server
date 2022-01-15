@@ -3,7 +3,7 @@
 import { ExceptionFilter, Catch, ArgumentsHost, HttpStatus } from '@nestjs/common'
 import { Request, Response } from 'express'
 import { Prisma } from '@prisma/client'
-import { BaseError, CollectableError } from './utils/errors/errors'
+import { BaseError, CollectableError } from './utils/errors'
 
 @Catch(Prisma.PrismaClientKnownRequestError)
 export class PrismaExceptionFilter implements ExceptionFilter {
