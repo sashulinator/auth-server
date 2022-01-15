@@ -1,6 +1,6 @@
 import { Controller, Post, Header, Req } from '@nestjs/common'
-import { SearchQuery, FindManyParams } from '../types'
-import { RequestWithQuery } from '../utils/types'
+import { SearchQuery, FindManyParams } from 'src/common/types'
+import { RequestWithQuery } from 'src/utils/types'
 import { LocalAuthService } from './local-auth.service'
 
 @Controller('auth')

@@ -1,7 +1,7 @@
 import { Controller, Delete, Get, Header, Post, Put, Req } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
-import { SearchQuery, FindManyParams } from '../types'
+import { SearchQuery, FindManyParams } from 'src/common/types'
 import { RequestWithBody, RequestWithQuery } from '../utils/types'
 import { PrismaClient, User } from '@prisma/client'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'

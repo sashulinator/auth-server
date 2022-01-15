@@ -3,14 +3,6 @@ import { ServerError } from 'src/utils/errors'
 import { createStructureValidator } from '@savchenko91/schema-validator/dist/structure-validators'
 import { StructureSchema } from '@savchenko91/schema-validator/dist/types'
 import { validate } from '@savchenko91/schema-validator/dist/validate'
-export interface FindManySettings {
-  maxTake: number
-}
-
-export interface FindManyParams {
-  take: string
-  skip: string
-}
 
 export const throwError = (name: string) =>
   createStructureValidator(({ errorTree }) => {
