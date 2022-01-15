@@ -11,7 +11,7 @@ async function main() {
         create: {
           email: `alice${index}@prisma.io`,
           username: `aliceprisma${index}`,
-          name: `Alice${index}`,
+          fullname: `Alice${index}`,
         },
       })
 
@@ -21,7 +21,7 @@ async function main() {
         create: {
           email: `bob${index}@prisma.io`,
           username: `bobprisma${index}`,
-          name: `Bob${index}`,
+          fullname: `Bob${index}`,
         },
       })
     })

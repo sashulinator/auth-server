@@ -3,7 +3,7 @@ CREATE TABLE "User" (
     "id" UUID NOT NULL,
     "username" VARCHAR(64) NOT NULL,
     "email" VARCHAR(64) NOT NULL,
-    "name" VARCHAR(64),
+    "fullname" VARCHAR(64),
     "phone" VARCHAR(15),
     "deletedAt" TIMESTAMP(3),
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,

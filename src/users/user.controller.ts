@@ -7,7 +7,8 @@ import { PrismaClient, User } from '@prisma/client'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
-import { validateCreateUser, validateUpdateUser } from '../common/schemas'
+import { createUserSchema, updateUserSchema } from '../common/schemas'
+import { throwError } from 'src/helpers/structure-validators'
 
 const prisma = new PrismaClient()
 
@@ -31,12 +32,12 @@ export class UserController {
   async create(@Req() request: RequestWithBody<User & { password: string }>) {
     const createUserInput = request?.body
 
-    validateCreateUser(createUserInput)
+    throwError(createUserSchema)(createUserInput)
 
     const formatedUserInput = {
       username: createUserInput?.username?.toLowerCase(),
       email: createUserInput?.email?.toLowerCase(),
-      name: createUserInput?.name,
+      fullname: createUserInput?.fullname,
     }
 
     const createdUser = await prisma.$transaction(async () => {
@@ -60,11 +61,12 @@ export class UserController {
   async update(@Req() request: RequestWithBody<User>) {
     const userInput = request?.body
 
-    validateUpdateUser(userInput)
+    throwError(updateUserSchema)(userInput)
 
     const formatedUserInput = {
       username: userInput?.username?.toLowerCase(),
       email: userInput?.email?.toLowerCase(),
+      fullname: userInput.fullname,
       id: userInput.id,
     }
 
