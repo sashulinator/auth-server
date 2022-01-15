@@ -7,7 +7,7 @@ import { PrismaClient, User } from '@prisma/client'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
-import { validateCreateUser, validateUpdateUser } from './user.validators'
+import { validateCreateUser, validateUpdateUser } from '../common/schemas'
 
 const prisma = new PrismaClient()
 

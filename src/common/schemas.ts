@@ -1,4 +1,4 @@
-import { idSchemaStructure, throwError } from 'src/helpers/validators'
+import { idSchemaStructure, throwError } from 'src/common/validators'
 import { only } from '@savchenko91/schema-validator/dist/structure-validators'
 import { validate } from '@savchenko91/schema-validator/dist/validate'
 import { assertMatchPattern, assertNotUndefined, assertString } from '@savchenko91/schema-validator/dist/assertions'
