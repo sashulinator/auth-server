@@ -16,3 +16,5 @@ export const updateUserSchema = only({
   email: validate(assertString),
   fullname: validate(assertString),
 })
+
+// test
