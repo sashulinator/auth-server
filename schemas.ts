@@ -11,8 +11,8 @@ export const createUserSchema = only({
 
 export const updateUserSchema = only({
   ...idSchemaStructure,
-  // username: validate([assertMatchPattern, /^(\w*)$/]),
-  // password: validate(assertString),
-  // email: validate(assertString),
-  // fullname: validate(assertString),
+  username: validate([assertMatchPattern, /^(\w*)$/]),
+  password: validate(assertString),
+  email: validate(assertString),
+  fullname: validate(assertString),
 })
