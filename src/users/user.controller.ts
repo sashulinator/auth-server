@@ -1,14 +1,14 @@
-import { Controller, Delete, Get, Header, Post, Put, Req } from '@nestjs/common'
+import { Body, Controller, Delete, Get, Header, Post, Put, Req, UsePipes } from '@nestjs/common'
 import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
-import { SearchQuery, FindManyParams } from 'src/common/types'
+import { SearchQuery, FindManyParams, UpdateUser, CreateUser, Pageable } from 'src/common/types'
 import { RequestWithBody, RequestWithQuery } from '../utils/types'
-import { PrismaClient, User } from '@prisma/client'
+import { Prisma, PrismaClient, User } from '@prisma/client'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
-import { createUserSchema, updateUserSchema } from '../common/schemas'
-import { throwError } from 'src/helpers/structure-validators'
+import { BodyValidationPipe } from 'src/utils/body-validation-pipe'
+import { createUserValidator, updateUserValidator } from 'src/common/schemas'
 
 const prisma = new PrismaClient()
 
@@ -18,7 +18,7 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Get()
-  async findMany(@Req() request: RequestWithQuery<FindManyParams<string> & SearchQuery>) {
+  async findMany(@Req() request: RequestWithQuery<FindManyParams<string> & SearchQuery>): Promise<Pageable<User>> {
     const query = request?.query
 
     const take = parseInteger(query.take)
@@ -29,11 +29,8 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Post()
-  async create(@Req() request: RequestWithBody<User & { password: string }>) {
-    const createUserInput = request?.body
-
-    throwError(createUserSchema)(createUserInput)
-
+  @UsePipes(new BodyValidationPipe(createUserValidator))
+  async create(@Body() createUserInput: CreateUser): Promise<User> {
     const formatedUserInput = {
       username: createUserInput?.username?.toLowerCase(),
       email: createUserInput?.email?.toLowerCase(),
@@ -58,16 +55,13 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Put()
-  async update(@Req() request: RequestWithBody<User>) {
-    const userInput = request?.body
-
-    throwError(updateUserSchema)(userInput)
-
+  @UsePipes(new BodyValidationPipe(updateUserValidator))
+  async update(@Body() updateUserInput: UpdateUser): Promise<User> {
     const formatedUserInput = {
-      username: userInput?.username?.toLowerCase(),
-      email: userInput?.email?.toLowerCase(),
-      fullname: userInput.fullname,
-      id: userInput.id,
+      username: updateUserInput?.username?.toLowerCase(),
+      email: updateUserInput?.email?.toLowerCase(),
+      fullname: updateUserInput.fullname,
+      id: updateUserInput.id,
     }
 
     return this.userService.updateById(formatedUserInput)
@@ -75,7 +69,7 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Delete()
-  async pruneMany(@Req() request: RequestWithBody<string[]>) {
+  async pruneMany(@Req() request: RequestWithBody<string[]>): Promise<Prisma.BatchPayload> {
     const ids = request?.body
 
     return this.userService.pruneMany(ids)

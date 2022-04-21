@@ -1,20 +1,38 @@
-import { assertMatchPattern, assertNotUndefined, assertString, only, validate } from '@savchenko91/schema-validator'
+import {
+  _undefined,
+  and,
+  buildErrorTree,
+  matchPattern,
+  notEmptyString,
+  only,
+  or,
+  string,
+  withValue,
+  wrap,
+} from '@savchenko91/schema-validator'
 
-import { idSchemaStructure } from './validators'
+import { CreateUser, UpdateUser } from './types'
 
-export const createUserSchema = only({
-  username: validate(assertNotUndefined, [assertMatchPattern, /^(\w*)$/]),
-  password: validate(assertNotUndefined, assertString),
-  email: validate(assertNotUndefined, assertString, [assertMatchPattern, /@.*\.*./, 'email']),
-  fullname: validate(assertString),
-})
+const bindedWrap = wrap.bind({ handleError: buildErrorTree })
 
-export const updateUserSchema = only({
-  ...idSchemaStructure,
-  username: validate([assertMatchPattern, /^(\w*)$/]),
-  password: validate(assertString),
-  email: validate(assertString),
-  fullname: validate(assertString),
-})
+export const createUserValidator = bindedWrap(
+  only<CreateUser>({
+    username: and(string, withValue(/^(\w*)$/, matchPattern)),
+    password: and(
+      string,
+      notEmptyString,
+      withValue(/[A-Z]/, matchPattern),
+      withValue(/[a-z]/, matchPattern),
+      withValue(/[0-9]/, matchPattern),
+    ),
+    email: and(string, withValue(/@.*\.*./, matchPattern)),
+    fullname: or(string, _undefined),
+  }),
+)
 
-// test
+export const updateUserValidator = bindedWrap(
+  only<UpdateUser>({
+    id: string,
+    ...createUserValidator,
+  }),
+)

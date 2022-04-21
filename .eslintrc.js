@@ -29,6 +29,6 @@ module.exports = {
     'consistent-return': 'off',
     'import/no-named-as-default': 'off',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
-    'import/prefer-default-export': 'on',
+    'import/prefer-default-export': 2,
   },
 }
