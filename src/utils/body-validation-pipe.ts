@@ -4,6 +4,7 @@ import { ServerError } from './errors'
 
 @Injectable()
 export class BodyValidationPipe implements PipeTransform {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   constructor(private validator: ErrorCollector<any>) {}
 
   transform(value: unknown): unknown {
