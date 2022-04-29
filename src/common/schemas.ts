@@ -13,7 +13,7 @@ import {
 
 import { CreateUser, UpdateUser } from './types'
 
-const bindedWrap = wrap.bind({ handleError: buildErrorTree })
+export const bindedWrap = wrap.bind({ handleError: buildErrorTree }) as typeof wrap
 
 export const createUserValidator = bindedWrap(
   only<CreateUser>({

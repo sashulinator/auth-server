@@ -7,8 +7,8 @@ export class BodyValidationPipe implements PipeTransform {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   constructor(private validator: ErrorCollector<any>) {}
 
-  transform(value: unknown): unknown {
-    const errorCollection = this.validator(value)
+  async transform(value: unknown): Promise<unknown> {
+    const errorCollection = await this.validator(value)
 
     if (errorCollection) {
       throw new ServerError({

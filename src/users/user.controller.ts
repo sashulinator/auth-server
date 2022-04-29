@@ -8,9 +8,31 @@ import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
 import { BodyValidationPipe } from 'src/utils/body-validation-pipe'
-import { createUserValidator, updateUserValidator } from 'src/common/schemas'
+import { bindedWrap, createUserValidator, updateUserValidator } from 'src/common/schemas'
+import { and, assertString, ValidationError } from '@savchenko91/schema-validator'
 
 const prisma = new PrismaClient()
+
+const createUserValidatorServer = bindedWrap<{ username: string }>({
+  ...createUserValidator,
+  username: and(createUserValidator.username, async (input, meta) => {
+    assertString(input)
+
+    const user = await prisma.user.findUnique({
+      where: {
+        username: input,
+      },
+    })
+
+    if (user) {
+      throw new ValidationError({
+        code: 'assertUnique',
+        message: 'already exists',
+        inputName: meta.inputName,
+      })
+    }
+  }),
+})
 
 @Controller('users')
 export class UserController {
@@ -29,7 +51,7 @@ export class UserController {
 
   @Header('Content-Type', 'application/json')
   @Post()
-  @UsePipes(new BodyValidationPipe(createUserValidator))
+  @UsePipes(new BodyValidationPipe(createUserValidatorServer))
   async create(@Body() createUserInput: CreateUser): Promise<User> {
     const formatedUserInput = {
       username: createUserInput?.username?.toLowerCase(),
