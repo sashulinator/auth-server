@@ -29,3 +29,11 @@ model LocalAuth {
 
   User User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
+
+model Schema {
+  id          String @id @default(uuid()) @db.Uuid
+  name        String
+  title       String
+  description String
+  comps       Json   @db.JsonB
+}

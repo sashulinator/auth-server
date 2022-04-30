@@ -23,6 +23,17 @@ CREATE TABLE "LocalAuth" (
     CONSTRAINT "LocalAuth_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "Schema" (
+    "id" UUID NOT NULL,
+    "name" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
+    "comps" JSONB NOT NULL,
+
+    CONSTRAINT "Schema_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
