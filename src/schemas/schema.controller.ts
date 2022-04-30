@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Header, Param, Post, Req } from '@nestjs/common'
+import { Body, Controller, Delete, Get, Header, Param, Post, Put, Query, Req } from '@nestjs/common'
 import { PrismaClient } from '@prisma/client'
 
 export interface Comp {
@@ -27,41 +27,60 @@ const prisma = new PrismaClient()
 @Controller('schemas')
 export class SchemaController {
   @Header('Content-Type', 'application/json')
+  @Get('/list')
+  async findManyList(@Query('ids') ids, @Query('types') types) {
+    return prisma.schema.findMany({
+      where: {
+        id: { in: ids },
+        type: { in: types },
+      },
+    })
+  }
+
+  @Header('Content-Type', 'application/json')
   @Get()
-  async findMany(@Req() request) {
-    return prisma.schema.findMany()
+  async findMany(@Query('ids') ids) {
+    const schemas = await prisma.schema.findMany({
+      where: {
+        id: { in: ids },
+      },
+    })
+
+    const normSchemas = schemas.reduce((acc, schema) => {
+      acc[schema.id] = schema
+      return acc
+    }, {})
+
+    return normSchemas
   }
 
   @Get(':id')
-  async findOneWithComps(@Param('id') id) {
-    const FSchema = await prisma.schema.findFirst({
+  async findOne(@Param('id') id) {
+    return prisma.schema.findFirst({
       where: {
         id,
       },
     })
+  }
 
-    const ids = Object.values(FSchema.comps).map((comp) => comp.compSchemaId)
-
-    const CSchemas = await prisma.schema.findMany({
+  @Delete()
+  async deleteMany(@Body() body) {
+    return prisma.schema.deleteMany({
       where: {
-        id: { in: [...new Set(ids)] },
+        id: { in: body.ids },
       },
     })
-
-    const normCSchemas = CSchemas.reduce((acc, CSchema) => {
-      acc[CSchema.id] = CSchema
-      return acc
-    }, {})
-
-    return {
-      FSchema,
-      CSchemas: normCSchemas,
-    }
   }
 
   @Header('Content-Type', 'application/json')
   @Post()
   async create(@Body() createSchemaInput: Schema) {
     return prisma.schema.create({ data: createSchemaInput as any })
+  }
+
+  @Header('Content-Type', 'application/json')
+  @Put()
+  async update(@Body() createSchemaInput: Schema) {
+    return prisma.schema.update({ where: { id: createSchemaInput.id }, data: createSchemaInput as any })
   }
 }

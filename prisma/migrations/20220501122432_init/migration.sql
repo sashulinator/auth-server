@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "SchemaType" AS ENUM ('FORM', 'COMP', 'PRESET');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" UUID NOT NULL,
@@ -27,8 +30,8 @@ CREATE TABLE "LocalAuth" (
 CREATE TABLE "Schema" (
     "id" UUID NOT NULL,
     "name" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
+    "componentName" TEXT,
+    "type" "SchemaType" NOT NULL,
     "comps" JSONB NOT NULL,
 
     CONSTRAINT "Schema_pkey" PRIMARY KEY ("id")
