@@ -294,7 +294,7 @@ async function main() {
         },
       },
       {
-        id: 'ee4254ef-4689-8943-8968-51ce700b870',
+        id: 'ee4254ef-4689-8943-8968-51ce700b8704',
         name: 'Text',
         title: 'Text',
         description: 'Text',
