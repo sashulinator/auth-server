@@ -1,31 +1,22 @@
 import { Body, Controller, Delete, Get, Header, Param, Post, Put, Query, Req } from '@nestjs/common'
-import { PrismaClient } from '@prisma/client'
-
-export interface Comp {
-  id: string
-  compSchemaId: string
-  compName: string
-  name: string
-  type: string
-  path: string
-  // дефвалуе вынести в пропс и юзер не должен в пас писать слово пропс для формы элемента
-  defaultValue?: string
-  props?: Record<string, unknown>
-  childCompIds?: string[]
-}
-
-export interface Schema {
-  id: string
-  name: string
-  title: string
-  description: string
-  comps: Comp
-}
+import { PrismaClient, Schema } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
 @Controller('schemas')
 export class SchemaController {
+  @Get('dependencies')
+  async findDependencies(@Query('ids') ids: string[]) {
+    const schemas = await SchemaController.findDependencySchemas(ids, [], [])
+
+    const normSchemas = schemas.reduce((acc, schema) => {
+      acc[schema.id] = schema
+      return acc
+    }, {})
+
+    return normSchemas
+  }
+
   @Header('Content-Type', 'application/json')
   @Get('/list')
   async findManyList(@Query('ids') ids, @Query('types') types) {
@@ -82,5 +73,33 @@ export class SchemaController {
   @Put()
   async update(@Body() createSchemaInput: Schema) {
     return prisma.schema.update({ where: { id: createSchemaInput.id }, data: createSchemaInput as any })
+  }
+
+  static async findDependencySchemas(
+    idsToFind: string[],
+    foundIds: string[],
+    foundSchemas: Schema[],
+  ): Promise<Schema[]> {
+    const schemas = await prisma.schema.findMany({
+      where: {
+        id: { in: idsToFind },
+      },
+    })
+
+    const newFoundSchemas = [...foundSchemas, ...schemas]
+
+    const newFoundIds = schemas.map((schema) => Object.values(schema.comps).map((comp) => comp.compSchemaId)).flat()
+
+    // TODO выкинуть нот фаунд
+
+    const setNewFoundIds = new Set([...newFoundIds, ...foundIds])
+
+    if (setNewFoundIds.size === foundIds.length) {
+      return newFoundSchemas
+    }
+
+    const newIdsToFind = [...setNewFoundIds].filter((x) => !foundIds.includes(x))
+
+    return SchemaController.findDependencySchemas(newIdsToFind, [...setNewFoundIds], newFoundSchemas)
   }
 }
