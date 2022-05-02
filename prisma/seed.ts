@@ -31,168 +31,170 @@ async function main() {
   await prisma.schema.createMany({
     skipDuplicates: true,
     data: [
-      // {
-      //   id: 'ee4254ef-a9a3-4243-be68-51ce733b338e',
-      //   name: 'credentials',
-      //   type: 'FORM',
-      //   description: 'some description',
-      //   comps: {
-      //     [ROOT_COMP_ID]: {
-      //       id: [ROOT_COMP_ID],
-      //       name: 'stackRoot',
-      //       compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
-      //       compName: 'Stack',
-      //       path: 'hello',
-      //       type: 'component',
-      //       props: {
-      //         as: 'ul',
-      //         horizontal: true,
-      //         verticalAlign: 'center',
-      //         tokens: {
-      //           childrenGap: 10,
-      //           padding: '45px 40px',
-      //         },
-      //       },
-      //       childCompIds: ['stackChild'],
-      //     },
-      //     stackChild: {
-      //       id: 'stackChild',
-      //       name: 'stackChildName',
-      //       compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
-      //       compName: 'Stack',
-      //       path: 'hello',
-      //       type: 'component',
-      //       props: {
-      //         as: 'ul',
-      //         horizontal: true,
-      //         verticalAlign: 'center',
-      //         tokens: {
-      //           childrenGap: 10,
-      //           padding: '45px 40px',
-      //         },
-      //       },
-      //       childCompIds: ['buttonOneId', 'buttonTwoId', 'textInputOneId', 'textInputTwoId'],
-      //     },
-      //     buttonOneId: {
-      //       id: 'buttonOneId',
-      //       name: 'КнопкаГлавная1',
-      //       compSchemaId: 'ee4254ef-9099-4243-be68-51ce733b3376',
-      //       compName: 'PrimaryButton',
-      //       path: 'hello12',
-      //       type: 'button',
-      //       props: {
-      //         disabled: false,
-      //         type: 'submit',
-      //         children: 'hello',
-      //       },
-      //     },
-      //     textOneId: {
-      //       id: 'textOneId',
-      //       name: 'Текст1',
-      //       compSchemaId: 'ee4254ef-4689-8943-8968-51ce700b8704',
-      //       compName: 'Text',
-      //       path: 'hello12',
-      //       type: 'component',
-      //       props: {
-      //         children: 'hello',
-      //       },
-      //     },
-      //     buttonTwoId: {
-      //       id: 'buttonTwoId',
-      //       name: 'КнопкаГлавная2',
-      //       compSchemaId: 'ee4254ef-9099-4243-be68-51ce733b3376',
-      //       compName: 'PrimaryButton',
-      //       path: 'world',
-      //       type: 'button',
-      //       props: {
-      //         disabled: false,
-      //         children: 'koko',
-      //       },
-      //     },
-      //     textInputOneId: {
-      //       id: 'textInputOneId',
-      //       name: 'ТекстовоеПоле1',
-      //       compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
-      //       compName: 'TextField',
-      //       path: 'funny',
-      //       defaultValue: 'init',
-      //       type: 'input',
-      //     },
-      //     textInputTwoId: {
-      //       id: 'textInputTwoId',
-      //       name: 'ТекстовоеПоле2',
-      //       compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
-      //       compName: 'TextField',
-      //       path: 'kuku',
-      //       type: 'input',
-      //     },
-      //   },
-      // },
+      {
+        id: 'e84eabbb-b048-4d39-ab10-673605c718e2',
+        name: 'TYU',
+        componentName: null,
+        type: 'FORM',
+        comps: {
+          stackRootId: {
+            id: 'stackRootId',
+            name: 'stackRoot',
+            path: 'hello',
+            props: { tokens: { padding: '25px' } },
+            childCompIds: [
+              '43fa6880-240f-40ee-bd80-6a0fd7a95493',
+              '2df7ea43-d706-4eb7-80c6-d8b87d4c94f6',
+              '6fde1f45-9af8-4b5d-aefc-15b589d7fcb5',
+            ],
+            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
+          },
+          '2df7ea43-d706-4eb7-80c6-d8b87d4c94f6': {
+            id: '2df7ea43-d706-4eb7-80c6-d8b87d4c94f6',
+            name: 'middle name',
+            path: 'middle name',
+            props: { label: 'middle name' },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+          '43fa6880-240f-40ee-bd80-6a0fd7a95493': {
+            id: '43fa6880-240f-40ee-bd80-6a0fd7a95493',
+            name: 'name',
+            path: 'name',
+            props: { label: 'name' },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+          '6fde1f45-9af8-4b5d-aefc-15b589d7fcb5': {
+            id: '6fde1f45-9af8-4b5d-aefc-15b589d7fcb5',
+            name: 'lastname',
+            path: 'lastname',
+            props: { label: 'lastname' },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+        },
+      },
       {
         id: 'ee4254ef-9099-4243-be68-51ce733b3376',
         name: 'PrimaryButton',
-        type: 'COMP',
         componentName: 'PrimaryButton',
+        type: 'COMP',
         comps: {
-          [ROOT_COMP_ID]: {
-            id: ROOT_COMP_ID,
+          stackRootId: {
+            id: 'stackRootId',
             name: 'stackRoot',
-            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
             props: {
               tokens: {
-                childrenGap: 10,
                 padding: '20px',
+                childrenGap: 10,
               },
             },
-            childCompIds: ['ee4254ef-9099-5543-be68-51ce533b3367', 'ee4254ef-9099-5543-be68-51ce733b3367'],
+            childCompIds: [
+              '9ba7af9a-8942-4e57-af66-e0b2936dbc56',
+              '794d1480-0cec-4916-8a10-7c3e446bd327',
+              'ee4254ef-9099-5543-be68-51ce533b3367',
+              'ee4254ef-9099-5543-be68-51ce733b3367',
+            ],
+            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
+          },
+          '794d1480-0cec-4916-8a10-7c3e446bd327': {
+            id: '794d1480-0cec-4916-8a10-7c3e446bd327',
+            name: 'type',
+            path: 'props.type',
+            props: {
+              label: 'type',
+            },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+          '9ba7af9a-8942-4e57-af66-e0b2936dbc56': {
+            id: '9ba7af9a-8942-4e57-af66-e0b2936dbc56',
+            name: 'name',
+            path: 'name',
+            props: {
+              label: 'name',
+            },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           'ee4254ef-9099-5543-be68-51ce533b3367': {
             id: 'ee4254ef-9099-5543-be68-51ce533b3367',
-            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+            name: 'text',
             path: 'props.children',
-            name: 'TextField',
             props: {
+              label: 'text',
               placeholder: 'надпись',
             },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           'ee4254ef-9099-5543-be68-51ce733b3367': {
             id: 'ee4254ef-9099-5543-be68-51ce733b3367',
-            name: 'Неактивный checkbox',
-            compSchemaId: 'ee4254ef-9099-9089-7468-89ce733b3376',
-            path: 'props.disabled',
+            name: 'disabled',
+            path: 'disabled',
             type: 'checkbox',
             props: {
-              label: 'неактивный',
+              label: 'disabled',
             },
+            compSchemaId: 'ee4254ef-9099-9089-7468-89ce733b3376',
           },
         },
       },
       {
         id: 'ee4254ef-9099-9089-7468-89ce733b3376',
         name: 'Checkbox',
-        type: 'COMP',
         componentName: 'Checkbox',
+        type: 'COMP',
         comps: {
-          [ROOT_COMP_ID]: {
-            id: ROOT_COMP_ID,
+          stackRootId: {
+            id: 'stackRootId',
             name: 'stackRoot',
-            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
             props: {
               tokens: {
-                childrenGap: 10,
                 padding: '20px',
+                childrenGap: 10,
               },
             },
-            childCompIds: ['ee4254ef-9099-5543-be68-51ce733b3367'],
+            childCompIds: [
+              '1a61d43c-6f0f-4a76-b2fc-478b6e3c633c',
+              'dcc05499-6c54-4302-86d9-6b39b133a626',
+              '9a4cd3e0-4b62-4e3c-b38f-6b928a07637c',
+              'ee4254ef-9099-5543-be68-51ce733b3367',
+            ],
+            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
+          },
+          '1a61d43c-6f0f-4a76-b2fc-478b6e3c633c': {
+            id: '1a61d43c-6f0f-4a76-b2fc-478b6e3c633c',
+            name: 'name',
+            path: 'name',
+            props: {
+              label: 'name',
+            },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+          '9a4cd3e0-4b62-4e3c-b38f-6b928a07637c': {
+            id: '9a4cd3e0-4b62-4e3c-b38f-6b928a07637c',
+            name: 'label',
+            path: 'props.label',
+            props: {
+              label: 'label',
+            },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+          'dcc05499-6c54-4302-86d9-6b39b133a626': {
+            id: 'dcc05499-6c54-4302-86d9-6b39b133a626',
+            name: 'path',
+            path: 'path',
+            props: {
+              label: 'path',
+            },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           'ee4254ef-9099-5543-be68-51ce733b3367': {
             id: 'ee4254ef-9099-5543-be68-51ce733b3367',
-            name: 'ТестЧекбокс1',
-            compSchemaId: 'ee4254ef-9099-9089-7468-89ce733b3376',
+            name: 'disabled',
             path: 'props.disabled',
+            label: 'disabled',
             props: {
-              label: 'неактивный',
+              label: 'disabled',
+              disabled: false,
             },
+            compSchemaId: 'ee4254ef-9099-9089-7468-89ce733b3376',
           },
         },
       },
@@ -202,35 +204,35 @@ async function main() {
         componentName: 'Stack',
         type: 'COMP',
         comps: {
-          [ROOT_COMP_ID]: {
-            id: ROOT_COMP_ID,
+          stackRootId: {
+            id: 'stackRootId',
             name: 'stackRoot',
-            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
             props: {
               tokens: {
-                childrenGap: 10,
                 padding: '20px',
+                childrenGap: 10,
               },
             },
             childCompIds: ['ee4254ef-9099-5sd3-be68-51ce733b3367', 'ee4254ef-9099-5543-be68-51ce733b3367'],
-          },
-          'ee4254ef-9099-5sd3-be68-51ce733b3367': {
-            id: 'ee4254ef-9099-5sd3-be68-51ce733b3367',
-            compSchemaId: 'ee4254ef-9099-9089-7468-89ce733b3376',
-            path: 'props.horizontal',
-            name: 'Checkbox',
-            props: {
-              label: 'горизонтально',
-            },
+            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
           },
           'ee4254ef-9099-5543-be68-51ce733b3367': {
             id: 'ee4254ef-9099-5543-be68-51ce733b3367',
-            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
-            path: 'props.tokens.padding',
             name: 'TextField',
+            path: 'props.tokens.padding',
             props: {
               label: 'отступ',
             },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+          'ee4254ef-9099-5sd3-be68-51ce733b3367': {
+            id: 'ee4254ef-9099-5sd3-be68-51ce733b3367',
+            name: 'Checkbox',
+            path: 'props.horizontal',
+            props: {
+              label: 'горизонтально',
+            },
+            compSchemaId: 'ee4254ef-9099-9089-7468-89ce733b3376',
           },
         },
       },
@@ -240,35 +242,59 @@ async function main() {
         componentName: 'TextField',
         type: 'COMP',
         comps: {
-          [ROOT_COMP_ID]: {
-            id: ROOT_COMP_ID,
+          stackRootId: {
+            id: 'stackRootId',
             name: 'stackRoot',
-            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
             props: {
               tokens: {
-                childrenGap: 10,
                 padding: '20px',
+                childrenGap: 10,
               },
             },
-            childCompIds: ['ee4254ef-9099-5543-be68-51ce733b3367', 'rr4254ef-9099-5643-be68-51ce733b3360'],
+            childCompIds: [
+              'a218dd0c-04e3-4733-9504-81f7ce3b93ee',
+              '8d9d7967-cce1-40cc-b991-1b55809c475b',
+              'ee4254ef-9099-5543-be68-51ce733b3367',
+              'rr4254ef-9099-5643-be68-51ce733b3360',
+            ],
+            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
+          },
+          '8d9d7967-cce1-40cc-b991-1b55809c475b': {
+            id: '8d9d7967-cce1-40cc-b991-1b55809c475b',
+            name: 'label',
+            path: 'props.label',
+            props: {
+              label: 'label',
+              lable: 'label',
+            },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+          'a218dd0c-04e3-4733-9504-81f7ce3b93ee': {
+            id: 'a218dd0c-04e3-4733-9504-81f7ce3b93ee',
+            name: 'name',
+            path: 'name',
+            props: {
+              label: 'name',
+            },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           'ee4254ef-9099-5543-be68-51ce733b3367': {
             id: 'ee4254ef-9099-5543-be68-51ce733b3367',
-            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+            name: 'path',
             path: 'path',
-            name: 'TextField',
             props: {
-              label: 'путь',
+              label: 'path',
             },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           'rr4254ef-9099-5643-be68-51ce733b3360': {
             id: 'rr4254ef-9099-5643-be68-51ce733b3360',
-            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+            name: 'default value',
             path: 'defaultValue',
-            name: 'TextField',
             props: {
-              label: 'значение по умолчанию',
+              label: 'default value',
             },
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
         },
       },
