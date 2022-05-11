@@ -29,7 +29,7 @@ CREATE TABLE "LocalAuth" (
 -- CreateTable
 CREATE TABLE "Schema" (
     "id" UUID NOT NULL,
-    "name" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
     "componentName" TEXT,
     "type" "SchemaType" NOT NULL,
     "comps" JSONB NOT NULL,

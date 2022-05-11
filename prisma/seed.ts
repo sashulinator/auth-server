@@ -32,51 +32,80 @@ async function main() {
     skipDuplicates: true,
     data: [
       {
+        id: 'e24fad61-576a-421d-9273-02b3c365c15c',
+        title: 'Validator',
+        componentName: 'ValidatorPicker',
+        type: 'COMP',
+        comps: {
+          ROOT_ID: {
+            id: 'ROOT_ID',
+            name: 'noname',
+            props: {
+              tokens: {
+                padding: '20px',
+              },
+            },
+            title: 'stackRoot',
+            children: ['l30hez8c'],
+            compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
+          },
+          l30hez8c: {
+            id: 'l30hez8c',
+            name: 'name',
+            props: {
+              label: 'name',
+            },
+            title: 'name',
+            compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
+          },
+        },
+      },
+      {
         id: 'e84eabbb-b048-4d39-ab10-673605c718e2',
-        name: 'TYU',
+        title: 'TYU',
         componentName: null,
         type: 'FORM',
         comps: {
           ROOT_ID: {
             id: 'ROOT_ID',
-            name: 'stackRoot',
-            path: 'hello',
+            title: 'stackRoot',
+            name: 'hello',
             props: { tokens: { padding: '25px' } },
             children: ['43fa6880ds24', '2df7ea43pd706', '6fde1f45p9af8'],
             compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
           },
           '2df7ea43pd706': {
             id: '2df7ea43pd706',
-            name: 'middle name',
-            path: 'middle name',
-            props: { label: 'middle name' },
+            title: 'middle title',
+            name: 'middle title',
+            props: { label: 'middle title' },
             compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           '43fa6880ds24': {
             id: '43fa6880ds24',
-            name: 'name',
-            path: 'name',
-            props: { label: 'name' },
+            title: 'title',
+            name: 'title',
+            props: { label: 'title' },
             compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           '6fde1f45p9af8': {
             id: '6fde1f45p9af8',
-            name: 'lastname',
-            path: 'lastname',
-            props: { label: 'lastname' },
+            title: 'lasttitle',
+            name: 'lasttitle',
+            props: { label: 'lasttitle' },
             compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
         },
       },
       {
         id: 'ee4254ef-9099-4243-be68-51ce733b3376',
-        name: 'PrimaryButton',
+        title: 'PrimaryButton',
         componentName: 'PrimaryButton',
         type: 'COMP',
         comps: {
           ROOT_ID: {
             id: 'ROOT_ID',
-            name: 'stackRoot',
+            title: 'stackRoot',
             props: {
               tokens: {
                 padding: '20px',
@@ -88,8 +117,8 @@ async function main() {
           },
           '794d1480f0cec': {
             id: '794d1480f0cec',
-            name: 'type',
-            path: 'props.type',
+            title: 'type',
+            name: 'props.type',
             props: {
               label: 'type',
             },
@@ -97,17 +126,17 @@ async function main() {
           },
           '9ba7af9ap8942': {
             id: '9ba7af9ap8942',
-            name: 'name',
-            path: 'name',
+            title: 'title',
+            name: 'title',
             props: {
-              label: 'name',
+              label: 'title',
             },
             compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           ee4254efh9099: {
             id: 'ee4254efh9099',
-            name: 'text',
-            path: 'props.children',
+            title: 'text',
+            name: 'props.children',
             props: {
               label: 'text',
             },
@@ -115,8 +144,8 @@ async function main() {
           },
           ee4254efp9099: {
             id: 'ee4254efp9099',
+            title: 'disabled',
             name: 'disabled',
-            path: 'disabled',
             type: 'checkbox',
             props: {
               label: 'disabled',
@@ -127,13 +156,13 @@ async function main() {
       },
       {
         id: 'ee4254ef-9099-9089-7468-89ce733b3376',
-        name: 'Checkbox',
+        title: 'Checkbox',
         componentName: 'Checkbox',
         type: 'COMP',
         comps: {
           ROOT_ID: {
             id: 'ROOT_ID',
-            name: 'stackRoot',
+            title: 'stackRoot',
             props: {
               tokens: {
                 padding: '20px',
@@ -145,17 +174,17 @@ async function main() {
           },
           '1a61d43ck6f0f': {
             id: '1a61d43ck6f0f',
-            name: 'name',
-            path: 'name',
+            title: 'title',
+            name: 'title',
             props: {
-              label: 'name',
+              label: 'title',
             },
             compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           '9a4cd3e0s4b6r': {
             id: '9a4cd3e0s4b6r',
-            name: 'label',
-            path: 'props.label',
+            title: 'label',
+            name: 'props.label',
             props: {
               label: 'label',
             },
@@ -163,17 +192,17 @@ async function main() {
           },
           dcc05499a6c54: {
             id: 'dcc05499a6c54',
-            name: 'path',
-            path: 'path',
+            title: 'name',
+            name: 'name',
             props: {
-              label: 'path',
+              label: 'name',
             },
             compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           ee4254efp9099: {
             id: 'ee4254efp9099',
-            name: 'disabled',
-            path: 'props.disabled',
+            title: 'disabled',
+            name: 'props.disabled',
             label: 'disabled',
             props: {
               label: 'disabled',
@@ -185,13 +214,13 @@ async function main() {
       },
       {
         id: 'ee4254ef-9099-4289-be68-51ce733b3376',
-        name: 'StackRoot',
+        title: 'StackRoot',
         componentName: 'Stack',
         type: 'COMP',
         comps: {
           ROOT_ID: {
             id: 'ROOT_ID',
-            name: 'stackRoot',
+            title: 'stackRoot',
             props: {
               tokens: {
                 padding: '20px',
@@ -203,8 +232,8 @@ async function main() {
           },
           ee4254efp9099: {
             id: 'ee4254efp9099',
-            name: 'TextField',
-            path: 'props.tokens.padding',
+            title: 'TextField',
+            name: 'props.tokens.padding',
             props: {
               label: 'отступ',
             },
@@ -212,8 +241,8 @@ async function main() {
           },
           ee4254efs9099: {
             id: 'ee4254efs9099',
-            name: 'Checkbox',
-            path: 'props.horizontal',
+            title: 'Checkbox',
+            name: 'props.horizontal',
             props: {
               label: 'горизонтально',
             },
@@ -223,13 +252,13 @@ async function main() {
       },
       {
         id: 'ee4234ef-9099-8943-8968-51c00733b870',
-        name: 'TextField',
+        title: 'TextField',
         componentName: 'TextField',
         type: 'COMP',
         comps: {
           ROOT_ID: {
             id: 'ROOT_ID',
-            name: 'stackRoot',
+            title: 'stackRoot',
             props: {
               tokens: {
                 padding: '20px',
@@ -241,8 +270,8 @@ async function main() {
           },
           '8d9d7967pcced': {
             id: '8d9d7967pcced',
-            name: 'label',
-            path: 'props.label',
+            title: 'label',
+            name: 'props.label',
             props: {
               label: 'label',
               lable: 'label',
@@ -251,26 +280,26 @@ async function main() {
           },
           a218dd0sf04e3: {
             id: 'a218dd0sf04e3',
-            name: 'name',
-            path: 'name',
+            title: 'title',
+            name: 'title',
             props: {
-              label: 'name',
+              label: 'title',
             },
             compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           ee4254efp9099: {
             id: 'ee4254efp9099',
-            name: 'path',
-            path: 'path',
+            title: 'name',
+            name: 'name',
             props: {
-              label: 'path',
+              label: 'name',
             },
             compSchemaId: 'ee4234ef-9099-8943-8968-51c00733b870',
           },
           rr4254efg9099: {
             id: 'rr4254efg9099',
-            name: 'default value',
-            path: 'defaultValue',
+            title: 'default value',
+            name: 'defaultValue',
             props: {
               label: 'default value',
             },
