@@ -5,6 +5,16 @@ const prisma = new PrismaClient()
 
 @Controller('schemas')
 export class SchemaController {
+  @Header('Content-Type', 'application/json')
+  @Get('/risk-type')
+  async riskType() {
+    return [
+      ['RT1', 'операционный риск'],
+      ['RT2', 'репутационный риск'],
+      ['RT3', 'рыночный риск'],
+    ]
+  }
+
   @Get('dependencies')
   async findDependencies(@Query('ids') ids: string[]) {
     const schemas = await SchemaController.findDependencySchemas(ids, [], [])
