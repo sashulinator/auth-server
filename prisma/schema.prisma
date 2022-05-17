@@ -38,6 +38,18 @@ model Schema {
   comps         Json       @db.JsonB
 }
 
+model Incident {
+  id                String   @id @default(uuid()) @db.Uuid
+  name              String
+  status            String
+  creator           String
+  validationStateCd String
+  sourceSystemCd    String
+  createdAt         DateTime
+  editedAt          DateTime
+  values            Json     @db.JsonB
+}
+
 enum SchemaType {
   FORM
   COMP

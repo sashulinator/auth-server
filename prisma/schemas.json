@@ -1,0 +1,3314 @@
+[
+  {
+    "id": "8550ad0f-ee1f-448c-a465-458d69b69e0c",
+    "title": "DatePicker",
+    "componentName": "DatePicker",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "8px" } },
+        "title": "stackRoot",
+        "children": ["l38hzk2f", "l38j0x97", "l38j17tp", "l38jaigo", "l38vip3t", "l38jbwik"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l38hzk2f": {
+        "id": "l38hzk2f",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38j0x97": {
+        "id": "l38j0x97",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38j17tp": {
+        "id": "l38j17tp",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38jaigo": {
+        "id": "l38jaigo",
+        "name": "props.underlined",
+        "props": { "label": "underlined" },
+        "title": "underlined",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l38jbwik": {
+        "id": "l38jbwik",
+        "name": "props.placeholder",
+        "props": { "label": "placeholder" },
+        "title": "placeholder",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38vip3t": {
+        "id": "l38vip3t",
+        "name": "props.borderless",
+        "props": { "label": "borderless" },
+        "title": "borderless",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      }
+    }
+  },
+  {
+    "id": "ee4254ef-9099-4289-be68-51ce733b3376",
+    "title": "StackRoot",
+    "componentName": "Stack",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "props": { "tokens": { "padding": "20px", "childrenGap": 10 } },
+        "title": "stackRoot",
+        "children": ["l32zobsf", "l32t05y6", "ee4254efs9099", "ee4254efp9099"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32t05y6": {
+        "id": "l32t05y6",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32zobsf": {
+        "id": "l32zobsf",
+        "name": "props.style.minWidth",
+        "props": { "label": "min width" },
+        "title": "min width",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "ee4254efp9099": {
+        "id": "ee4254efp9099",
+        "name": "props.tokens.padding",
+        "props": { "label": "padding" },
+        "title": "TextField",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "ee4254efs9099": {
+        "id": "ee4254efs9099",
+        "name": "props.horizontal",
+        "props": { "label": "horizontal", "boxSide": "end" },
+        "title": "Checkbox",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      }
+    }
+  },
+  {
+    "id": "e24fad61-576a-421d-9273-02b3c365c15c",
+    "title": "Validator",
+    "componentName": "ValidatorPicker",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l32xe746", "l30hez8c"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l30hez8c": {
+        "id": "l30hez8c",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32xe746": {
+        "id": "l32xe746",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "f6b1a985-be84-474e-a4a5-164a76eec249",
+    "title": "PivotItem",
+    "componentName": "PivotItem",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l31mco2i", "l31fpd2k", "l31fpqgu", "l31fv66b", "l31fvs7n", "l31i2b6u", "l31m8af5"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l31fpd2k": {
+        "id": "l31fpd2k",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31fpqgu": {
+        "id": "l31fpqgu",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "DefaultLabel"
+      },
+      "l31fv66b": {
+        "id": "l31fv66b",
+        "name": "props.headerText",
+        "props": { "label": "headerText" },
+        "title": "headerText",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "Header Text"
+      },
+      "l31fvs7n": {
+        "id": "l31fvs7n",
+        "name": "props.headerButtonProps",
+        "props": { "label": "headerButtonProps" },
+        "title": "headerButtonProps",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31i2b6u": {
+        "id": "l31i2b6u",
+        "name": "props.itemCount",
+        "props": { "label": "itemCount" },
+        "title": "itemCount",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31m8af5": {
+        "id": "l31m8af5",
+        "name": "props.itemIcon",
+        "props": { "label": "itemIcon" },
+        "title": "itemIcon",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31mco2i": {
+        "id": "l31mco2i",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "cd1c9df4-f5dd-426c-9d26-a0ec40638601",
+    "title": "Dropdown",
+    "componentName": "Dropdown",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": [
+          "l32t2u5b",
+          "l32se519",
+          "l32t8zir",
+          "l34a8pbs",
+          "l3453axe",
+          "l368nb50",
+          "l332qx3i",
+          "l331azbk",
+          "l331bnz0"
+        ],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32se519": {
+        "id": "l32se519",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32t2u5b": {
+        "id": "l32t2u5b",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32t36z8": {
+        "id": "l32t36z8",
+        "name": "props.options[0].key",
+        "props": { "label": "optionKey" },
+        "title": "optionKey",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32t4d6y": {
+        "id": "l32t4d6y",
+        "name": "props.options[0].text",
+        "props": { "label": "optionText" },
+        "title": "optionText",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32t8zir": {
+        "id": "l32t8zir",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32thlsx": {
+        "id": "l32thlsx",
+        "name": "props.options[1].key",
+        "props": { "label": "optionKey" },
+        "title": "optionKey",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32thlsz": {
+        "id": "l32thlsz",
+        "name": "props.options[1].text",
+        "props": { "label": "optionText" },
+        "title": "optionText",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32tj7uo": {
+        "id": "l32tj7uo",
+        "name": "l32tj7up",
+        "props": { "tokens": { "padding": "3px" } },
+        "title": "StackRoot",
+        "children": ["l32t36z8", "l32t4d6y", "l32tlh9b"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32tjfks": {
+        "id": "l32tjfks",
+        "name": "l32tjfkt",
+        "props": { "tokens": { "padding": "3px" } },
+        "title": "StackRoot",
+        "children": ["l32thlsx", "l32thlsz", "l32tmimy"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32tlh9b": {
+        "id": "l32tlh9b",
+        "name": "props.options[0].itemType",
+        "props": { "label": "itemType" },
+        "title": "itemType",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "DropdownMenuItemType.Header"
+      },
+      "l32tmimy": {
+        "id": "l32tmimy",
+        "name": "props.options[1].itemType",
+        "props": { "label": "itemType" },
+        "title": "itemType",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "DropdownMenuItemType.Header"
+      },
+      "l32to2p9": {
+        "id": "l32to2p9",
+        "name": "l32to2pa",
+        "props": { "tokens": { "padding": "3px" } },
+        "title": "StackRoot",
+        "children": ["l32to2pb", "l32to2pd", "l32to2pf"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32to2pb": {
+        "id": "l32to2pb",
+        "name": "props.options[2].key",
+        "props": { "label": "optionKey" },
+        "title": "optionKey",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32to2pd": {
+        "id": "l32to2pd",
+        "name": "props.options[2].text",
+        "props": { "label": "optionText" },
+        "title": "optionText",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32to2pf": {
+        "id": "l32to2pf",
+        "name": "props.options[2].itemType",
+        "props": { "label": "itemType" },
+        "title": "itemType",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l331azbk": {
+        "id": "l331azbk",
+        "name": "injections[0].from",
+        "props": { "label": "injection from" },
+        "title": "injection from",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l331bnz0": {
+        "id": "l331bnz0",
+        "name": "injections[0].to",
+        "props": { "label": "injection to" },
+        "title": "injection to",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l332qx3i": {
+        "id": "l332qx3i",
+        "name": "props.options",
+        "props": { "label": "options" },
+        "title": "options",
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l3453axe": {
+        "id": "l3453axe",
+        "name": "props.disabled",
+        "props": { "label": "disabled", "boxSide": "start" },
+        "title": "disabled",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l34a8pbs": {
+        "id": "l34a8pbs",
+        "name": "props.placeholder",
+        "props": { "label": "placeholder" },
+        "title": "placeholder",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "Выберите значение"
+      },
+      "l368nb50": {
+        "id": "l368nb50",
+        "name": "defaultValue",
+        "props": { "label": "default value" },
+        "title": "default value",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "ebeb0b32-3298-4da3-b67b-de34ee852fa1",
+    "title": "Bindings",
+    "componentName": "BindingPicker",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "title": "stackRoot",
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      }
+    }
+  },
+  {
+    "id": "ee4234ef-9099-8943-8968-51c00733b870",
+    "title": "TextField",
+    "componentName": "TextField",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "props": { "tokens": { "padding": "20px", "childrenGap": 10 } },
+        "title": "stackRoot",
+        "children": [
+          "a218dd0sf04e3",
+          "8d9d7967pcced",
+          "ee4254efp9099",
+          "rr4254efg9099",
+          "l32v2xm8",
+          "l32v5cs4",
+          "l32v9j0t",
+          "l34cp5uw",
+          "l3482div",
+          "l32rhbjp"
+        ],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32rhbjp": {
+        "id": "l32rhbjp",
+        "name": "validators",
+        "props": { "label": "validators" },
+        "title": "Validator",
+        "compSchemaId": "e24fad61-576a-421d-9273-02b3c365c15c"
+      },
+      "l32v2xm8": {
+        "id": "l32v2xm8",
+        "name": "props.multiline",
+        "props": { "label": "multiline", "boxSide": "start" },
+        "title": "multiline",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l32v5cs4": {
+        "id": "l32v5cs4",
+        "name": "props.autoAdjustHeight",
+        "props": { "label": "autoAdjustHeight", "boxSide": "start", "checked": true, "disabled": true },
+        "title": "autoAdjustHeight",
+        "l32tx8ac": false,
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l32v9j0t": {
+        "id": "l32v9j0t",
+        "name": "props.underlined",
+        "props": { "label": "underlined", "boxSide": "start" },
+        "title": "underlined",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l3482div": {
+        "id": "l3482div",
+        "name": "props.disabled",
+        "props": { "label": "disabled", "boxSide": "start" },
+        "title": "disabled",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l34cp5uw": {
+        "id": "l34cp5uw",
+        "name": "props.borderless",
+        "props": { "label": "borderless", "boxSide": "start" },
+        "title": "borderless",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "8d9d7967pcced": {
+        "id": "8d9d7967pcced",
+        "name": "props.label",
+        "props": { "label": "label", "lable": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "a218dd0sf04e3": {
+        "id": "a218dd0sf04e3",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "ee4254efp9099": {
+        "id": "ee4254efp9099",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "rr4254efg9099": {
+        "id": "rr4254efg9099",
+        "name": "defaultValue",
+        "props": { "label": "default value" },
+        "title": "default value",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "5778a519-36c7-49f5-a36a-1b5ac280b51b",
+    "title": "Table",
+    "componentName": "Table",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": [
+          "l38s06xu",
+          "l38s0nfb",
+          "l34k0r3f",
+          "l32z3olh",
+          "l32z2vge",
+          "l32z4m2k",
+          "l32z9evy",
+          "l32za1wa",
+          "l34jmnpk",
+          "l34jn3df"
+        ],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32z2vge": {
+        "id": "l32z2vge",
+        "name": "props.columns[0].fieldName",
+        "props": { "label": "columns 1 name" },
+        "title": "columns 1 name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32z3olh": {
+        "id": "l32z3olh",
+        "name": "props.columns[0].key",
+        "props": { "label": "columns 1 key" },
+        "title": "columns 1 key",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32z4m2k": {
+        "id": "l32z4m2k",
+        "name": "props.columns[0].minWidth",
+        "props": { "label": "minWidth" },
+        "title": "minWidth",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32z9evy": {
+        "id": "l32z9evy",
+        "name": "injections[0].from",
+        "props": { "label": "inject from" },
+        "title": "inject from",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32za1wa": {
+        "id": "l32za1wa",
+        "name": "injections[0].to",
+        "props": { "label": "inject to" },
+        "title": "inject to",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34jmnpk": {
+        "id": "l34jmnpk",
+        "name": "props.items",
+        "props": { "label": "items" },
+        "title": "items",
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l34jn3df": {
+        "id": "l34jn3df",
+        "name": "props.columns",
+        "props": { "label": "columns" },
+        "title": "columns",
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l34k0r3f": {
+        "id": "l34k0r3f",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38s06xu": {
+        "id": "l38s06xu",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38s0nfb": {
+        "id": "l38s0nfb",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d",
+    "title": "IconButton",
+    "componentName": "IconButton",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l38iynu1", "l38rka7x", "l38sfyke", "l38rkpvx", "l38rl5tc", "l38rlih0"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l38iynu1": {
+        "id": "l38iynu1",
+        "name": "props.iconProps.iconName",
+        "props": { "label": "Icon name" },
+        "title": "Icon name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38rka7x": {
+        "id": "l38rka7x",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38rkpvx": {
+        "id": "l38rkpvx",
+        "name": "props.ariaLabel",
+        "props": { "label": "ariaLabel" },
+        "title": "ariaLabel",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38rl5tc": {
+        "id": "l38rl5tc",
+        "name": "props.disabled",
+        "props": { "label": "disabled", "boxSide": "start" },
+        "title": "disabled",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l38rlih0": {
+        "id": "l38rlih0",
+        "name": "props.checked",
+        "props": { "label": "checked", "boxSide": "start" },
+        "title": "checked",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l38sfyke": {
+        "id": "l38sfyke",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "afaa57e6-1925-4b1b-933a-cb7af80587af",
+    "title": "Pivot",
+    "componentName": "Pivot",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "25px" } },
+        "title": "stackRoot",
+        "children": ["l31m1vw3", "l31dn5pn", "l31e653j", "l31fwcaj", "l34j5e36", "l344uufj", "l3450k3p", "l34j8n15"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l31dn5pn": {
+        "id": "l31dn5pn",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31e653j": {
+        "id": "l31e653j",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31fwcaj": {
+        "id": "l31fwcaj",
+        "name": "props.ariaLabel",
+        "props": { "label": "aria-label" },
+        "title": "aria-label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "aria-label"
+      },
+      "l31m1vw3": {
+        "id": "l31m1vw3",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "Pivot"
+      },
+      "l344uufj": {
+        "id": "l344uufj",
+        "name": "props.linkSize",
+        "props": {
+          "label": "linkSize",
+          "options": [
+            { "key": "normal", "text": "normal" },
+            { "key": "large", "text": "large" }
+          ]
+        },
+        "title": "linkSize",
+        "compSchemaId": "cd1c9df4-f5dd-426c-9d26-a0ec40638601"
+      },
+      "l3450k3p": {
+        "id": "l3450k3p",
+        "name": "props.overflowBehavior",
+        "props": {
+          "label": "overflowBehavior",
+          "options": [
+            { "key": "none", "text": "none" },
+            { "key": "menu", "text": "menu" }
+          ],
+          "placeholder": "Выберите значение"
+        },
+        "title": "overflowBehavior",
+        "compSchemaId": "cd1c9df4-f5dd-426c-9d26-a0ec40638601"
+      },
+      "l34j5e36": {
+        "id": "l34j5e36",
+        "name": "props.linkFormat",
+        "props": {
+          "label": "linkFormat",
+          "options": [
+            { "key": "tabs", "text": "tabs" },
+            { "key": "links", "text": "links" }
+          ],
+          "placeholder": "Выберите значение"
+        },
+        "title": "linkFormat",
+        "compSchemaId": "cd1c9df4-f5dd-426c-9d26-a0ec40638601"
+      },
+      "l34j8n15": {
+        "id": "l34j8n15",
+        "name": "props.overflowAriaLabel",
+        "props": { "label": "overflowAriaLabel" },
+        "title": "overflowAriaLabel",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "more items"
+      }
+    }
+  },
+  {
+    "id": "02add00e-8d79-4aa3-944d-a538539a8096",
+    "title": "Label",
+    "componentName": "Label",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "25px" } },
+        "title": "stackRoot",
+        "children": ["l31iby2p", "l348c02j", "l34c7dzz", "l34c7jen"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l31iby2p": {
+        "id": "l31iby2p",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l348c02j": {
+        "id": "l348c02j",
+        "name": "props.children[0]",
+        "props": { "label": "value" },
+        "title": "value",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34c5488": {
+        "id": "l34c5488",
+        "name": "props.disabled",
+        "props": { "label": "disabled", "boxSide": "end" },
+        "title": "disabled",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l34c5gke": {
+        "id": "l34c5gke",
+        "name": "props.required",
+        "props": { "label": "required", "boxSide": "end" },
+        "title": "required",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l34c7dzz": {
+        "id": "l34c7dzz",
+        "name": "l34c7e00",
+        "props": { "tokens": { "padding": "10px" } },
+        "title": "Stack",
+        "children": ["l34c5488"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l34c7jen": {
+        "id": "l34c7jen",
+        "name": "l34c7jeo",
+        "props": { "tokens": { "padding": "10px" } },
+        "title": "Stack",
+        "children": ["l34c5gke"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      }
+    }
+  },
+  {
+    "id": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806",
+    "title": "Text",
+    "componentName": "Text",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l347hgee", "l32urk0v", "l34843yu", "l32urqxr", "l347pg55"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32urk0v": {
+        "id": "l32urk0v",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32urqxr": {
+        "id": "l32urqxr",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l347hgee": {
+        "id": "l347hgee",
+        "name": "props.children[0]",
+        "props": { "label": "text:", "multiline": true, "underlined": false },
+        "title": "text",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l347pg55": {
+        "id": "l347pg55",
+        "name": "props.variant",
+        "props": {
+          "label": "variant",
+          "options": [
+            { "key": "tiny", "text": "tiny" },
+            { "key": "xSmall", "text": "xSmall" },
+            { "key": "small", "text": "small" },
+            { "key": "smallPlus", "text": "smallPlus" },
+            { "key": "medium", "text": "medium" },
+            { "key": "mediumPlus", "text": "mediumPlus" },
+            { "key": "large", "text": "large" },
+            { "key": "xLarge", "text": "xLarge" },
+            { "key": "xxLarge", "text": "xxLarge" },
+            { "key": "mega", "text": "mega" }
+          ],
+          "required": true
+        },
+        "title": "variant",
+        "compSchemaId": "cd1c9df4-f5dd-426c-9d26-a0ec40638601"
+      },
+      "l34843yu": {
+        "id": "l34843yu",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "162b65ee-08d2-4c4e-84fc-e9583958b88c",
+    "title": "Stack",
+    "componentName": "Stack",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l36ajzcb", "l344kvqs", "l344mcvn", "l368zif5", "l3694gsk", "l38j40cj", "l345biyu"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l344kvqs": {
+        "id": "l344kvqs",
+        "name": "title",
+        "props": { "label": "title", "underlined": false },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l344mcvn": {
+        "id": "l344mcvn",
+        "name": "props.tokens.padding",
+        "props": { "label": "padding", "required": false },
+        "title": "padding",
+        "validators": {
+          "ROOT_ID": { "id": "ROOT_ID", "name": "and", "children": ["l34585jl"] },
+          "l34585jl": { "id": "l34585jl", "name": "string", "children": [] }
+        },
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "10px"
+      },
+      "l345biyu": {
+        "id": "l345biyu",
+        "name": "props.horizontal",
+        "props": { "label": "horizontal", "boxSide": "start" },
+        "title": "horizontal",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l368zif5": {
+        "id": "l368zif5",
+        "name": "props.style.minWidth",
+        "props": { "label": "width" },
+        "title": "width",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l3694gsk": {
+        "id": "l3694gsk",
+        "name": "props.tokens.childrenGap",
+        "props": { "label": "children gap" },
+        "title": "children gap",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l36ajzcb": {
+        "id": "l36ajzcb",
+        "name": "props.tokens.maxWidth",
+        "props": { "label": "max width" },
+        "title": "max width",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38j40cj": {
+        "id": "l38j40cj",
+        "name": "props.horizontalAlign",
+        "props": { "label": "horizontal align" },
+        "title": "horizontal align",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "ee4254ef-9099-4243-be68-51ce733b3376",
+    "title": "PrimaryButton",
+    "componentName": "PrimaryButton",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "props": { "tokens": { "padding": "20px", "childrenGap": 10 } },
+        "title": "stackRoot",
+        "children": ["9ba7af9ap8942", "794d1480f0cec", "ee4254efh9099", "ee4254efp9099", "l346aszw"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l346aszw": {
+        "id": "l346aszw",
+        "name": "primary",
+        "props": { "label": "primary", "boxSide": "start" },
+        "title": "primary",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "794d1480f0cec": {
+        "id": "794d1480f0cec",
+        "name": "props.type",
+        "props": { "label": "type" },
+        "title": "type",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "9ba7af9ap8942": {
+        "id": "9ba7af9ap8942",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "ee4254efh9099": {
+        "id": "ee4254efh9099",
+        "name": "props.children",
+        "props": { "label": "text" },
+        "title": "text",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "ee4254efp9099": {
+        "id": "ee4254efp9099",
+        "name": "props.disabled",
+        "type": "checkbox",
+        "props": { "label": "disabled" },
+        "title": "disabled",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      }
+    }
+  },
+  {
+    "id": "860e71cc-bf6f-4d80-882b-62dbc0907218",
+    "title": "Name",
+    "componentName": "NumberField",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "title": "stackRoot",
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      }
+    }
+  },
+  {
+    "id": "10f4b915-d03a-4849-9a3e-06bc9abc66d0",
+    "title": "NumberField",
+    "componentName": "NumberField",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "title": "stackRoot",
+        "children": ["l34g56ze", "l34g5tgz", "l34g3oa8"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l34g3oa8": {
+        "id": "l34g3oa8",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34g56ze": {
+        "id": "l34g56ze",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34g5tgz": {
+        "id": "l34g5tgz",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "ee4254ef-9099-9089-7468-89ce733b3376",
+    "title": "Checkbox",
+    "componentName": "Checkbox",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "props": { "tokens": { "padding": "20px", "childrenGap": 10 } },
+        "title": "stackRoot",
+        "children": ["l32u8w8k", "l32u3cir", "1a61d43ck6f0f", "dcc05499a6c54", "9a4cd3e0s4b6r", "ee4254efp9099"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32u3cir": {
+        "id": "l32u3cir",
+        "name": "props.boxSide",
+        "props": {
+          "label": "boxSide",
+          "options": [
+            { "key": "start", "text": "left" },
+            { "key": "end", "text": "right" }
+          ],
+          "required": true,
+          "placeholder": "Выберите значение"
+        },
+        "title": "boxSide",
+        "compSchemaId": "cd1c9df4-f5dd-426c-9d26-a0ec40638601"
+      },
+      "l32u8w8k": {
+        "id": "l32u8w8k",
+        "name": "props.checked",
+        "props": { "label": "checked", "boxSide": "end" },
+        "title": "checked",
+        "l32tx8ac": false,
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "1a61d43ck6f0f": {
+        "id": "1a61d43ck6f0f",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "9a4cd3e0s4b6r": {
+        "id": "9a4cd3e0s4b6r",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "dcc05499a6c54": {
+        "id": "dcc05499a6c54",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "ee4254efp9099": {
+        "id": "ee4254efp9099",
+        "name": "props.disabled",
+        "label": "disabled",
+        "props": { "label": "disabled", "boxSide": "end", "disabled": false },
+        "title": "disabled",
+        "l32tx8ac": true,
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      }
+    }
+  },
+  {
+    "id": "e84eabbb-b048-4d39-ab10-673605c718e2",
+    "title": "PivotsIncidentDemo",
+    "componentName": null,
+    "type": "FORM",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "hello",
+        "props": { "style": { "minWidth": "700px" }, "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l347y8p3", "l34562ah", "l345efif", "l3458hf1", "l3698v2h"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l31ftonj": {
+        "id": "l31ftonj",
+        "name": "l31ftonk",
+        "title": "PivotItem",
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l31ftpa6": {
+        "id": "l31ftpa6",
+        "name": "l31ftpa7",
+        "title": "PivotItem",
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l31icz1a": {
+        "id": "l31icz1a",
+        "name": "l31icz1b",
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l31k7y0x": {
+        "id": "l31k7y0x",
+        "name": "l31k7y0y",
+        "props": { "label": "Label3", "headerText": "HeaderText3" },
+        "title": "PivotItem",
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l31li3g9": {
+        "id": "l31li3g9",
+        "name": "l31li3ga",
+        "props": { "label": "Краткое описание" },
+        "title": "Description",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31li3gb": {
+        "id": "l31li3gb",
+        "name": "l31li3gc",
+        "props": {
+          "label": "Название",
+          "validators": {
+            "ROOT_ID": { "id": "ROOT_ID", "name": "and", "children": ["l3301ls4"] },
+            "l3301ls4": { "id": "l3301ls4", "name": "not undefined" }
+          }
+        },
+        "title": "Name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31liiqa": {
+        "id": "l31liiqa",
+        "name": "co86_str_sec_conclusion",
+        "props": { "label": "Заключение ИБ", "multiline": true, "underlined": false },
+        "title": "co86_str_sec_conclusion",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l31mltxm": {
+        "id": "l31mltxm",
+        "name": "l31mltxn",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "StackRoot",
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32mqp7s": {
+        "id": "l32mqp7s",
+        "name": "l32mqp7t",
+        "props": {
+          "label": "Pivot",
+          "linkSize": "normal",
+          "ariaLabel": "aria-label",
+          "linkFormat": "links",
+          "overflowBehavior": "menu",
+          "overflowAriaLabel": "more items"
+        },
+        "title": "Pivot",
+        "children": ["l32mrboa", "l32n0c6p", "l32mr136", "l34jcaiq", "l3474j11", "l38vwdbc", "l34ivhua"],
+        "compSchemaId": "afaa57e6-1925-4b1b-933a-cb7af80587af"
+      },
+      "l32mr136": {
+        "id": "l32mr136",
+        "name": "orTab",
+        "props": { "headerText": "Объекты ОР" },
+        "title": "ObjectsOR",
+        "children": ["l345xdy6"],
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l32mrboa": {
+        "id": "l32mrboa",
+        "name": "mainTab",
+        "props": { "headerText": "Сведения" },
+        "title": "MainTab",
+        "children": [
+          "l345cifk",
+          "l38hte1r",
+          "l38rtln7",
+          "l38sby5g",
+          "l38svtdh",
+          "l38svek1",
+          "l38svi9h",
+          "l38sezdw",
+          "l38sjq79",
+          "l38spep7",
+          "l38u1lwq",
+          "l38t9ork",
+          "l38tw6a6",
+          "l38tzkma"
+        ],
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l32n0c6p": {
+        "id": "l32n0c6p",
+        "name": "IBTab",
+        "props": { "headerText": "Заключение ИБ" },
+        "title": "IB Tab",
+        "children": ["l345xyo8"],
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l32qnsd7": {
+        "id": "l32qnsd7",
+        "name": "l32qnsd8",
+        "props": { "type": "submit", "children": "Сохранить", "disabled": false },
+        "title": "Submit",
+        "primary": false,
+        "disabled": false,
+        "compSchemaId": "ee4254ef-9099-4243-be68-51ce733b3376"
+      },
+      "l32qq1st": {
+        "id": "l32qq1st",
+        "name": "l32qq1su",
+        "props": { "type": "cancel", "children": "Отменить", "disabled": true },
+        "title": "Cancel",
+        "disabled": false,
+        "compSchemaId": "ee4254ef-9099-4243-be68-51ce733b3376"
+      },
+      "l32r03yb": {
+        "id": "l32r03yb",
+        "name": "IBRisk",
+        "props": { "label": "Риск информационной безопасности" },
+        "title": "IBRisk",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l32r048m": {
+        "id": "l32r048m",
+        "name": "longTermIncidentFlg",
+        "props": { "label": "Долгосрочный инцидент", "boxSide": "start" },
+        "title": "longTermIncidentFlg",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l32uu7qw": {
+        "id": "l32uu7qw",
+        "name": "name1",
+        "props": { "value": "Текст" },
+        "title": "Text",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l34562ah": {
+        "id": "l34562ah",
+        "name": "l34562ai",
+        "props": { "tokens": { "padding": "0px" }, "horizontal": false },
+        "title": "HeadStack",
+        "children": ["l348nixt", "l34c8zba"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l3458hf1": {
+        "id": "l3458hf1",
+        "name": "l3458hf2",
+        "props": { "tokens": { "padding": "0 0 0" }, "horizontal": false },
+        "title": "Stack",
+        "children": ["l32mqp7s"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l345cifk": {
+        "id": "l345cifk",
+        "name": "mainTabStack",
+        "props": { "tokens": { "padding": "16px 10px 0", "childrenGap": "24px" }, "horizontal": true },
+        "title": "MainTabStack",
+        "children": ["l34gesfh", "l345h991"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l345efif": {
+        "id": "l345efif",
+        "name": "l345efig",
+        "props": { "tokens": { "padding": "0 0 16px" } },
+        "title": "Stack",
+        "children": ["l34atbf4"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l345emub": {
+        "id": "l345emub",
+        "name": "l345emuc",
+        "props": { "tokens": { "padding": "5px" } },
+        "title": "Stack",
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l345h991": {
+        "id": "l345h991",
+        "name": "mainTabStackRight",
+        "props": { "style": { "minWidth": "50%" }, "tokens": { "padding": "0 0 16px", "childrenGap": "6px" } },
+        "title": "RightStack",
+        "children": ["l32r048m", "l38mnazt", "l32r03yb", "l38tly7r", "l38tmtch"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l345xdy6": {
+        "id": "l345xdy6",
+        "name": "l345xdy7",
+        "props": { "tokens": { "padding": "8px 8px 0", "childrenGap": "8px" }, "horizontal": false },
+        "title": "Stack",
+        "children": ["l34gw0l2", "l34h5uda"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l345xyo8": {
+        "id": "l345xyo8",
+        "name": "l345xyo9",
+        "props": { "tokens": { "padding": "8px 8px", "childrenGap": "8px" } },
+        "title": "IBTabStack",
+        "children": ["l34gh4dy", "l31liiqa"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l3474j11": {
+        "id": "l3474j11",
+        "name": "effectsTab",
+        "props": { "label": "DefaultLabel", "headerText": "Потери и возмещения" },
+        "title": "Effects Tab",
+        "children": ["l36aus8u"],
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l347an6d": {
+        "id": "l347an6d",
+        "name": "l347an6e",
+        "props": { "url": "/api/v1/schemas/risk-type", "name": "risk-type" },
+        "title": "Fetcher",
+        "compSchemaId": "bc5b7bf1-6abf-43b9-8cf3-bf223dbff9fe"
+      },
+      "l347an6f": {
+        "id": "l347an6f",
+        "name": "l347an6g",
+        "title": "JSON",
+        "injections": [{ "to": "props.value", "from": "context" }],
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l347ao4r": {
+        "id": "l347ao4r",
+        "name": "l347ao4s",
+        "props": { "url": "/api/v1/schemas/risk-type", "name": "risk-type" },
+        "title": "Fetcher",
+        "compSchemaId": "bc5b7bf1-6abf-43b9-8cf3-bf223dbff9fe"
+      },
+      "l347ao4t": {
+        "id": "l347ao4t",
+        "name": "l347ao4u",
+        "title": "JSON",
+        "injections": [{ "to": "props.value", "from": "context" }],
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l347dnut": {
+        "id": "l347dnut",
+        "name": "l347dnuu",
+        "props": {
+          "label": "Статус:",
+          "value": "123",
+          "chidren": [null],
+          "variant": "xxLarge",
+          "children": ["Инцидент"]
+        },
+        "title": "Text",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l347y8p3": {
+        "id": "l347y8p3",
+        "name": "l347y8p4",
+        "props": { "tokens": { "padding": "0 0 16px" }, "horizontal": true, "horizontalAlign": "space-between" },
+        "title": "Stack",
+        "children": ["l347dnut", "l38wou42"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l3483q02": {
+        "id": "l3483q02",
+        "name": "l3483q03",
+        "props": { "value": "123", "chidren": [null], "variant": "mediumPlus", "children": ["Инцидент"] },
+        "title": "Text",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l348g0nh": {
+        "id": "l348g0nh",
+        "name": "l348g0ni",
+        "props": { "tokens": { "padding": "5px" } },
+        "title": "Stack",
+        "children": ["l348cmkn"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l348g0nj": {
+        "id": "l348g0nj",
+        "name": "l348g0nk",
+        "props": { "tokens": { "padding": "0px" } },
+        "title": "Stack",
+        "children": ["l3481ar4"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l348nixt": {
+        "id": "l348nixt",
+        "name": "l348nixu",
+        "props": { "tokens": { "padding": "0 0 16px", "childrenGap": "16px" }, "horizontal": true },
+        "title": "ActivityStack",
+        "children": ["l348xhvk", "l34bua8i"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l348t3wu": {
+        "id": "l348t3wu",
+        "name": "incidentStatus",
+        "props": { "variant": "medium", "children": ["Создание инцидента"] },
+        "title": "Text",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l348xhvk": {
+        "id": "l348xhvk",
+        "name": "l348xhvl",
+        "props": {
+          "label": "Активность",
+          "options": [
+            { "key": "CRT", "text": "Подлежит обработке" },
+            { "key": "APP", "text": "На согласовани" },
+            { "key": "CTL", "text": "Диспетчеризация" },
+            { "key": "INP", "text": "В работе" },
+            { "key": "CLS", "text": "Завершен" },
+            { "key": "FIN", "text": "В архиве" }
+          ],
+          "disabled": true,
+          "placeholder": "Выберите значение",
+          "defaultSelectedKey": "options[0]?.key.toString()"
+        },
+        "title": "Dropdown",
+        "compSchemaId": "cd1c9df4-f5dd-426c-9d26-a0ec40638601",
+        "defaultValue": "CRT"
+      },
+      "l34advhr": {
+        "id": "l34advhr",
+        "name": "custObjNm",
+        "props": { "label": "Название инцидента", "disabled": false, "underlined": false },
+        "title": "custObjNm",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34atbf4": {
+        "id": "l34atbf4",
+        "name": "l34atbf5",
+        "props": { "label": "Необходимо согласование ответственного", "boxSide": "start" },
+        "title": "Checkbox",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l34bua8i": {
+        "id": "l34bua8i",
+        "name": "l34bua8j",
+        "props": {
+          "label": "Статус",
+          "options": [
+            { "key": "create", "text": "Создание инцидента" },
+            { "key": "approval", "text": "Согласование инцидента" },
+            { "key": "dispatching", "text": "Диспетчеризация инцидента" },
+            { "key": "inWork", "text": "В работе" },
+            { "key": "considerationSec", "text": "На рассмотрении менеджером безопасности" },
+            { "key": "correction", "text": "Корректировка" },
+            { "key": "close", "text": "Завершен" },
+            { "key": "delete", "text": "Архив" }
+          ],
+          "disabled": true,
+          "defaultSelectedKey": "options[0]?.key.toString()"
+        },
+        "title": "Dropdown",
+        "compSchemaId": "cd1c9df4-f5dd-426c-9d26-a0ec40638601",
+        "defaultValue": "create"
+      },
+      "l34c8zba": {
+        "id": "l34c8zba",
+        "name": "l34c8zbb",
+        "props": { "tokens": { "padding": "0 0 16px", "childrenGap": "16px" } },
+        "title": "LocationStack",
+        "children": ["l34cazll", "l34cbp5y", "l34cboq5", "l34cbo46", "l34cgvni", "l34ci1ur"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l34cazll": {
+        "id": "l34cazll",
+        "name": "managementOrg",
+        "props": {
+          "label": "managementOrg",
+          "variant": "medium",
+          "children": ["Орг. структура: Банк > Головной офис > Отделение №1234"]
+        },
+        "title": "managementOrg",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l34cbo46": {
+        "id": "l34cbo46",
+        "name": "financialStatementItem",
+        "props": { "label": "financialStatementItem", "variant": "medium", "children": ["Источник ОР:"] },
+        "title": "financialStatementItem",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l34cboq5": {
+        "id": "l34cboq5",
+        "name": "cause",
+        "props": { "label": "cause", "variant": "medium", "children": ["Вид нефинансового риска:"] },
+        "title": "cause",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l34cbp5y": {
+        "id": "l34cbp5y",
+        "name": "riskCategory",
+        "props": { "label": "location", "variant": "medium", "children": ["Тип события:"] },
+        "title": "riskCategory",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l34cgvni": {
+        "id": "l34cgvni",
+        "name": "process",
+        "props": { "label": "process", "variant": "medium", "children": ["Бизнес-процесс:"] },
+        "title": "process",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l34ci1ur": {
+        "id": "l34ci1ur",
+        "name": "businessLine",
+        "props": { "label": "businessLine", "variant": "medium", "children": ["Направление деятельности:"] },
+        "title": "businessLine",
+        "compSchemaId": "403fd9a0-7bc8-4b5e-91bf-a442d1eba806"
+      },
+      "l34cl8y1": {
+        "id": "l34cl8y1",
+        "name": "custObj86Id",
+        "props": { "label": "Идентификатор инцидента", "disabled": true, "borderless": false, "underlined": false },
+        "title": "custObj86Id",
+        "validators": {
+          "ROOT_ID": { "id": "ROOT_ID", "name": "and", "children": ["l34cm82i"] },
+          "l34cm82i": {
+            "id": "l34cm82i",
+            "name": "matchPattern",
+            "input2": { "MUTATE_ALL_FORM_VALUES_TO_STRING": "^[0-9]" }
+          }
+        },
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "10000"
+      },
+      "l34cqpxh": {
+        "id": "l34cqpxh",
+        "name": "summaryDescription",
+        "props": { "label": "Сводное описание", "disabled": false, "underlined": false },
+        "title": "summaryDescription",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34fr4f8": {
+        "id": "l34fr4f8",
+        "name": "stepsTaken",
+        "props": {
+          "label": "Предпринятые действия",
+          "required": false,
+          "multiline": true,
+          "borderless": false,
+          "underlined": false,
+          "autoAdjustHeight": true
+        },
+        "title": "stepsTaken",
+        "l32rhbjq": {
+          "ROOT_ID": { "id": "ROOT_ID", "name": "and", "children": ["l32rptgc"] },
+          "l32rptgc": { "id": "l32rptgc", "name": "string", "children": [] }
+        },
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34gesfh": {
+        "id": "l34gesfh",
+        "name": "l34gesfi",
+        "props": { "style": { "minWidth": "50%" }, "tokens": { "padding": "0" } },
+        "title": "LeftStack",
+        "children": ["l34cl8y1", "l34advhr", "l34cqpxh", "l38s5dyp", "l38j06bc", "l34fr4f8"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l34gh4dy": {
+        "id": "l34gh4dy",
+        "name": "co86_bol_sec_approvedFlg",
+        "props": { "label": "Согласовано ИБ", "boxSide": "start" },
+        "title": "co86_bol_sec_approvedFlg",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l34gw0l2": {
+        "id": "l34gw0l2",
+        "name": "co86_bol_insuredFlg",
+        "props": { "label": "Объект застрахован", "boxSide": "start" },
+        "title": "co86_bol_insuredFlg",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l34h5uda": {
+        "id": "l34h5uda",
+        "name": "co86_opm_oprisk_objects",
+        "label": "Объекты ОР",
+        "props": {
+          "label": "Объекты ОР:",
+          "options": [
+            { "key": "OBJ1", "text": "Здания" },
+            { "key": "OBJ2", "text": "Земельные участки" },
+            { "key": "OBJ3", "text": "Транспортные средства" },
+            { "key": "OBJ4", "text": "Банкоматы" },
+            { "key": "OBJ5", "text": "Инфокиоски" },
+            { "key": "OBJ6", "text": "Вычислительная техника" },
+            { "key": "OBJ7", "text": "Иное оборудование (кроме банкоматов и вычислительной техники)" },
+            { "key": "OBJ8", "text": "Мебель и предметы интерьера" },
+            { "key": "OBJ9", "text": "Прочие материальные активы" },
+            { "key": "OBJ10", "text": "Наличные денежные средства" },
+            {
+              "key": "OBJ11",
+              "text": "Ценности в кассе и подотчете (карты, бланки ценных бумаг, монеты иностранных государств и тд.)"
+            },
+            { "key": "OBJ12", "text": "Драгоценные металлы в слитках" },
+            { "key": "OBJ13", "text": "Ценные бумаги (приобретенные и выпущенные) - кроме рыночного риска" },
+            {
+              "key": "OBJ14",
+              "text": "Денежные средства размещенные (в т.ч. кредиты ФЛ,  ЮЛ, МБК) - кроме кредитного риска"
+            },
+            { "key": "OBJ15", "text": "Прочая дебиторская задолженность" },
+            { "key": "OBJ16", "text": "Прочая кредиторская задолженность" },
+            {
+              "key": "OBJ17",
+              "text": "Права использования (неисключительные права) программного обеспечения и/или баз данных"
+            },
+            { "key": "OBJ18", "text": "Исключительные права на программное обеспечение и/или базы данных" },
+            { "key": "OBJ19", "text": "Права на товарные знаки" },
+            { "key": "OBJ20", "text": "Прочие нематериальные активы" },
+            { "key": "OBJ21", "text": "Другое" }
+          ],
+          "disabled": false,
+          "placeholder": "Выберите значение"
+        },
+        "title": "co86_opm_oprisk_objects",
+        "compSchemaId": "4e6245fc-20c8-437e-a4e9-c2458fb6de70"
+      },
+      "l34ivhua": {
+        "id": "l34ivhua",
+        "name": "l34ivhub",
+        "props": { "headerText": "Администрирование" },
+        "title": "Admin",
+        "children": ["l38x7n05", "l34ivhuc", "l34ivhue"],
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l34ivhuc": {
+        "id": "l34ivhuc",
+        "name": "l34ivhud",
+        "props": { "url": "/api/v1/schemas/risk-type", "name": "risk-type" },
+        "title": "Fetcher",
+        "compSchemaId": "bc5b7bf1-6abf-43b9-8cf3-bf223dbff9fe"
+      },
+      "l34ivhue": {
+        "id": "l34ivhue",
+        "name": "l34ivhuf",
+        "title": "JSON",
+        "injections": [{ "to": "props.value", "from": "context" }],
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l34j29ci": {
+        "id": "l34j29ci",
+        "name": "l34j29cj",
+        "props": { "url": "/api/v1/schemas/risk-type", "name": "risk-type" },
+        "title": "Fetcher",
+        "compSchemaId": "bc5b7bf1-6abf-43b9-8cf3-bf223dbff9fe"
+      },
+      "l34j29ck": {
+        "id": "l34j29ck",
+        "name": "l34j29cl",
+        "title": "JSON",
+        "injections": [{ "to": "props.value", "from": "context" }],
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l34j2mm4": {
+        "id": "l34j2mm4",
+        "name": "l34j2mm5",
+        "props": { "url": "/api/v1/schemas/risk-type", "name": "risk-type" },
+        "title": "Fetcher",
+        "compSchemaId": "bc5b7bf1-6abf-43b9-8cf3-bf223dbff9fe"
+      },
+      "l34j2mm6": {
+        "id": "l34j2mm6",
+        "name": "l34j2mm7",
+        "title": "JSON",
+        "injections": [{ "to": "props.value", "from": "context" }],
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l34j9za6": {
+        "id": "l34j9za6",
+        "name": "l34j9za7",
+        "props": { "tokens": { "padding": "5px" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l34gesfh", "l345h991"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l34ja18r": {
+        "id": "l34ja18r",
+        "name": "l34ja18s",
+        "props": { "tokens": { "padding": "5px" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l34gesfh", "l345h991"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l34jcaiq": {
+        "id": "l34jcaiq",
+        "name": "l34jcair",
+        "props": { "label": "DefaultLabel", "headerText": "Даты и суммы" },
+        "title": "Dates and Sums Tab",
+        "children": ["l38vs3cd"],
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l34jezhn": {
+        "id": "l34jezhn",
+        "name": "l34jezho",
+        "props": {
+          "items": [
+            {
+              "id": "10000",
+              "name": "Недостача в банкомате №11111",
+              "type": "customObject87",
+              "value": "1000",
+              "currency": "RUB"
+            },
+            {
+              "id": "10001",
+              "name": "Недостача в ДО 'Нью-Йоркский'",
+              "type": "customObject87",
+              "value": "50",
+              "currency": "USD"
+            },
+            {
+              "id": "10002",
+              "name": "Мошеничество в особо крупном размере",
+              "type": "customObject87",
+              "value": "100500",
+              "currency": "RUB"
+            }
+          ],
+          "label": "Финансовые последствия",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "value",
+              "name": "Сумма",
+              "text": "value",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "value",
+              "isResizable": "true"
+            },
+            {
+              "key": "currency",
+              "name": "Валюта",
+              "text": "currency",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "currency",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l34k8h79": {
+        "id": "l34k8h79",
+        "name": "l34k8h7a",
+        "props": { "children": ["Финансовые последствия"], "required": false },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l34k8tj5": {
+        "id": "l34k8tj5",
+        "name": "l34k8tj6",
+        "props": { "children": ["Нефинансовые последствия"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l34k8tj7": {
+        "id": "l34k8tj7",
+        "name": "l34k8tj8",
+        "props": {
+          "items": [
+            {
+              "id": "10000",
+              "name": "Прямое возмещение",
+              "type": "customObject89",
+              "value": "100500",
+              "currency": "RUB"
+            }
+          ],
+          "label": "Прямые возмещения",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "value",
+              "name": "Сумма",
+              "text": "value",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "value",
+              "isResizable": "true"
+            },
+            {
+              "key": "currency",
+              "name": "Валюта",
+              "text": "currency",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "currency",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l34km9n0": {
+        "id": "l34km9n0",
+        "name": "l34km9n1",
+        "props": { "children": ["Прямые возмещения"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l34km9n2": {
+        "id": "l34km9n2",
+        "name": "l34km9n3",
+        "props": {
+          "items": [{ "id": "10000", "name": "Потеря репутации среди клиентов", "type": "customObject88" }],
+          "label": "Финансовые последствия",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l34kmwv3": {
+        "id": "l34kmwv3",
+        "name": "l34kmwv4",
+        "props": { "children": ["Страховые возмещения"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l34kmwv5": {
+        "id": "l34kmwv5",
+        "name": "l34kmwv6",
+        "props": {
+          "items": [
+            {
+              "id": "10000",
+              "name": "Страховое возмещение",
+              "type": "customObject90",
+              "value": "9999",
+              "currency": "RUB"
+            }
+          ],
+          "label": "Страховые возмещения",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "value",
+              "name": "Сумма",
+              "text": "value",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "value",
+              "isResizable": "true"
+            },
+            {
+              "key": "currency",
+              "name": "Валюта",
+              "text": "currency",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "currency",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l3698v2h": {
+        "id": "l3698v2h",
+        "name": "l3698v2i",
+        "props": { "tokens": { "padding": "32px 0 0 0", "childrenGap": "20px" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l32qnsd7", "l32qq1st"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l36aus8u": {
+        "id": "l36aus8u",
+        "name": "l36aus8v",
+        "props": { "tokens": { "padding": "16px 10px 0" } },
+        "title": "Stack",
+        "children": ["l34k8h79", "l34jezhn", "l34k8tj5", "l34km9n2", "l34km9n0", "l34k8tj7", "l34kmwv3", "l34kmwv5"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38hhgd5": {
+        "id": "l38hhgd5",
+        "name": "l38hhgd6",
+        "props": {
+          "items": [{ "id": "10001", "name": "Руководитель ответственного", "author": "Ответственный" }],
+          "label": "Владелец процесса или руководитель ответственного",
+          "columns": [
+            {
+              "key": "id",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "author",
+              "name": "Автор",
+              "text": "author",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "author",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "co86_str_process_owner",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38hhgd7": {
+        "id": "l38hhgd7",
+        "name": "attachment",
+        "props": { "children": ["Вложение с описанием инцидента"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38hoyl2": {
+        "id": "l38hoyl2",
+        "name": "l38hoyl3",
+        "props": { "children": ["Владелец процесса или руководитель ответственного"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38hoyl4": {
+        "id": "l38hoyl4",
+        "name": "l38hoyl5",
+        "props": {
+          "items": [
+            { "id": "10000", "name": "Описание.docx", "type": "docx", "author": "Демонстрационный пользователь" }
+          ],
+          "label": "Вложение с описанием инцидента",
+          "columns": [
+            {
+              "key": "id",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 100,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип",
+              "text": "type",
+              "maxWidth": 70,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            },
+            {
+              "key": "author",
+              "name": "Автор",
+              "text": "author",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "author",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Attachments",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38hte1r": {
+        "id": "l38hte1r",
+        "name": "l38hte1s",
+        "props": { "style": { "minWidth": "50%" }, "tokens": { "padding": "16px 10px 0" } },
+        "title": "Stack",
+        "children": ["l38l3ltb", "l38sasah"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38j06bc": {
+        "id": "l38j06bc",
+        "name": "l38j06bd",
+        "props": { "tokens": { "padding": "8px 0 0 0" } },
+        "title": "Stack",
+        "children": ["l38j1ex7", "l38hoyl4"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38j0d6i": {
+        "id": "l38j0d6i",
+        "name": "l38j0d6j",
+        "props": { "iconProps": { "iconName": "Delete" } },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38j1ex7": {
+        "id": "l38j1ex7",
+        "name": "l38j1ex8",
+        "props": { "tokens": { "padding": "0" }, "horizontal": true, "horizontalAlign": "space-between" },
+        "title": "Stack",
+        "children": ["l38hhgd7", "l38j33ya"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38j2rv1": {
+        "id": "l38j2rv1",
+        "name": "l38j2rv2",
+        "props": {
+          "checked": false,
+          "disabled": false,
+          "ariaLabel": "Upload File",
+          "iconProps": { "iconName": "Upload" }
+        },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38j2s6d": {
+        "id": "l38j2s6d",
+        "name": "l38j2s6e",
+        "props": { "iconProps": { "iconName": "DownloadDocument" } },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38j2snj": {
+        "id": "l38j2snj",
+        "name": "l38j2snk",
+        "props": { "iconProps": { "iconName": "BulkUpload" } },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38j33ya": {
+        "id": "l38j33ya",
+        "name": "l38j33yb",
+        "props": { "tokens": { "padding": "0" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38j2rv1", "l38j2s6d", "l38j2snj", "l38j0d6i"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38l3ltb": {
+        "id": "l38l3ltb",
+        "name": "l38l3ltc",
+        "props": { "tokens": { "padding": "0" }, "horizontal": true, "horizontalAlign": "space-between" },
+        "title": "Stack",
+        "children": ["l38hoyl2", "l38l3r5a"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38l3r5a": {
+        "id": "l38l3r5a",
+        "name": "l38l3r5b",
+        "props": { "tokens": { "padding": "0 0 0" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38l40j9", "l38l40ts"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38l40j9": {
+        "id": "l38l40j9",
+        "name": "l38l40ja",
+        "props": { "iconProps": { "iconName": "PeopleAdd" } },
+        "title": "PeopleAdd",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38l40ts": {
+        "id": "l38l40ts",
+        "name": "l38l40tt",
+        "props": { "disabled": false, "iconProps": { "iconName": "Delete" } },
+        "title": "Delete",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38mnazt": {
+        "id": "l38mnazt",
+        "name": "customerComplaintFlg",
+        "props": { "label": "Жалоба клиента", "boxSide": "start" },
+        "title": "customerComplaintFlg",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l38rtln7": {
+        "id": "l38rtln7",
+        "name": "l38rtln8",
+        "props": { "tokens": { "padding": "16px 10px 0", "childrenGap": "50px" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38rtnlf", "l38s70m1"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38rtnlf": {
+        "id": "l38rtnlf",
+        "name": "co86_dte_ctrl_dueDt",
+        "props": { "label": "Срок исполнения (инцидент на контроле)", "placeholder": "Выберите дату" },
+        "title": "co86_dte_ctrl_dueDt",
+        "compSchemaId": "8550ad0f-ee1f-448c-a465-458d69b69e0c"
+      },
+      "l38s5dyp": {
+        "id": "l38s5dyp",
+        "name": "custObjDesc",
+        "props": { "label": "Описание события", "disabled": false, "multiline": true, "underlined": false },
+        "title": "custObjDesc",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38s70m1": {
+        "id": "l38s70m1",
+        "name": "co86_str_process_owner_inquiry",
+        "props": {
+          "label": "Запрос владельцу процесса или руководителю",
+          "disabled": false,
+          "multiline": true,
+          "underlined": false
+        },
+        "title": "co86_str_process_owner_inquiry",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38s9mpk": {
+        "id": "l38s9mpk",
+        "name": "co86_str_CommentPO",
+        "props": {
+          "label": "Комментарий владельца процесса или руководителя",
+          "disabled": false,
+          "multiline": true,
+          "borderless": false,
+          "underlined": false
+        },
+        "title": "co86_str_CommentPO",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38sasah": {
+        "id": "l38sasah",
+        "name": "l38sasai",
+        "props": { "tokens": { "padding": "8px 8px 0" } },
+        "title": "Stack",
+        "children": ["l38hhgd5"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38sby5g": {
+        "id": "l38sby5g",
+        "name": "l38sby5h",
+        "props": { "tokens": { "padding": "0 10px 0" } },
+        "title": "Stack",
+        "children": ["l38s9mpk"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38se9yf": {
+        "id": "l38se9yf",
+        "name": "l38se9yg",
+        "props": { "children": ["Ответственный за уточнение"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38sezdw": {
+        "id": "l38sezdw",
+        "name": "l38sezdx",
+        "props": { "tokens": { "padding": "16px 10px 0" }, "horizontal": true, "horizontalAlign": "space-between" },
+        "title": "Stack",
+        "children": ["l38se9yf", "l38sgu9p"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38sgu9p": {
+        "id": "l38sgu9p",
+        "name": "l38sgu9q",
+        "props": { "tokens": { "padding": "0 0 0" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38si4ez", "l38sgwgc"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38sgwgc": {
+        "id": "l38sgwgc",
+        "name": "l38sgwgd",
+        "props": { "iconProps": { "iconName": "Delete" } },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38si4ez": {
+        "id": "l38si4ez",
+        "name": "l38si4f0",
+        "props": { "iconProps": { "iconName": "PeopleAdd" } },
+        "title": "PeopleAdd",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38sjq79": {
+        "id": "l38sjq79",
+        "name": "l38sjq7a",
+        "props": { "tokens": { "padding": "0px 0px 0" } },
+        "title": "Stack",
+        "children": ["l38t4zc2"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38spep7": {
+        "id": "l38spep7",
+        "name": "l38spep8",
+        "props": { "tokens": { "padding": "16px 10px 0", "childrenGap": "50px" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38spep9", "l38spepb"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38spep9": {
+        "id": "l38spep9",
+        "name": "co86_dte_resp_dueDt",
+        "props": {
+          "label": "Срок исполнения (инцидент на уточнении)",
+          "underlined": false,
+          "placeholder": "Выберите дату"
+        },
+        "title": "co86_dte_resp_dueDt",
+        "compSchemaId": "8550ad0f-ee1f-448c-a465-458d69b69e0c"
+      },
+      "l38spepb": {
+        "id": "l38spepb",
+        "name": "co86_str_process_owner_inquiry",
+        "props": {
+          "label": "Запрос ответственному за уточнение",
+          "disabled": false,
+          "multiline": true,
+          "borderless": false,
+          "underlined": false
+        },
+        "title": "co86_str_process_owner_inquiry",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l38svek1": {
+        "id": "l38svek1",
+        "name": "l38svek2",
+        "props": { "tokens": { "padding": "8px 8px 0" } },
+        "title": "Stack",
+        "children": ["l38t59zt"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38svi9h": {
+        "id": "l38svi9h",
+        "name": "l38svi9i",
+        "props": { "tokens": { "padding": "16px 10px 0", "childrenGap": "50px" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38svi9j"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38svi9j": {
+        "id": "l38svi9j",
+        "name": "co86_dte_sec_dueDt",
+        "props": {
+          "label": "Срок исполнения (инцидент на уточнении)",
+          "underlined": false,
+          "placeholder": "Выберите дату"
+        },
+        "title": "co86_dte_sec_dueDt",
+        "compSchemaId": "8550ad0f-ee1f-448c-a465-458d69b69e0c"
+      },
+      "l38svovb": {
+        "id": "l38svovb",
+        "name": "l38svovc",
+        "props": { "children": ["Ответственный со стороны ИБ"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38svtdh": {
+        "id": "l38svtdh",
+        "name": "l38svtdi",
+        "props": { "tokens": { "padding": "16px 10px 0" }, "horizontal": true, "horizontalAlign": "space-between" },
+        "title": "Stack",
+        "children": ["l38svovb", "l38swzpj"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38swzpj": {
+        "id": "l38swzpj",
+        "name": "l38swzpk",
+        "props": { "tokens": { "padding": "0 0 0" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38swzpl", "l38swzpn"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38swzpl": {
+        "id": "l38swzpl",
+        "name": "l38swzpm",
+        "props": { "iconProps": { "iconName": "PeopleAdd" } },
+        "title": "PeopleAdd",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38swzpn": {
+        "id": "l38swzpn",
+        "name": "l38swzpo",
+        "props": { "iconProps": { "iconName": "Delete" } },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38t4zc2": {
+        "id": "l38t4zc2",
+        "name": "l38t4zc3",
+        "props": {
+          "items": [{ "id": "10001", "name": "Ответственный за уточнение", "author": "Ответственный" }],
+          "columns": [
+            {
+              "key": "id",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Имя",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "author",
+              "name": "Автор",
+              "text": "author",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "author",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "co86_str_resp_pers",
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38t59zt": {
+        "id": "l38t59zt",
+        "name": "l38t59zu",
+        "props": {
+          "items": [{ "id": "10001", "name": "Ответственный со стороны ИБ", "author": "Ответственный" }],
+          "columns": [
+            {
+              "key": "id",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Имя",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "author",
+              "name": "Автор",
+              "text": "author",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "author",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "co86_str_sec_manager",
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38t9ori": {
+        "id": "l38t9ori",
+        "name": "l38t9orj",
+        "props": { "children": ["Причина"], "required": false },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38t9ork": {
+        "id": "l38t9ork",
+        "name": "l38t9orl",
+        "props": {
+          "items": [
+            {
+              "id": "10000",
+              "type": "customObject92",
+              "causeType": "Основная",
+              "custObjNm": "Демонстрационная причина инцидента №1"
+            },
+            {
+              "id": "10001",
+              "type": "customObject92",
+              "causeType": "Второстепенная",
+              "custObjNm": "Демонстрационная причина инцидента №2"
+            }
+          ],
+          "label": "Причина",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "custObjNm",
+              "name": "Название",
+              "text": "custObjNm",
+              "maxWidth": 250,
+              "minWidth": 60,
+              "fieldName": "custObjNm",
+              "isResizable": "true"
+            },
+            {
+              "key": "causeType",
+              "name": "Приоритет причины",
+              "text": "causeType",
+              "maxWidth": 150,
+              "minWidth": 10,
+              "fieldName": "causeType",
+              "isResizable": "causeType"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "IncidentCauseTable",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38tly7r": {
+        "id": "l38tly7r",
+        "name": "co86_bol_otherRisk",
+        "props": { "label": "Связанный риск" },
+        "title": "co86_bol_otherRisk",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l38tmtch": {
+        "id": "l38tmtch",
+        "name": "co86_opm_otherRisk",
+        "label": "Объекты ОР",
+        "props": {
+          "label": "Связанные риски (виды)",
+          "options": [
+            { "key": "OBJ1", "text": "Кредитный риск" },
+            { "key": "OBJ2", "text": "Рыночный риск" },
+            { "key": "OBJ3", "text": "Риск ликвидности" },
+            { "key": "OBJ4", "text": "Стратегический риск" },
+            { "key": "OBJ5", "text": "Репутационный риск" },
+            { "key": "OBJ6", "text": "Регуляторный риск" },
+            { "key": "OBJ7", "text": "Другое" }
+          ],
+          "disabled": false,
+          "placeholder": "Выберите значение"
+        },
+        "title": "co86_opm_otherRisk",
+        "compSchemaId": "4e6245fc-20c8-437e-a4e9-c2458fb6de70"
+      },
+      "l38tw05m": {
+        "id": "l38tw05m",
+        "name": "l38tw05n",
+        "props": { "children": ["Сотрудник спецподразделения"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38tw05o": {
+        "id": "l38tw05o",
+        "name": "l38tw05p",
+        "props": { "iconProps": { "iconName": "PeopleAdd" } },
+        "title": "PeopleAdd",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38tw05q": {
+        "id": "l38tw05q",
+        "name": "l38tw05r",
+        "props": { "iconProps": { "iconName": "Delete" } },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38tw6a6": {
+        "id": "l38tw6a6",
+        "name": "l38tw6a7",
+        "props": { "tokens": { "padding": "16px 10px 0" }, "horizontal": true, "horizontalAlign": "space-between" },
+        "title": "Stack",
+        "children": ["l38tw05m", "l38twa3y"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38twa3y": {
+        "id": "l38twa3y",
+        "name": "l38twa3z",
+        "props": { "tokens": { "padding": "0" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38tw05o", "l38tw05q"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38tzkma": {
+        "id": "l38tzkma",
+        "name": "l38tzkmb",
+        "props": {
+          "items": [{}],
+          "columns": [
+            {
+              "key": "id",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Имя",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "author",
+              "name": "Автор",
+              "text": "author",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "author",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "co86_str_resp_pers",
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38u1lwq": {
+        "id": "l38u1lwq",
+        "name": "l38u1lwr",
+        "props": { "tokens": { "padding": "16px 10px 0" }, "horizontal": true, "horizontalAlign": "space-between" },
+        "title": "Stack",
+        "children": ["l38t9ori", "l38u5qqg"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38u5qqg": {
+        "id": "l38u5qqg",
+        "name": "l38u5qqh",
+        "props": { "tokens": { "padding": "0" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38u5w68", "l38u96ae", "l38u6zyo", "l38u8jh8"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38u5w68": {
+        "id": "l38u5w68",
+        "name": "l38u5w69",
+        "props": { "ariaLabel": "Создать объект", "iconProps": { "iconName": "Add" } },
+        "title": "Add",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38u6zyo": {
+        "id": "l38u6zyo",
+        "name": "l38u6zyp",
+        "props": { "ariaLabel": "Удалить связь с объектом", "iconProps": { "iconName": "DependencyRemove" } },
+        "title": "DependencyRemove",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38u8jh8": {
+        "id": "l38u8jh8",
+        "name": "l38u8jh9",
+        "props": { "ariaLabel": "Удалить объект", "iconProps": { "iconName": "Delete" } },
+        "title": "Delete",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38u96ae": {
+        "id": "l38u96ae",
+        "name": "l38u96af",
+        "props": { "ariaLabel": "Связать объект", "iconProps": { "iconName": "DependencyAdd" } },
+        "title": "DependencyAdd",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38udw6k": {
+        "id": "l38udw6k",
+        "name": "discoveryDt",
+        "props": {
+          "label": "Дата обнаружения",
+          "borderless": false,
+          "underlined": true,
+          "placeholder": "Выберите дату"
+        },
+        "title": "discoveryDt",
+        "compSchemaId": "8550ad0f-ee1f-448c-a465-458d69b69e0c"
+      },
+      "l38ue557": {
+        "id": "l38ue557",
+        "name": "l38ue558",
+        "props": { "label": "Дата начала", "borderless": true, "underlined": true, "placeholder": "Выберите дату" },
+        "title": "DatePicker",
+        "compSchemaId": "8550ad0f-ee1f-448c-a465-458d69b69e0c"
+      },
+      "l38vfm8l": {
+        "id": "l38vfm8l",
+        "name": "co86_str_eventTime",
+        "props": { "label": "Время начала", "borderless": true, "underlined": true },
+        "title": "co86_str_eventTime",
+        "validators": {
+          "ROOT_ID": { "id": "ROOT_ID", "name": "and", "type": "OPERATOR", "children": ["l38vgopz"] },
+          "l38vgopz": {
+            "id": "l38vgopz",
+            "name": "matchPattern",
+            "type": "ASSERTION",
+            "props": { "MUTATE_ALL_FORM_VALUES_TO_STRING": "^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" }
+          }
+        },
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "00:00:00"
+      },
+      "l38vlj85": {
+        "id": "l38vlj85",
+        "name": "l38vlj86",
+        "props": { "style": { "minWidth": "50%" }, "tokens": { "padding": "0 0 0" } },
+        "title": "Stack",
+        "children": ["l38ue557"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38vlw9k": {
+        "id": "l38vlw9k",
+        "name": "l38vlw9l",
+        "props": { "style": { "minWidth": "50%" }, "tokens": { "padding": "0 0 0" } },
+        "title": "Stack",
+        "children": ["l38vfm8l"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38vq059": {
+        "id": "l38vq059",
+        "name": "eventEndDt",
+        "props": {
+          "label": "Дата окончания события",
+          "borderless": false,
+          "underlined": true,
+          "placeholder": "Выберите дату"
+        },
+        "title": "eventEndDt",
+        "compSchemaId": "8550ad0f-ee1f-448c-a465-458d69b69e0c"
+      },
+      "l38vs3cd": {
+        "id": "l38vs3cd",
+        "name": "l38vs3ce",
+        "props": { "tokens": { "padding": "8px 10px 0", "childrenGap": "8px" } },
+        "title": "Stack",
+        "children": ["l38udw6k", "l38vt2jq", "l38vq059"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38vt2jq": {
+        "id": "l38vt2jq",
+        "name": "l38vt2jr",
+        "props": { "tokens": { "padding": "0px 0px 0" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38vlj85", "l38vlw9k"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38vwdbc": {
+        "id": "l38vwdbc",
+        "name": "lboTab",
+        "props": { "headerText": "Связанное содержимое" },
+        "title": "LinkedBusinessObjects Tab",
+        "children": [
+          "l38vxv07",
+          "l38vxv09",
+          "l38vxv0b",
+          "l38vxv0d",
+          "l38vxv0f",
+          "l38vxv0h",
+          "l38vxv0j",
+          "l38vxv0l",
+          "l38vz5rs",
+          "l38vz5ru"
+        ],
+        "compSchemaId": "f6b1a985-be84-474e-a4a5-164a76eec249"
+      },
+      "l38vxv07": {
+        "id": "l38vxv07",
+        "name": "l38vxv08",
+        "props": { "children": ["Связанный риск"], "required": false },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38vxv09": {
+        "id": "l38vxv09",
+        "name": "l38vxv0a",
+        "props": {
+          "items": [{ "id": "10000", "name": "Риск нарушения процедуры демонстрации", "type": "customObject96" }],
+          "label": "Связанный риск",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38vxv0b": {
+        "id": "l38vxv0b",
+        "name": "l38vxv0c",
+        "props": { "children": ["Проблема"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38vxv0d": {
+        "id": "l38vxv0d",
+        "name": "l38vxv0e",
+        "props": {
+          "items": [{ "id": "10000", "name": "Проблема проведения процедуры демонстрации", "type": "customObject110" }],
+          "label": "Проблема",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38vxv0f": {
+        "id": "l38vxv0f",
+        "name": "l38vxv0g",
+        "props": { "children": ["Связанный инцидент"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38vxv0h": {
+        "id": "l38vxv0h",
+        "name": "l38vxv0i",
+        "props": {
+          "items": [{ "id": "10001", "name": "Инцидент", "type": "customObject86" }],
+          "label": "Инциденты",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38vxv0j": {
+        "id": "l38vxv0j",
+        "name": "l38vxv0k",
+        "props": { "children": ["Связанные КИРы"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38vxv0l": {
+        "id": "l38vxv0l",
+        "name": "l38vxv0m",
+        "props": {
+          "items": [
+            { "id": "10000", "name": "КИР №1", "type": "customObject113" },
+            { "id": "10001", "name": "КИР №2", "type": "customObject113" },
+            { "id": "10002", "name": "КИР №3", "type": "customObject113" }
+          ],
+          "label": "Связанные КИРы",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38vz5rs": {
+        "id": "l38vz5rs",
+        "name": "l38vz5rt",
+        "props": { "children": ["План мероприятий"] },
+        "title": "Label",
+        "compSchemaId": "02add00e-8d79-4aa3-944d-a538539a8096"
+      },
+      "l38vz5ru": {
+        "id": "l38vz5ru",
+        "name": "l38vz5rv",
+        "props": {
+          "items": [
+            {
+              "id": "10000",
+              "name": "План проведения мероприятия по демонстрации функционала АСУОР",
+              "type": "customObject111"
+            }
+          ],
+          "label": "План мероприятий",
+          "columns": [
+            {
+              "key": "1",
+              "name": "ID",
+              "text": "id",
+              "maxWidth": 40,
+              "minWidth": 20,
+              "fieldName": "id",
+              "isResizable": "true"
+            },
+            {
+              "key": "name",
+              "name": "Название",
+              "text": "name",
+              "maxWidth": 200,
+              "minWidth": 50,
+              "fieldName": "name",
+              "isResizable": "true"
+            },
+            {
+              "key": "type",
+              "name": "Тип объекта",
+              "text": "type",
+              "maxWidth": 50,
+              "minWidth": 10,
+              "fieldName": "type",
+              "isResizable": "true"
+            }
+          ]
+        },
+        "title": "Table",
+        "injections": [{}],
+        "compSchemaId": "5778a519-36c7-49f5-a36a-1b5ac280b51b"
+      },
+      "l38wnyz1": {
+        "id": "l38wnyz1",
+        "name": "Save",
+        "props": { "iconProps": { "iconName": "Save" } },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38woe47": {
+        "id": "l38woe47",
+        "name": "Next",
+        "props": { "iconProps": { "iconName": "Next" } },
+        "title": "IconButton",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38wou42": {
+        "id": "l38wou42",
+        "name": "l38wou43",
+        "props": { "tokens": { "padding": "0" }, "horizontal": true },
+        "title": "Stack",
+        "children": ["l38wnyz1", "l38wpane", "l38woe47"],
+        "compSchemaId": "162b65ee-08d2-4c4e-84fc-e9583958b88c"
+      },
+      "l38wpane": {
+        "id": "l38wpane",
+        "name": "Previous",
+        "props": { "iconProps": { "iconName": "Previous" } },
+        "title": "Previous",
+        "compSchemaId": "fc0872ac-b8ec-414f-9114-d61ae89c0a7d"
+      },
+      "l38x7n05": {
+        "id": "l38x7n05",
+        "name": "sourceSystemCd",
+        "props": {
+          "label": "Источник данных",
+          "options": [
+            { "key": "GRC", "text": "SAS Risk Governance And Compliance Manager" },
+            { "key": "EXT", "text": "Интеграция из АС" }
+          ],
+          "disabled": false,
+          "placeholder": "Выберите значение",
+          "defaultSelectedKey": "options[0]?.key.toString()"
+        },
+        "title": "sourceSystemCd",
+        "compSchemaId": "cd1c9df4-f5dd-426c-9d26-a0ec40638601",
+        "defaultValue": "GRC"
+      },
+      "43fa6880ds24": {
+        "id": "43fa6880ds24",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "96cc8e0c-69af-44c7-b9c3-2339dc6e545f",
+    "title": "123",
+    "componentName": null,
+    "type": "FORM",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "title": "stackRoot",
+        "children": ["l38n7inn", "l32z079y", "l32yuz3b", "l32ywmnq"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32yuz3b": {
+        "id": "l32yuz3b",
+        "name": "l32yuz3c",
+        "title": "JSON",
+        "injections": [{ "to": "props.value", "from": "context" }],
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l32ywmnq": {
+        "id": "l32ywmnq",
+        "name": "props.test",
+        "props": { "label": "test" },
+        "title": "test",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32z079y": {
+        "id": "l32z079y",
+        "name": "l32z079z",
+        "props": { "url": "https://pokeapi.co/api/v2/pokemon/ditto", "name": "pokemon" },
+        "title": "Fetcher",
+        "compSchemaId": "bc5b7bf1-6abf-43b9-8cf3-bf223dbff9fe"
+      },
+      "l38n7inn": {
+        "id": "l38n7inn",
+        "name": "l38n7ino",
+        "title": "NumberField",
+        "compSchemaId": "10f4b915-d03a-4849-9a3e-06bc9abc66d0"
+      }
+    }
+  },
+  {
+    "id": "4e6245fc-20c8-437e-a4e9-c2458fb6de70",
+    "title": "DropdownMultipleSelect",
+    "componentName": "DropdownMultipleSelect",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l34gyjeu", "l34gyjes", "l34gyjeq", "l34gyjeo", "l34gyjem", "l34gyjek", "l34gyjei", "l34gyjeg"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l34gyjeg": {
+        "id": "l34gyjeg",
+        "name": "injections[0].to",
+        "props": { "label": "injection to" },
+        "title": "injection to",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34gyjei": {
+        "id": "l34gyjei",
+        "name": "injections[0].from",
+        "props": { "label": "injection from" },
+        "title": "injection from",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34gyjek": {
+        "id": "l34gyjek",
+        "name": "props.disabled",
+        "props": { "label": "disabled", "boxSide": "end" },
+        "title": "disabled",
+        "compSchemaId": "ee4254ef-9099-9089-7468-89ce733b3376"
+      },
+      "l34gyjem": {
+        "id": "l34gyjem",
+        "name": "props.placeholder",
+        "props": { "label": "placeholder" },
+        "title": "placeholder",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870",
+        "defaultValue": "Выберите значение"
+      },
+      "l34gyjeo": {
+        "id": "l34gyjeo",
+        "name": "props.options",
+        "props": { "label": "options" },
+        "title": "options",
+        "compSchemaId": "f278867b-106c-4f95-b425-32a7c14a3e1a"
+      },
+      "l34gyjeq": {
+        "id": "l34gyjeq",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34gyjes": {
+        "id": "l34gyjes",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l34gyjeu": {
+        "id": "l34gyjeu",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "f278867b-106c-4f95-b425-32a7c14a3e1a",
+    "title": "JSONEditor",
+    "componentName": "JSONEditor",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l332rkxd", "l332rzwp", "l332pvnt", "l32ysobu", "l32ytgoy"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32ysobu": {
+        "id": "l32ysobu",
+        "name": "injections[0].from",
+        "props": { "label": "injection from" },
+        "title": "injection from",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32ytgoy": {
+        "id": "l32ytgoy",
+        "name": "injections[0].to",
+        "props": { "label": "injection to" },
+        "title": "injection to",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l332pvnt": {
+        "id": "l332pvnt",
+        "name": "name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l332rkxd": {
+        "id": "l332rkxd",
+        "name": "props.label",
+        "props": { "label": "label" },
+        "title": "label",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l332rzwp": {
+        "id": "l332rzwp",
+        "name": "title",
+        "props": { "label": "title" },
+        "title": "title",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  },
+  {
+    "id": "bc5b7bf1-6abf-43b9-8cf3-bf223dbff9fe",
+    "title": "Fetcher",
+    "componentName": "Fetcher",
+    "type": "COMP",
+    "comps": {
+      "ROOT_ID": {
+        "id": "ROOT_ID",
+        "name": "noname",
+        "props": { "tokens": { "padding": "20px" } },
+        "title": "stackRoot",
+        "children": ["l32yytup", "l32yzoep"],
+        "compSchemaId": "ee4254ef-9099-4289-be68-51ce733b3376"
+      },
+      "l32yytup": {
+        "id": "l32yytup",
+        "name": "props.url",
+        "props": { "label": "url" },
+        "title": "url",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      },
+      "l32yzoep": {
+        "id": "l32yzoep",
+        "name": "props.name",
+        "props": { "label": "name" },
+        "title": "name",
+        "compSchemaId": "ee4234ef-9099-8943-8968-51c00733b870"
+      }
+    }
+  }
+]

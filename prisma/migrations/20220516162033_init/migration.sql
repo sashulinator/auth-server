@@ -37,6 +37,21 @@ CREATE TABLE "Schema" (
     CONSTRAINT "Schema_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "Incident" (
+    "id" UUID NOT NULL,
+    "name" TEXT NOT NULL,
+    "status" TEXT NOT NULL,
+    "creator" TEXT NOT NULL,
+    "validationStateCd" TEXT NOT NULL,
+    "sourceSystemCd" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL,
+    "editedAt" TIMESTAMP(3) NOT NULL,
+    "values" JSONB NOT NULL,
+
+    CONSTRAINT "Incident_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
