@@ -35,7 +35,7 @@ model Schema {
   title         String
   componentName String?
   type          SchemaType
-  comps         Json       @db.JsonB
+  catalog       Json       @db.JsonB
 }
 
 model Incident {

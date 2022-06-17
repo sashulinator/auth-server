@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import schemas from './schemas.json'
+import schemas from './schemas'
 
 const prisma = new PrismaClient()
 
@@ -32,7 +32,8 @@ async function main() {
 
   await prisma.schema.createMany({
     skipDuplicates: true,
-    data: schemas as any,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data: Object.values(schemas as any) as any,
   })
 }
 
