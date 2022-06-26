@@ -35,7 +35,7 @@ model Schema {
   title         String
   componentName String?
   type          SchemaType
-  catalog       Json       @db.JsonB
+  data          Json       @db.JsonB
 }
 
 model Incident {
@@ -47,11 +47,12 @@ model Incident {
   sourceSystemCd    String
   createdAt         DateTime
   editedAt          DateTime
-  values            Json     @db.JsonB
+  data              Json     @db.JsonB
 }
 
 enum SchemaType {
   FORM
   COMP
   PRESET
+  FORM_DIMENSION
 }

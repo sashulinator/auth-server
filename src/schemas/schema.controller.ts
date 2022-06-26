@@ -97,7 +97,7 @@ export class SchemaController {
     })
 
     const newFoundSchemas = [...foundSchemas, ...schemas]
-    const newFoundIds = schemas.map((schema) => Object.values(schema.catalog).map((comp) => comp.compSchemaId)).flat()
+    const newFoundIds = schemas.map((schema) => Object.values(schema.data).map((comp) => comp.compSchemaId)).flat()
 
     // TODO выкинуть нот фаунд
 
