@@ -2887,7 +2887,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '12px',
@@ -4383,7 +4383,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -4444,7 +4444,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -4589,7 +4589,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         title: 'stackRoot',
         children: ['l45dfloi', 'l45dg0g1'],
         compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
@@ -4623,7 +4623,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '20px',
@@ -4670,7 +4670,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             maxWidth: '1000px',
@@ -5173,7 +5173,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             maxWidth: '800px',
@@ -5839,7 +5839,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '24px',
@@ -5878,7 +5878,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             maxWidth: '1024px',
@@ -5936,7 +5936,7 @@ const schemas = {
       },
       l3vm4e3w: {
         id: 'l3vm4e3w',
-        name: 'values.co86_bol_needApproveBM',
+        name: 'data.co86_bol_needApproveBM',
         props: {
           label: 'Необходимо согласование ответственного',
           boxSide: 'start',
@@ -6243,7 +6243,7 @@ const schemas = {
       },
       l3vm4e5q: {
         id: 'l3vm4e5q',
-        name: 'values.co86_str_resp_pers',
+        name: 'data.co86_str_resp_pers',
         props: {
           items: [{}],
           label: 'Сотрудник спецподразделения',
@@ -6617,7 +6617,7 @@ const schemas = {
       },
       l3vm4e7c: {
         id: 'l3vm4e7c',
-        name: 'values.co86_str_CommentRespPers',
+        name: 'data.co86_str_CommentRespPers',
         props: {
           label: 'Комментарий ответственного за уточнение',
           multiline: true,
@@ -6627,7 +6627,7 @@ const schemas = {
       },
       l3vm4e7i: {
         id: 'l3vm4e7i',
-        name: 'values.co86_bol_sec_approvedFlg',
+        name: 'data.co86_bol_sec_approvedFlg',
         props: {
           label: 'Согласовано ИБ',
           boxSide: 'start',
@@ -6637,7 +6637,7 @@ const schemas = {
       },
       l3vm4e7k: {
         id: 'l3vm4e7k',
-        name: 'values.co86_str_sec_conclusion.',
+        name: 'data.co86_str_sec_conclusion.',
         props: {
           label: 'Заключение ИБ',
           multiline: true,
@@ -6647,7 +6647,7 @@ const schemas = {
       },
       l3vm4e7m: {
         id: 'l3vm4e7m',
-        name: 'values.co86_bol_insuredFlg',
+        name: 'data.co86_bol_insuredFlg',
         props: {
           label: 'Объект застрахован',
           boxSide: 'start',
@@ -7112,7 +7112,7 @@ const schemas = {
       },
       l3vm4e8y: {
         id: 'l3vm4e8y',
-        name: 'values.custObj86Id',
+        name: 'data.custObj86Id',
         props: {
           label: 'Идентификатор инцидента',
           disabled: true,
@@ -7123,7 +7123,7 @@ const schemas = {
       },
       l3vm4e90: {
         id: 'l3vm4e90',
-        name: 'values.custObjNm',
+        name: 'data.custObjNm',
         props: {
           label: 'Название инцидента',
         },
@@ -7148,7 +7148,7 @@ const schemas = {
       },
       l3vm4e92: {
         id: 'l3vm4e92',
-        name: 'values.summaryDescription',
+        name: 'data.summaryDescription',
         props: {
           label: 'Сводное описание',
         },
@@ -7157,7 +7157,7 @@ const schemas = {
       },
       l3vm4e94: {
         id: 'l3vm4e94',
-        name: 'values.custObjDesc',
+        name: 'data.custObjDesc',
         props: {
           label: 'Детальное описание события',
           multiline: true,
@@ -7290,7 +7290,7 @@ const schemas = {
       },
       l3vm4e9s: {
         id: 'l3vm4e9s',
-        name: 'values.co86_str_process_owner',
+        name: 'data.co86_str_process_owner',
         props: {
           items: [
             {
@@ -7346,7 +7346,7 @@ const schemas = {
       },
       l3vm4e9w: {
         id: 'l3vm4e9w',
-        name: 'values.co86_str_process_owner_inquiry',
+        name: 'data.co86_str_process_owner_inquiry',
         props: {
           label: 'Запрос владельцу процесса или руководителю',
           multiline: true,
@@ -8098,7 +8098,7 @@ const schemas = {
       },
       l3vm4edc: {
         id: 'l3vm4edc',
-        name: 'values.co86_opm_otherRisk',
+        name: 'data.co86_opm_otherRisk',
         props: {
           options: [
             {
@@ -8181,7 +8181,7 @@ const schemas = {
               name: 'matchPattern',
               type: 'ASSERTION',
               props: {
-                name: 'values.co86_opm_otherRisk',
+                name: 'data.co86_opm_otherRisk',
                 pattern: 'Other',
               },
             },
@@ -8217,7 +8217,7 @@ const schemas = {
       },
       l3vm4ede: {
         id: 'l3vm4ede',
-        name: 'values.co86_str_otherRisk',
+        name: 'data.co86_str_otherRisk',
         props: {
           label: 'Другое',
         },
@@ -8702,7 +8702,7 @@ const schemas = {
       },
       l4edoptb: {
         id: 'l4edoptb',
-        name: 'values.custObjNm',
+        name: 'data.custObjNm',
         props: {
           label: 'Название',
           underlined: true,
@@ -8821,7 +8821,7 @@ const schemas = {
       },
       l4o89zle: {
         id: 'l4o89zle',
-        name: 'values.co86_str_resp_pers',
+        name: 'data.co86_str_resp_pers',
         title: 'Table',
         compSchemaId: '5778a519-36c7-49f5-a36a-1b5ac280b51b',
       },
@@ -10009,7 +10009,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -10232,7 +10232,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             maxWidth: '800px',
@@ -10584,7 +10584,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         title: 'stackRoot',
         children: ['l3x5ph1l', 'l3x5q7na'],
         compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
@@ -10648,7 +10648,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             maxWidth: '900px',
@@ -10951,7 +10951,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             maxWidth: '1000px',
@@ -11326,7 +11326,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -11596,7 +11596,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '12px',
@@ -11702,7 +11702,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -13866,7 +13866,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -14141,7 +14141,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -14253,7 +14253,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '20px',
@@ -14333,7 +14333,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -14473,7 +14473,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '24px',
@@ -14511,7 +14511,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -14639,7 +14639,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -14823,7 +14823,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -14941,7 +14941,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -15214,7 +15214,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             maxWidth: '1024px',
@@ -15272,7 +15272,7 @@ const schemas = {
       },
       l3vm4e3w: {
         id: 'l3vm4e3w',
-        name: 'values.co86_bol_needApproveBM',
+        name: 'data.co86_bol_needApproveBM',
         props: {
           label: 'Необходимо согласование ответственного',
           boxSide: 'start',
@@ -15618,7 +15618,7 @@ const schemas = {
       },
       l3vm4e5q: {
         id: 'l3vm4e5q',
-        name: 'values.co86_str_resp_pers',
+        name: 'data.co86_str_resp_pers',
         props: {
           items: [{}],
           label: 'Сотрудник спецподразделения',
@@ -15723,7 +15723,7 @@ const schemas = {
       },
       l3vm4e64: {
         id: 'l3vm4e64',
-        name: 'values.sourceSystemCd',
+        name: 'data.sourceSystemCd',
         props: {
           label: 'Источник данных',
           options: [
@@ -15897,11 +15897,11 @@ const schemas = {
       },
       l3vm4e70: {
         id: 'l3vm4e70',
-        name: 'values.co86_dte_sec_dueDt',
+        name: 'data.co86_dte_sec_dueDt',
         props: {
           label: 'Срок исполнения (инцидент на уточнении в ИБ)',
         },
-        title: 'values.co86_dte_sec_dueDt',
+        title: 'data.co86_dte_sec_dueDt',
         compSchemaId: '8550ad0f-ee1f-448c-a465-458d69b69e0c',
       },
       l3vm4e76: {
@@ -15992,7 +15992,7 @@ const schemas = {
       },
       l3vm4e7c: {
         id: 'l3vm4e7c',
-        name: 'values.co86_str_CommentRespPers',
+        name: 'data.co86_str_CommentRespPers',
         props: {
           label: 'Комментарий ответственного за уточнение',
           multiline: true,
@@ -16002,7 +16002,7 @@ const schemas = {
       },
       l3vm4e7i: {
         id: 'l3vm4e7i',
-        name: 'values.co86_bol_sec_approvedFlg',
+        name: 'data.co86_bol_sec_approvedFlg',
         props: {
           label: 'Согласовано ИБ',
           boxSide: 'start',
@@ -16012,7 +16012,7 @@ const schemas = {
       },
       l3vm4e7k: {
         id: 'l3vm4e7k',
-        name: 'values.co86_str_sec_conclusion.',
+        name: 'data.co86_str_sec_conclusion.',
         props: {
           label: 'Заключение ИБ',
           multiline: true,
@@ -16022,7 +16022,7 @@ const schemas = {
       },
       l3vm4e7m: {
         id: 'l3vm4e7m',
-        name: 'values.co86_bol_insuredFlg',
+        name: 'data.co86_bol_insuredFlg',
         props: {
           label: 'Объект застрахован',
           boxSide: 'start',
@@ -16487,7 +16487,7 @@ const schemas = {
       },
       l3vm4e8y: {
         id: 'l3vm4e8y',
-        name: 'values.custObj86Id',
+        name: 'data.custObj86Id',
         props: {
           label: 'Идентификатор инцидента',
           disabled: true,
@@ -16524,7 +16524,7 @@ const schemas = {
       },
       l3vm4e92: {
         id: 'l3vm4e92',
-        name: 'values.summaryDescription',
+        name: 'data.summaryDescription',
         props: {
           label: 'Сводное описание',
         },
@@ -16533,7 +16533,7 @@ const schemas = {
       },
       l3vm4e94: {
         id: 'l3vm4e94',
-        name: 'values.custObjDesc',
+        name: 'data.custObjDesc',
         props: {
           label: 'Детальное описание события',
           multiline: true,
@@ -16544,7 +16544,7 @@ const schemas = {
       },
       l3vm4e98: {
         id: 'l3vm4e98',
-        name: 'values.stepsTaken',
+        name: 'data.stepsTaken',
         props: {
           label: 'Предпринятые действия',
           multiline: true,
@@ -16666,7 +16666,7 @@ const schemas = {
       },
       l3vm4e9s: {
         id: 'l3vm4e9s',
-        name: 'values.co86_str_process_owner',
+        name: 'data.co86_str_process_owner',
         props: {
           items: [
             {
@@ -16713,7 +16713,7 @@ const schemas = {
       },
       l3vm4e9u: {
         id: 'l3vm4e9u',
-        name: 'values.date',
+        name: 'data.date',
         props: {
           label: 'Срок исполнения (инцидент на контроле)',
         },
@@ -16722,7 +16722,7 @@ const schemas = {
       },
       l3vm4e9w: {
         id: 'l3vm4e9w',
-        name: 'values.co86_str_process_owner_inquiry',
+        name: 'data.co86_str_process_owner_inquiry',
         props: {
           label: 'Запрос владельцу процесса или руководителю',
           multiline: true,
@@ -17133,7 +17133,7 @@ const schemas = {
       },
       l3vm4ebk: {
         id: 'l3vm4ebk',
-        name: 'values.discoveryDt',
+        name: 'data.discoveryDt',
         props: {
           label: 'Дата обнаружения',
         },
@@ -17166,7 +17166,7 @@ const schemas = {
       },
       l3vm4ebq: {
         id: 'l3vm4ebq',
-        name: 'values.eventEndDt',
+        name: 'data.eventEndDt',
         props: {
           label: 'Дата окончания',
         },
@@ -17205,7 +17205,7 @@ const schemas = {
       },
       l3vm4ebw: {
         id: 'l3vm4ebw',
-        name: 'values.basePotentialLossAmt',
+        name: 'data.basePotentialLossAmt',
         props: {
           label: 'Прогнозируемая сумма (RUB)',
           disabled: true,
@@ -17303,7 +17303,7 @@ const schemas = {
       },
       l3vm4eci: {
         id: 'l3vm4eci',
-        name: 'values.eventStartDt',
+        name: 'data.eventStartDt',
         props: {
           label: 'Дата начала',
         },
@@ -17312,7 +17312,7 @@ const schemas = {
       },
       l3vm4eck: {
         id: 'l3vm4eck',
-        name: 'values.co86_str_eventTime',
+        name: 'data.co86_str_eventTime',
         props: {
           label: 'Время начала',
         },
@@ -17321,7 +17321,7 @@ const schemas = {
       },
       l3vm4ecm: {
         id: 'l3vm4ecm',
-        name: 'values.potentialLoss',
+        name: 'data.potentialLoss',
         props: {
           label: 'Прогнозируемая сумма',
           placeholder: 'Введите число',
@@ -17331,7 +17331,7 @@ const schemas = {
       },
       l3vm4eco: {
         id: 'l3vm4eco',
-        name: 'values.potentialLossCurrencyCd',
+        name: 'data.potentialLossCurrencyCd',
         props: {
           label: 'Валюта',
           options: [
@@ -17474,7 +17474,7 @@ const schemas = {
       },
       l3vm4edc: {
         id: 'l3vm4edc',
-        name: 'values.co86_opm_otherRisk',
+        name: 'data.co86_opm_otherRisk',
         props: {
           options: [
             {
@@ -17557,7 +17557,7 @@ const schemas = {
               name: 'matchPattern',
               type: 'ASSERTION',
               props: {
-                name: 'values.co86_opm_otherRisk',
+                name: 'data.co86_opm_otherRisk',
                 pattern: 'Other',
               },
             },
@@ -17593,7 +17593,7 @@ const schemas = {
       },
       l3vm4ede: {
         id: 'l3vm4ede',
-        name: 'values.co86_str_otherRisk',
+        name: 'data.co86_str_otherRisk',
         props: {
           label: 'Другое',
         },
@@ -17858,7 +17858,7 @@ const schemas = {
       },
       l3vq2nvf: {
         id: 'l3vq2nvf',
-        name: 'values.co86_opm_oprisk_objects',
+        name: 'data.co86_opm_oprisk_objects',
         props: {
           options: [
             {
@@ -18198,7 +18198,7 @@ const schemas = {
       },
       l4o89zle: {
         id: 'l4o89zle',
-        name: 'values.co86_str_resp_pers',
+        name: 'data.co86_str_resp_pers',
         title: 'Table',
         compSchemaId: '5778a519-36c7-49f5-a36a-1b5ac280b51b',
       },
@@ -18288,7 +18288,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -18393,7 +18393,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -18590,7 +18590,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -19008,7 +19008,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             minWidth: '600px',
@@ -19287,7 +19287,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         title: 'stackRoot',
         compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
       },
@@ -19301,7 +19301,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         title: 'stackRoot',
         children: [
           'l4mh2le5',
@@ -19352,12 +19352,12 @@ const schemas = {
           children: ['jhj'],
         },
         title: 'Text',
-        l3a49mr8: 'context.formState.values.name',
+        l3a49mr8: 'context.formState.data.name',
         l3a49mra: 'props.children[0]',
         injection: [
           {
             to: 'props.children[0]',
-            from: 'context.formState.values.name',
+            from: 'context.formState.data.name',
           },
         ],
         injections: [
@@ -19487,7 +19487,7 @@ const schemas = {
         {
           ROOT_ID: {
             id: 'ROOT_ID',
-            name: 'noname',
+
             title: 'stackRoot',
             children: [],
             compSchemaId: 'ee4254ef-9099-4289-be68-51ce733b3376',
@@ -19503,7 +19503,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
@@ -19650,7 +19650,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '34px 0',
@@ -19852,7 +19852,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             minWidth: '600px',
@@ -20004,7 +20004,6 @@ const schemas = {
           form: 'main',
           text: 't.buttons.save',
           type: 'submit',
-          variant: 'action',
         },
         title: 'Save',
         compSchemaId: 'a8461c55-eeb9-40de-8920-cb0444c5ab0b',
@@ -20198,7 +20197,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           style: {
             maxWidth: '900px',
@@ -20404,7 +20403,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '12px 24px 12px',
@@ -21079,7 +21078,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '34px 0',
@@ -21416,7 +21415,7 @@ const schemas = {
     data: {
       ROOT_ID: {
         id: 'ROOT_ID',
-        name: 'noname',
+
         props: {
           tokens: {
             padding: '32px 0 0 0',
