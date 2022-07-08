@@ -3,7 +3,7 @@ import { UserService } from './user.service'
 import { parseInteger } from '../utils/parse-integer'
 import { SearchQuery, FindManyParams, UpdateUser, CreateUser, Pageable } from 'src/common/types'
 import { RequestWithBody, RequestWithQuery } from '../utils/types'
-import { Prisma, PrismaClient, User } from '@prisma/client'
+import { Prisma, User } from '@prisma/client'
 import { LocalAuthService } from 'src/local-auth/local-auth.service'
 import generateHash from 'src/utils/generate-hash'
 import generateHashedPassword from 'src/utils/generate-hash-password'
@@ -11,7 +11,7 @@ import { BodyValidationPipe } from 'src/utils/body-validation-pipe'
 import { bindedWrap, createUserValidator, updateUserValidator } from 'src/common/schemas'
 import { and, assertString, ValidationError } from '@savchenko91/schema-validator'
 
-const prisma = new PrismaClient()
+import { prisma } from 'src/prisma-client'
 
 const createUserValidatorServer = bindedWrap<{ username: string }>({
   ...createUserValidator,

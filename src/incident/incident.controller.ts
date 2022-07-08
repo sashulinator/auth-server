@@ -1,7 +1,6 @@
 import { Body, Controller, Delete, Get, Header, Param, Post, Put, Query } from '@nestjs/common'
-import { Incident, PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { Incident } from '@prisma/client'
+import { prisma } from 'src/prisma-client'
 
 @Controller('incidents')
 export class IncidentController {

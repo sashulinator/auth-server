@@ -1,9 +1,9 @@
-import { Body, Controller, Delete, Get, Header, Param, Post, Put, Query, Req } from '@nestjs/common'
-import { PrismaClient, Schema } from '@prisma/client'
+import { Body, Controller, Delete, Get, Header, Param, Post, Put, Query } from '@nestjs/common'
+import { Schema } from '@prisma/client'
 import { isObject } from '@savchenko91/schema-validator'
 import { Comp } from 'src/common/types'
 
-const prisma = new PrismaClient()
+import { prisma } from 'src/prisma-client'
 
 export function isComp(input: unknown): input is Comp {
   return isObject(input) && 'compSchemaId' in input

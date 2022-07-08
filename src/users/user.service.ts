@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common'
-import { Prisma, PrismaClient, User } from '@prisma/client'
+import { Prisma, User } from '@prisma/client'
 import { FindManyParams, Pageable } from 'src/common/types'
 import { CreateInput, UpdateInput } from '../utils/types'
 
-const prisma = new PrismaClient()
+import { prisma } from 'src/prisma-client'
 
 @Injectable()
 export class UserService {
