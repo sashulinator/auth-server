@@ -23,7 +23,7 @@ export class SchemaController {
 
   @Get('dependencies')
   async findDependencies(@Query('ids') ids: string[]) {
-    const schemas = await SchemaController.findDependencySchemas(ids, [], [])
+    const schemas = await SchemaController.findDependencySchemas(Object.values(ids), [], [])
 
     const normSchemas = schemas.reduce((acc, schema) => {
       acc[schema.id] = schema
